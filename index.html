@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr-FR">
+<head>
+    <!-- Document Title
+    ============================================= -->
+    <title>Overview | Documentation Creads Partners</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if lt IE 9]>
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="/partners-doc/js/jquery.js"></script>
+    <script type="text/javascript" src="/partners-doc/js/plugins.js"></script>
+    
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="full-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="http://www.creads-partners.com" class="standard-logo" data-dark-logo="/partners-doc/images/logo-dark.png"><img src="/partners-doc/images/logo.png" alt="Creads Partners"></a>
+                        <a href="http://www.creads-partners.com" class="retina-logo" data-dark-logo="/partners-doc/images/logo-dark@2x.png"><img src="/partners-doc/images/logo@2x.png" alt="Creads Partners"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu">
+
+                        <ul>
+                            <li ><a href="http://www.creads-partners.com/"><div>Home</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/services"><div>Services</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/pricing"><div>Pricing</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/references"><div>Références</div></a></li>
+                            <li><a href="http://www.creads-partners.com/api"><div>API</div></a></li>
+                            <li class="current"><a href="/partners-doc"><div>Doc</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/contact"><div>Contact</div></a></li>
+                        </ul>
+
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+        <!-- Page Sub Menu
+        ============================================= -->
+        
+        <div id="page-menu">
+
+            <div id="page-menu-wrap">
+
+                <div class="container clearfix">
+
+                    <div class="menu-title">Documentation <span>Creads Partners</span></div>
+
+                    <nav>
+                        <ul>
+                            
+                            <li class="current"><a href="/partners-doc/">API</a></li>
+                            
+                            <li ><a href="/partners-doc/references">Références API</a></li>
+                            
+                        </ul>
+                    </nav>
+
+                <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+
+                </div>
+
+            </div>
+
+        </div><!-- #page-menu end -->
+        
+
+        <!-- Page Title
+        ============================================= -->
+        
+        <section id="page-title">
+
+            <div class="container clearfix">
+                <h1>Documentation API</h1>
+            </div>
+
+        </section><!-- #page-title end -->
+        
+
+        
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="side-navigation">
+
+                        <div class="col_two_third nobottommargin">
+                        <h1 id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h1>
+<p>L&apos;API est actuellement en version <code>beta</code>. Sa sp&#xE9;cification peut &#xEA;tre amen&#xE9;e &#xE0; &#xE9;voluer. Les changements de sp&#xE9;cification apparaissent dans la section Changelogs.</p>
+<p>Ce document est &#xE0; l&apos;&#xE9;tat de brouillon et peut &#xEA;tre incomplet. Pour toute information d&apos;ordre technique, contactez teamdev@creads.org.</p>
+<h2 id="schema"><a class="heading-anchor" href="#schema"><span></span></a>Schema</h2>
+<p>Tous les acc&#xE8;s &#xE0; API se font sur couche HTTPS, sur le domaine <code>api.creads-partners.com</code>. Toutes les donn&#xE9;es sont envoy&#xE9;es et re&#xE7;ues en JSON.</p>
+<pre><code>curl -i https://api.creads-partners.com/v1/
+</code></pre><p>R&#xE9;ponse :</p>
+<pre><code>HTTP/1.1 200 OK
+Cache-Control: no-cache
+Content-Type: application/json
+Date: Thu, 03 Sep 2015 08:55:35 GMT
+Server: nginx/1.6.2
+Content-Length: 72
+Connection: keep-alive
+
+{&quot;name&quot;:&quot;Creads Partners API&quot;,&quot;version&quot;:&quot;1.0.0&quot;}
+</code></pre><p>Les champs vides sont inclus en tant que valeur <code>null</code> plut&#xF4;t que d&apos;&#xEA;tre omis.</p>
+<p>Toutes les dates sont renvoy&#xE9;es au format ISO 8601:</p>
+<pre><code>YYYY-MM-DDTHH:MM:SS+0000
+</code></pre><h3 id="repr-sentation-partielle"><a class="heading-anchor" href="#repr-sentation-partielle"><span></span></a>Repr&#xE9;sentation partielle</h3>
+<blockquote>
+<p>La repr&#xE9;sentation partielle n&apos;est <strong>pas support&#xE9;e dans la version 1.0.0-alphaXXX</strong></p>
+</blockquote>
+<p>Quand vous r&#xE9;cup&#xE9;rez une liste de ressources, la r&#xE9;ponse contient une sous-s&#xE9;lection d&apos;attributs de cette ressource.</p>
+<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rer la liste des cat&#xE9;gories de produits (<a href="https://api.creads-partners.com/v1/categories">https://api.creads-partners.com/v1/categories</a>), vous obtenez une repr&#xE9;sentation partielle de chaque categorie.</p>
+<pre><code class="lang-json">{
+    &quot;total_count&quot;: 7,
+    &quot;items&quot;: [
+        {
+            &quot;gid&quot;: &quot;55e80f50da498&quot;,
+            &quot;created_at&quot;: &quot;2015-09-03T09:13:52+0000&quot;,
+            &quot;modified_at&quot;: &quot;2015-09-03T09:13:52+0000&quot;,
+            &quot;href&quot;: &quot;/categories/55e80f50da498&quot;,
+            &quot;is_removable&quot;: true,
+            &quot;title&quot;: &quot;Ex&#xE9;cution graphique&quot;
+        },
+        {
+            &quot;gid&quot;: &quot;55e80f50da568&quot;,
+            &quot;created_at&quot;: &quot;2015-09-03T09:13:52+0000&quot;,
+            &quot;modified_at&quot;: &quot;2015-09-03T09:13:52+0000&quot;,
+            &quot;href&quot;: &quot;/categories/55e80f50da568&quot;,
+            &quot;is_removable&quot;: false,
+            &quot;title&quot;: &quot;Logo &amp; Identit&#xE9;&quot;
+        },
+        ...
+    ]
+}
+</code></pre>
+<h3 id="repr-sentation-compl-te"><a class="heading-anchor" href="#repr-sentation-compl-te"><span></span></a>Repr&#xE9;sentation compl&#xE8;te</h3>
+<p>Quand vous r&#xE9;cup&#xE9;rez une ressource individuelle, la r&#xE9;ponse renvoy&#xE9;e contient g&#xE9;n&#xE9;ralement tous les attributs pour cette ressource.
+C&apos;est la vue &quot;compl&#xE8;te&quot; de la ressource. (Notez que vos droits d&apos;acc&#xE8;s sur l&apos;API peuvent influencer la pr&#xE9;sence de certains champs.)</p>
+<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rez une cat&#xE9;gorie de produits (<a href="https://api.creads-partners.com/v1/categories/{gid}">https://api.creads-partners.com/v1/categories/{gid}</a>), sa repr&#xE9;sentation contient tous les champs.</p>
+<pre><code class="lang-json">{
+    &quot;gid&quot;: &quot;55e80f50da498&quot;,
+    &quot;created_at&quot;: &quot;2015-09-03T09:13:52+0000&quot;,
+    &quot;modified_at&quot;: &quot;2015-09-03T09:13:52+0000&quot;,
+    &quot;href&quot;: &quot;/categories/55e80f50da498&quot;,
+    &quot;is_removable&quot;: true,
+    &quot;title&quot;: &quot;Ex&#xE9;cution graphique&quot;,
+    &quot;description&quot;: &quot;D&#xE9;tourage photo, retouches photo, adaptation de fichiers...&quot;
+}
+</code></pre>
+<h3 id="repr-sentation-de-r-f-rence"><a class="heading-anchor" href="#repr-sentation-de-r-f-rence"><span></span></a>Repr&#xE9;sentation de r&#xE9;f&#xE9;rence</h3>
+<p>Quand vous r&#xE9;cup&#xE9;rez une ressource &#xE0; laquelle est associ&#xE9;e &#xE0; une autre ressource, cette autre ressource apparait en sous-&#xE9;lement repr&#xE9;sent&#xE9; partiellement.
+Cette repr&#xE9;sentation est une &quot;repr&#xE9;sentation de r&#xE9;f&#xE9;rence&quot; contenant les &#xE9;l&#xE9;ments essentiels pour identifier la resource associ&#xE9;e.</p>
+<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rer un projet (<a href="https://api.creads-partners.com/v1/projects/{gid}">https://api.creads-partners.com/v1/projects/{gid}</a>), sa repr&#xE9;sentation contient une r&#xE9;f&#xE9;rence <code>owner</code> vous permettant de retrouver l&apos;utilisateur qui &#xE0; cr&#xE9;&#xE9; le project.</p>
+<pre><code class="lang-json">{
+    &quot;gid&quot;: &quot;55e80f5163e3a&quot;,
+    &quot;owner&quot;: {
+        &quot;gid&quot;: &quot;55e80f4b9f4c9&quot;,
+        &quot;href&quot;: &quot;/users/55e80f4b9f4c9&quot;
+    },
+    ...
+}
+</code></pre>
+<h2 id="param-tres"><a class="heading-anchor" href="#param-tres"><span></span></a>Param&#xE8;tres</h2>
+<p>Plusieurs m&#xE9;thodes de l&apos;API supportent des param&#xE8;tres optionnels.
+Pour les requ&#xEA;tes GET, ormis les param&#xE8;tres obligatoires pr&#xE9;sents dans le segment d&apos;URL, les param&#xE8;tres optionnels doivent &#xEA;tre pass&#xE9;s comme param&#xE8;tre d&apos;URL HTTP (query string parameter).</p>
+<p><strong>Exemple</strong>: On r&#xE9;cup&#xE8;re la liste des utlisateurs, tri&#xE9;s pas date de cr&#xE9;ation:</p>
+<pre><code class="lang-sh">curl -i https://api.creads-partners.com/v1/users?orderBy=created_at
+</code></pre>
+<p>Pour les requ&#xEA;tes POST, PUT et DELETE, mes param&#xE8;tres ne sont pas inclus dans l&apos;URL mais encod&#xE9;s en JSON dans le <em>body</em> de la requ&#xEA;te
+dont l&apos;ent&#xEA;te <code>Content-Type</code> doit &#xEA;tre initialis&#xE9; &#xE0; la valeur <code>application/json</code>.</p>
+<p>For POST, PATCH, PUT, and DELETE requests, parameters not included in the URL should be encoded as JSON with a Content-Type of &#x2018;application/json&#x2019;:</p>
+<pre><code class="lang-sh">curl -i -X POST -d &apos;{&quot;firstname&quot;:&quot;John&quot;}&apos; https://api.creads-partners.com/v1/users/55e80f4af117f
+</code></pre>
+<h2 id="erreurs-http"><a class="heading-anchor" href="#erreurs-http"><span></span></a>Erreurs HTTP</h2>
+<p>Il y a plusieurs sortes d&apos;erreurs possibles.</p>
+<ol>
+<li><p>Envoyer un JSON invalide provoquera une r&#xE9;ponse <code>400 Bad Request</code>.</p>
+</li>
+<li><p>Envoyer une requ&#xEA;te non-identifi&#xE9;e ou avec un token invalide provoquera une r&#xE9;ponse <code>401 Unauthorized</code></p>
+</li>
+<li><p>Envoyer une requ&#xEA;te &#xE0; un endpoint n&#xE9;cessitant des droits sup&#xE9;rieurs provoquera une r&#xE9;ponse <code>403 Forbidden</code></p>
+</li>
+<li><p>Envoyer une requ&#xEA;te &#xE0; une ressource inexistante provoquera une r&#xE9;ponse <code>404 Not found</code></p>
+</li>
+<li><p>Envoyer une requ&#xEA;te des champs invalides provoquera une r&#xE9;ponse <code>422 Unprocessable Entity</code></p>
+</li>
+</ol>
+<blockquote>
+<p>L&apos;erreur 422 n&apos;est <strong>pas support&#xE9;e dans la version 1.0.0-alphaXXX</strong>. Renvoie <code>400 Bad Request</code> en lieu et place.</p>
+</blockquote>
+<p>Toutes les erreurs ont un sch&#xE9;ma de r&#xE9;ponse &#xE9;quivalent:</p>
+<pre><code>HTTP/1.1 403 Forbidden
+Host: localhost:8000
+Connection: close
+X-Powered-By: PHP/5.5.27
+Cache-Control: no-cache
+Date: Thu, 03 Sep 2015 12:13:26 GMT
+X-Debug-Token: 450626
+X-Debug-Token-Link: /_profiler/450626
+Content-Type: application/json
+
+{&quot;error&quot;:{&quot;code&quot;:403,&quot;message&quot;:&quot;Forbidden&quot;}}
+</code></pre><h2 id="redirections-http"><a class="heading-anchor" href="#redirections-http"><span></span></a>Redirections HTTP</h2>
+<p>L&apos;API peut utiliser des redirections HTTP. Le client doit faire en sorte que ces redirections soient prises en charge.
+Les redirections portent une ent&#xEA;te <code>Location</code> qui contient l&apos;URL de la resource vers laquelle le client doit renvoyer la requ&#xEA;te.</p>
+<table>
+<thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>301</td>
+<td>Redirection permanente</td>
+</tr>
+<tr>
+<td>302</td>
+<td>Redirection temporaire</td>
+</tr>
+</tbody>
+</table>
+<h2 id="actions-http"><a class="heading-anchor" href="#actions-http"><span></span></a>Actions HTTP</h2>
+<p>L&apos;API utiliser les m&#xE9;thodes HTTP pour identifier l&apos;action &#xE0; ex&#xE9;cuter sur les ressources.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>Utilis&#xE9;e pour obtenir une ressource</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Utilis&#xE9;e pour cr&#xE9;er une ressource.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>Utilis&#xE9;e pour mettre &#xE0; jour une ressource.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>Utilis&#xE9;e pour supprimer une ressource.</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td>Utilis&#xE9;e sur une ressource pour obtenir seulement le status code et les en-t&#xEA;tes. Permet notamment de v&#xE9;rifier l&apos;existence d&apos;une ressource.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="authentification"><a class="heading-anchor" href="#authentification"><span></span></a>Authentification</h2>
+<p>En dehors du endpoint de base (<a href="https://api.creads-partners.com/v1/">https://api.creads-partners.com/v1/</a>), tous les autres endpoints n&#xE9;cessitent d&apos;&#xEA;tre authentifi&#xE9; pour &#xEA;tre interrog&#xE9;s.
+Certaines requ&#xEA;tes non-authentifi&#xE9;es peuvent retourner <code>404 Not Found</code> au lieu de <code>403 Forbidden</code> pour pr&#xE9;venir de fuites de s&#xE9;curit&#xE9;.</p>
+<p>L&apos;authentification se fait gr&#xE2;ce &#xE0; un token OAuth2 (access token).
+Veuillez lire la section <a href="/doc/api/oauth2">authentication OAuth2</a> pour plus d&apos;information sur les m&#xE9;thodes pour obtenir un access token.</p>
+<p>Il y a deux solutions pour authentifier les requ&#xEA;tes &#xE0; l&apos;aide du token OAuth2:</p>
+<p><strong>Token Oauth2 envoy&#xE9; en en-t&#xEA;tes:</strong></p>
+<pre><code>curl -H &quot;Authorization: Bearer OAUTH-TOKEN&quot; https://api.creads-partners.com/v1/me
+</code></pre><p><strong>Token Oauth2 envoy&#xE9; en param&#xE8;tre d&apos;URL:</strong></p>
+<pre><code>curl https://api.creads-partners.com/v1/me?access_token=OAUTH-TOKEN
+</code></pre><p>Si l&apos;authentification &#xE9;choue, la r&#xE9;ponse retourn&#xE9;e prendra la forme d&apos;une <code>401 Unauthorized</code>:</p>
+<pre><code class="lang-json">{
+    &quot;error&quot;: &quot;invalid_grant&quot;,
+    &quot;error_description&quot;: &quot;The access token provided is invalid.&quot;
+}
+</code></pre>
+<h2 id="timezones"><a class="heading-anchor" href="#timezones"><span></span></a>Timezones</h2>
+<p>Certaines requ&#xEA;tes renvoient des dates ou n&#xE9;cessitent d&apos;en envoyer.
+<strong>Toutes les dates renvoy&#xE9;es par l&apos;API sont exprim&#xE9;es en temps universelle (UTC) au format ISO 8601.</strong></p>
+<p>Par exemple :</p>
+<pre><code>2015-08-04T15:24:21+0000
+</code></pre><p>Lorsque vous souhaitez soummetre une date g&#xE9;n&#xE9;r&#xE9;e sur un autre fuseau horaire qu&apos;UTC, vous devez prendre soin de sp&#xE9;cifier la timezone employ&#xE9;e.
+L&apos;exemple pr&#xE9;sent sur le fuseau Europe/Paris en heure d&apos;&#xE9;t&#xE9; sera :</p>
+<pre><code>2015-08-04T17:24:21+0200
+</code></pre><h2 id="les-collections-de-ressource"><a class="heading-anchor" href="#les-collections-de-ressource"><span></span></a>les collections de ressource</h2>
+<p>Les collections de resource repr&#xE9;sentent un ensemble d&apos;items d&apos;une certaine ressource accompagn&#xE9; d&apos;un compte. Il s&apos;agit des r&#xE9;ponses aux requ&#xEA;tes <code>GET</code> sur les listes de resources (ex: <code>GET /projects</code>) ou de collections imbriqu&#xE9;es dans une autre ressources.</p>
+<p>Une collection est une resource qui contient deux attributs:</p>
+<ul>
+<li><code>total_count</code>: Ce compte contient le nombre d&apos;&#xE9;lements total correspondant &#xE0; la requ&#xEA;te faites (sans prendre en compte la pagination)</li>
+<li><code>items</code>: un tableau d&apos;&#xE9;l&#xE9;ments (ressources) du m&#xEA;me type</li>
+</ul>
+<h3 id="recherche-dans-une-collection"><a class="heading-anchor" href="#recherche-dans-une-collection"><span></span></a>Recherche dans une collection</h3>
+<p>Certaines ressources sont <em>searchable</em> ce qui signifie que vous pouvez filtrer le r&#xE9;sultat d&apos;une requ&#xEA;te sur la collection de cette resource.</p>
+<p>Par exemple, si vous voulez avoir tous les produits existants, vous pouvez faire</p>
+<pre><code class="lang-bash">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/products
+</code></pre>
+<p>Ce qui vous retournera une liste compl&#xE8;te.</p>
+<p>Si en revanche vous souhaitez obtenir seulement les produits d&apos;une cat&#xE9;gorie dont le gid est <code>$CATEGORY_GID</code>, vous pouvez filtrer cette requ&#xEA;te via une query.</p>
+<pre><code class="lang-bash">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/products?query=[&quot;category.gid&quot;, &quot;==&quot;, &quot;$CATEGORY_GID&quot;]
+</code></pre>
+<p>Le param&#xE8;tre d&apos;url <code>query</code> est un tableau JSON. Il s&apos;agit d&apos;un assemblage <em>d&apos;expressions</em> et d&apos;op&#xE9;rateurs logiques.</p>
+<p>Une <em>expression</em> se compose de trois &#xE9;l&#xE9;ments: un <strong>champ</strong>, un <strong>op&#xE9;rateur</strong>, et une <strong>valeur</strong>.</p>
+<pre><code class="lang-json">[ &quot;$FIELD&quot;, &quot;$OPERATOR&quot;, &quot;$VALUE&quot;]
+</code></pre>
+<p>Les champs et op&#xE9;rateurs utilisables sont d&#xE9;finies dans la documentation des resources.</p>
+<h4 id="op-rateurs-conditionnels"><a class="heading-anchor" href="#op-rateurs-conditionnels"><span></span></a>Op&#xE9;rateurs conditionnels</h4>
+<ul>
+<li><code>==</code> : Egalit&#xE9;</li>
+</ul>
+<p>Exemple: Produit dont le GID est 123456789</p>
+<pre><code>[&quot;gid&quot;, &quot;==&quot;, &quot;123456789&quot;]
+</code></pre><ul>
+<li><code>!=</code> : Inegalit&#xE9;</li>
+</ul>
+<p>Exemple: Produit dont le GID n&apos;est pas 123456789</p>
+<pre><code>[&quot;gid&quot;, !=&quot;, &quot;123456789&quot;]
+</code></pre><ul>
+<li><code>&lt;</code> : Inf&#xE9;rieur (strict)</li>
+</ul>
+<p>Exemple: Projets cr&#xE9;&#xE9;&#xE9;s apr&#xE8;s le 21 Octobre 2015 (strictement)</p>
+<pre><code>[&quot;created_at&quot;, &quot;&gt;&quot;, &quot;2015-08-21T01:00:00+0000&quot;]
+</code></pre><p>Note: la date doit &#xEA;tre au format ISO 8601</p>
+<ul>
+<li><code>&gt;</code> : Sup&#xE9;rieur (strict)</li>
+<li><code>&lt;=</code> : Inf&#xE9;rieur ou &#xE9;gal</li>
+<li><code>&gt;=</code> : Sup&#xE9;rieur ou &#xE9;gal</li>
+<li><code>in</code> : Resources dont la valeur de <em>field</em> appartient au tableau <em>value</em>. La <em>value</em> pour cet op&#xE9;rateur doit-&#xEA;treun tableau de valeurs scalaires.</li>
+<li><code>in</code> : Resources dont la valeur de <em>field</em> n&apos;appartient pas au tableau <em>value</em>. La <em>value</em> pour cet op&#xE9;rateur doit-&#xEA;treun tableau de valeurs scalaires.</li>
+<li><code>~=</code> : Op&#xE9;rateur <strong>LIKE</strong> qui permet de controler qu&apos;un champ contient une expression. Le champ doit &#xEA;tre <strong>likable</strong> pour effecteur ce genre de condition</li>
+</ul>
+<p>Exemple: Produits dont le titre contient le mot &apos;projet&apos;</p>
+<pre><code>[&quot;title&quot;, &quot;~=&quot;, &quot;projet&quot;]
+</code></pre><ul>
+<li><code>intersect</code> : Intersection. La <em>value</em> pour cet op&#xE9;rateur doit-&#xEA;tre elle-m&#xEA;me une expression, elle permet de ne filter que les r&#xE9;sultats qui r&#xE9;pondent au membre droite de cette condition</li>
+</ul>
+<p>Exemple: Produits contenant l&apos;organisation dont le gid est 123456879</p>
+<pre><code>[&quot;gid&quot;, &quot;in&quot;, [&quot;organizations.gid&quot;, &quot;==&quot;, &quot;123456789&quot;]]
+</code></pre><ul>
+<li><code>exclude</code> : Exclusion. Comme le pr&#xE9;c&#xE9;dent, permet d&apos;obtenir une liste de resource n&apos;&#xE9;tant pas comprise dans le r&#xE9;sultat d&apos;une autre condition.</li>
+</ul>
+<p>Exemple: Produits ne contenant pas l&apos;organisation dont le gid est 123456879</p>
+<pre><code>[&quot;gid&quot;, &quot;!in&quot;, [&quot;organizations.gid&quot;, &quot;==&quot;, &quot;123456789&quot;]]
+</code></pre><h4 id="op-rateurs-logiques"><a class="heading-anchor" href="#op-rateurs-logiques"><span></span></a>Op&#xE9;rateurs Logiques</h4>
+<p>Vous pouvez &#xE9;galement assembler plusieurs expressions dans la m&#xEA;me <code>query</code> de mani&#xE8;re logique. Par d&#xE9;faut, apposer les expressions en liste r&#xE9;alisera des <strong>ET logiques</strong> entre chacune:</p>
+<p>Imaginons cette query sur <code>/products</code></p>
+<pre><code>[[&quot;title&quot;, &quot;~=&quot;, &quot;projet&quot;],[&quot;gid&quot;, &quot;==&quot;, &quot;123456789&quot;],[&quot;category.gid&quot;, &quot;&gt;=&quot;, &quot;12456789&quot;]]
+</code></pre><p>Cette requ&#xEA;te signifie :</p>
+<blockquote>
+<p>Tous les produits dont le titre contient &quot;projet&quot; <strong>et</strong> dont le gid est 123456789 <strong>et</strong> donc la category a un gid sup&#xE9;rieur &#xE0; 123456789</p>
+</blockquote>
+<p>Si vous souhaitez la version explicite de cette logique, il faut appliqer un <code>AND</code> a la liste d&apos;expressions:</p>
+<pre><code>[&quot;AND&quot;, [ [&quot;title&quot;, &quot;~=&quot;, &quot;projet&quot;], [&quot;gid&quot;, &quot;==&quot;, &quot;123456789&quot;], [&quot;category.gid&quot;, &quot;&gt;=&quot;, &quot;12456789&quot;] ]]
+</code></pre><p>De la m&#xEA;me mani&#xE8;re, le <strong>OU logique</strong> est possible.:</p>
+<pre><code>[&quot;OR&quot;, [ [&quot;title&quot;, &quot;~=&quot;, &quot;projet&quot;],,[&quot;gid&quot;, &quot;==&quot;, &quot;123456789&quot;], [&quot;category.gid&quot;, &quot;&gt;=&quot;, &quot;12456789&quot;] ]]
+</code></pre><p>En d&apos;autres termes:</p>
+<pre><code>[&quot;$OPERATOR&quot;, [ $EXPRESSION_LIST ]]
+</code></pre><p>Pour <strong>prioriser</strong> un op&#xE9;rateur logique, il faut <em>imbriquer</em> une query en tant qu&apos;expression :</p>
+<pre><code>[&quot;AND&quot;, [[&quot;title&quot;, &quot;~=&quot;, &quot;projet&quot;], [&quot;OR&quot;, [[&quot;category.gid&quot;, &quot;&gt;=&quot;, &quot;12456789&quot;], [&quot;gid&quot;, &quot;==&quot;, &quot;123456789&quot;]]] ] ]
+</code></pre><p>se traduit:</p>
+<blockquote>
+<p>Produits dont le titre contient &quot;projet&quot; <strong>ET</strong> ( gid &#xE9;gale 123456789 <strong>OU</strong> category a un gid sup&#xE9;rieur &#xE0; 123546789 )</p>
+</blockquote>
+<h3 id="tri-d-une-collection"><a class="heading-anchor" href="#tri-d-une-collection"><span></span></a>Tri d&apos;une collection</h3>
+<p>Vous pouvez ordonner et trier les r&#xE9;ponses d&apos;une requ&#xEA;te en utilisant les param&#xE8;tres de requ&#xEA;te <code>orderBy</code> et <code>sort</code>.</p>
+<ul>
+<li><code>orderBy</code> permet de trier selon le champ d&apos;une ressource (&#xE0; condition que ce champ soit <em>orderable</em>, c.f. References)</li>
+<li><code>sort</code> vous permet de choisir l&apos;ordre de tri ascendant (<code>asc</code>) ou descendant (<code>desc</code>). Par d&#xE9;faut, cette valeur est &#xE0; <code>asc</code></li>
+</ul>
+<p>Pour obtenir les projets tri&#xE9;s par date de modification (les plus r&#xE9;cents en premier):</p>
+<pre><code>/projects?orderBy=modified_at&amp;sort=desc
+</code></pre><h3 id="pagination-d-une-collection"><a class="heading-anchor" href="#pagination-d-une-collection"><span></span></a>Pagination d&apos;une collection</h3>
+<p>Il est possible d&apos;utiliser la pagination (et la cumuler avec le tri et les <code>query</code>) pour n&apos;afficher qu&apos;une partie des r&#xE9;sultats. Les param&#xE8;tres de requ&#xEA;tes <code>offset</code> et <code>limit</code> vous permettent cette op&#xE9;ration.</p>
+<ul>
+<li><code>offset</code> d&#xE9;finit l&apos;index de l&apos;&#xE9;l&#xE9;ment &#xE0; partir duquel afficher la collection de r&#xE9;ponse</li>
+<li><code>limit</code> d&#xE9;finit le nombre d&apos;&#xE9;l&#xE9;ments maximum &#xE0; afficher</li>
+</ul>
+<p>Par exemple, pour obtenir la deuxieme page de la liste de projet, &#xE0; raison de 10 &#xE9;l&#xE9;ments par page:</p>
+<pre><code>/projects?offset=10&amp;limit=10
+</code></pre>
+                        </div>
+
+                        <div class="col_one_third col_last nobottommargin">
+
+                            <ul class="sidenav">
+                                
+                                <li class="ui-tabs-active"><a href="/partners-doc/api"><i class="icon-chevron-left"></i>Overview</a></li>
+                                
+                                <li ><a href="/partners-doc/api/oauth2"><i class="icon-chevron-left"></i>OAuth2</a></li>
+                                
+                                <li ><a href="/partners-doc/api/ressources"><i class="icon-chevron-left"></i>Ressources</a></li>
+                                
+                                <li ><a href="/partners-doc/api/changelogs"><i class="icon-chevron-left"></i>CHANGELOGS</a></li>
+                                
+                                
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+
+
+        <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        Copyright &copy; 2015 Creads Partners
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="fright clearfix">
+                            <a href="http://www.facebook.com/creads" class="social-icon si-small si-borderless si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="http://www.twitter.com/creads" class="social-icon si-small si-borderless si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="https://plus.google.com/+creads" class="social-icon si-small si-borderless si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i>
+                            </a>
+
+                            <a href="https://fr.pinterest.com/agencecreads/" class="social-icon si-small si-borderless si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i>
+                            </a>
+
+
+                            <a href="https://github.com/creads" class="social-icon si-small si-borderless si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/company/creads" class="social-icon si-small si-borderless si-linkedin">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <a href="mailto:info@creads-partners.com" target="_blank"><i class="icon-envelope2"></i>  info@creads-partners.com</a> <span class="middot">&middot;</span> <a href="tel:+330155347874" target="_blank"><i class="icon-headphones"></i> 01 55 34 78 74</a> <span class="middot">&middot;</span> <i class="icon-skype2"></i> creadspartners
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="/partners-doc/js/functions.js"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-57696122-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>
