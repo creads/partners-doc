@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "properties": {
+        "gid": {
+            "type": "string",
+            "required": false
+        },
+        "href": {
+            "type": "string",
+            "readOnly": true
+        },
+        "creads_id": {
+            "type": "integer",
+            "required": false
+        }
+    },
+    "additionalProperties": false
+}

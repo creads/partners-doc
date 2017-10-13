@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "App",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "href": {
+      "type": "string",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 80,
+      "required": true
+    },
+    "app_id": {
+      "type": "string",
+      "readOnly": true
+    },
+    "app_secret": {
+      "type": "string",
+      "readOnly": true
+    },
+    "callback_url": {
+      "type": "string",
+      "format": "uri",
+      "required": true
+    },
+    "allowed_grant_types": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "authorization_code",
+          "password",
+          "refresh_token",
+          "client_credentials",
+          "jwt_token"
+        ]
+      },
+      "required": true
+    },
+    "owner": {
+      "$ref": "user.reference.json",
+      "required": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+
+  "type": "object",
+
+  "properties": {
+    "error": { "$ref": "#/definitions/error"}
+  },
+
+  "definitions": {
+    "error": {
+      "type": "object",
+      "properties": {
+        "code":  {
+          "type": "integer",
+          "readOnly": true
+        },
+        "message": {
+          "type": "string",
+          "readOnly": true
+        },
+        "exception": {
+          "type": "array",
+          "readOnly": true
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

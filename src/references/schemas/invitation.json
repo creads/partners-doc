@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "href": {
+        "type": "string",
+        "readOnly": true
+    },
+    "token": {
+      "type": "string",
+      "readOnly": true
+    },
+    "has_user": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "organization": {
+      "$ref": "reference.json",
+      "required": true
+    },
+    "user_rank": {
+      "type": "string",
+      "required": false,
+      "enum": [
+          "user",
+          "manager",
+          "owner"
+      ]
+    },
+    "budget": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "price_value.embed.json"}
+      ],
+      "required": false
+    },
+    "locale": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "additionalProperties": false
+}

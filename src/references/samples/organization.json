@@ -1,0 +1,32 @@
+{
+  "gid": "559befd82c88b",
+  "created_at": {
+    "type": "string",
+    "format": "date-time",
+    "readOnly": true,
+    "required": true
+  },
+  "href": {
+    "type": "string",
+    "readOnly": true,
+    "required": true
+  },
+  "name": "Creads",
+  "hostname": "partners-creads.fr",
+  "vat": "FR09504019662",
+  "billing_address": {
+    "division": null,
+    "address1": "112 Rue de Réaumur",
+    "address2": null,
+    "zipcode": "75012",
+    "city": "Paris",
+    "state": null,
+    "country": "FR",
+    "additional": null,
+  },
+  "billing_contact": {
+    "phone": null,
+    "email": "contact@email.com"
+  },
+  "logo": "https://cre.ads/43348e3ea6-1.jpg"
+}

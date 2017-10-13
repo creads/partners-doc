@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "href": {
+      "type": "string",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "accepted_at": {
+      "type": [null, "string"],
+      "format": "date-time",
+      "readOnly": true
+    },
+    "message": {
+      "type": "string",
+      "required": false,
+      "maxLength": 8000
+    },
+    "project": {
+      "$ref": "reference.json",
+      "required": false
+    },
+    "mine": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "worker": {
+      "oneOf": [
+          {"type": "null"},
+          {"$ref": "worker.reference.json"}
+      ],
+      "required": false
+    },
+    "user": {
+      "oneOf": [
+          {"type": "null"},
+          {"$ref": "reference.json"}
+      ],
+      "required": false
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+          "simple",
+          "delivery",
+          "reject",
+          "accept"
+      ],
+      "required": false
+    },
+    "attached_files": {
+        "type": "array",
+        "items": {
+            "$ref": "file.json"
+        }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "username": {
+      "type": "string",
+      "required": false,
+      "maxLength": 45,
+      "minLength": 3
+    },
+    "href": {
+      "type": "string",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "firstname": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "lastname": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "avatar": {
+      "oneOf": [
+          {"type": "null"},
+          {"$ref": "image.json"}
+      ],
+      "required": false
+    }
+  }
+}

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr-FR">
+<head>
+    <!-- Document Title
+    ============================================= -->
+    <title>OAuth2 | Documentation Creads Partners</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="//fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/magnific-popup.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/responsive.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if lt IE 9]>
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="/partners-doc/js/jquery.js"></script>
+    <script type="text/javascript" src="/partners-doc/js/plugins.js"></script>
+    
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="full-header">
+
+            <div id="header-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="http://www.creads-partners.com" class="standard-logo" data-dark-logo="/partners-doc/images/logo-dark.png"><img src="/partners-doc/images/logo.png" alt="Creads Partners"></a>
+                        <a href="http://www.creads-partners.com" class="retina-logo" data-dark-logo="/partners-doc/images/logo-dark@2x.png"><img src="/partners-doc/images/logo@2x.png" alt="Creads Partners"></a>
+                    </div><!-- #logo end -->
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav id="primary-menu">
+
+                        <ul>
+                            <li ><a href="http://www.creads-partners.com/"><div>Home</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/services"><div>Services</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/pricing"><div>Pricing</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/references"><div>Références</div></a></li>
+                            <li><a href="http://www.creads-partners.com/api"><div>API</div></a></li>
+                            <li class="current"><a href="/partners-doc"><div>Doc</div></a></li>
+                            <li ><a href="http://www.creads-partners.com/contact"><div>Contact</div></a></li>
+                        </ul>
+
+
+                    </nav><!-- #primary-menu end -->
+
+                </div>
+
+            </div>
+
+        </header><!-- #header end -->
+
+        <!-- Page Sub Menu
+        ============================================= -->
+        
+        <div id="page-menu">
+
+            <div id="page-menu-wrap">
+
+                <div class="container clearfix">
+
+                    <div class="menu-title">Documentation <span>Creads Partners</span></div>
+
+                    <nav>
+                        <ul>
+                            
+                            <li class="current"><a href="/partners-doc/">API</a></li>
+                            
+                            <li ><a href="/partners-doc/references">Références API</a></li>
+                            
+                        </ul>
+                    </nav>
+
+                <div id="page-submenu-trigger"><i class="icon-reorder"></i></div>
+
+                </div>
+
+            </div>
+
+        </div><!-- #page-menu end -->
+        
+
+        <!-- Page Title
+        ============================================= -->
+        
+        <section id="page-title">
+
+            <div class="container clearfix">
+                <h1>Documentation API</h1>
+            </div>
+
+        </section><!-- #page-title end -->
+        
+
+        
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="side-navigation">
+
+                        <div class="col_two_third nobottommargin">
+                        <h1 id="oauth2"><a class="heading-anchor" href="#oauth2"><span></span></a>OAuth2</h1>
+<p>L&apos;API Creads Partners utilise OAuth2 comme unique protocole d&apos;authentification.
+Vous devez disposer d&apos;un compte Creads Partners et d&apos;identifiants pour votre application.
+Le compte Creads Partners est un couple email + mot de passe.
+Les identifiants d&apos;application sont un <em>Client ID</em> et un <em>Client Secret</em> OAuth.
+<strong>Ses identifiants ne doivent jamais &#xEA;tre partag&#xE9;s.</strong></p>
+<p>Si vous n&apos;avez pas de compte Creads Partners ou pas d&apos;identifiants d&apos;application,
+veuillez contacter contact@creads-partners.com.</p>
+<h2 id="workflow-pour-une-application-serveur"><a class="heading-anchor" href="#workflow-pour-une-application-serveur"><span></span></a>Workflow pour une application serveur</h2>
+<p><strong>client_credentials</strong> grant type</p>
+<p>Ce workflow permet d&apos;authentifier une application qui ne n&#xE9;cessite pas d&apos;authentification de plusieurs utilisateurs Partners diff&#xE9;rents.</p>
+<p>Obtenir un access token:</p>
+<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token&quot; -d &apos;grant_type=client_credentials&apos;
+</code></pre><blockquote>
+<p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
+remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em></p>
+</blockquote>
+<p>R&#xE9;ponse:</p>
+<pre><code>{
+    &quot;access_token&quot;: &quot;MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg&quot;,
+    &quot;expires_in&quot;: 3600,
+    &quot;token_type&quot;: &quot;bearer&quot;,
+    &quot;scope&quot;: &quot;base&quot;
+}
+</code></pre><h2 id="workflow-pour-une-application-serveur-avec-authentification-de-chaque-utilisateur-partners"><a class="heading-anchor" href="#workflow-pour-une-application-serveur-avec-authentification-de-chaque-utilisateur-partners"><span></span></a>Workflow pour une application serveur avec authentification de chaque utilisateur Partners</h2>
+<p><strong>password</strong> grant type</p>
+<p>Ce workflow permet d&apos;authentifier des utilisateurs Partners diff&#xE9;rents.
+Le serveur doit obtenir un <em>access token</em> et le stocker en l&apos;associant &#xE0; un utilisateur (en session par exemple).
+L&apos;<em>access token</em> devra &#xEA;tre associ&#xE9; &#xE0; toutes les requ&#xEA;tes effectu&#xE9;es par l&apos;utilisateur.</p>
+<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token?grant_type=password&apos; -d &apos;grant_type=password&amp;username=USERNAME&amp;password=PASSWORD&apos;
+</code></pre><blockquote>
+<p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
+remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em>
+remplacer <code>USERNAME</code> par l&apos;email de l&apos;utilisateur &#xE0; authentifier
+remplacer <code>PASSWORD</code> par le mot de passe saisie par l&apos;utilisateur &#xE0; authentifier</p>
+</blockquote>
+<p>R&#xE9;ponse:</p>
+<pre><code>{
+    &quot;access_token&quot;: &quot;NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ&quot;,
+    &quot;expires_in&quot;: 3600,
+    &quot;token_type&quot;: &quot;bearer&quot;,
+    &quot;scope&quot;: &quot;base&quot;,
+    &quot;refresh_token&quot;: &quot;ZWNmZWEwNjU0OTY5ZjUxMThjN2VlM2NkMjI5MDk1OWM3MGE1NTI2OTNmMzUwZWU3M2MzZTc0ZmFiMmVhYTk4Nw&quot;
+}
+</code></pre><h2 id="refresh-token-refresh_token-grant-type-"><a class="heading-anchor" href="#refresh-token-refresh_token-grant-type-"><span></span></a>Refresh token (<em>refresh_token</em> grant type)</h2>
+<p><strong>refresh_token</strong> grant type</p>
+<p>Permet de raffraichir un <em>access token</em> OAuth2 sans redemander le mot de passe de l&apos;utilisateur.
+A l&apos;obtention d&apos;un <em>access token</em> et son stockage sur le serveur, on peut &#xE9;galement stocker un <em>refresh token</em>.
+Ce <em>refresh token</em> valable pour une plus longue dur&#xE9;e permettra d&apos;obtenir un nouvel <em>access token</em> pour un utilisateur Partners sans le forcer &#xE0; resaisir son mot de passe.</p>
+<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token?grant_type=password&apos; -d &apos;grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN&apos;
+</code></pre><blockquote>
+<p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
+remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em>
+remplacer <code>REFRESH_TOKEN</code> par le <em>refresh token</em> obtenu avec l&apos;<em>access token</em></p>
+</blockquote>
+<p>R&#xE9;ponse:</p>
+<pre><code>{
+    &quot;access_token&quot;: &quot;NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ&quot;,
+    &quot;expires_in&quot;: 3600,
+    &quot;token_type&quot;: &quot;bearer&quot;,
+    &quot;scope&quot;: &quot;base&quot;,
+    &quot;refresh_token&quot;: &quot;ZWNmZWEwNjU0OTY5ZjUxMThjN2VlM2NkMjI5MDk1OWM3MGE1NTI2OTNmMzUwZWU3M2MzZTc0ZmFiMmVhYTk4Nw&quot;
+}
+</code></pre><h2 id="scopes"><a class="heading-anchor" href="#scopes"><span></span></a>Scopes</h2>
+<p>L&apos;API Partners permet de demander un <code>access_token</code> pour un <code>scope</code> particulier lors de l&apos;authentification. Par d&#xE9;faut, cette valeur est d&#xE9;finie &#xE0; <code>base</code>.</p>
+<h3 id="scopes-existants"><a class="heading-anchor" href="#scopes-existants"><span></span></a>Scopes existants</h3>
+<ul>
+<li><strong>base</strong>: Permet d&apos;obtenir et modifier des resources et des fichiers (soumis aux r&#xE8;gles de s&#xE9;curit&#xE9; de l&apos;utilisateur)</li>
+<li><strong>files</strong>: Ne permet que d&apos;obtenir des images ou des fichiers sur les endpoints pr&#xE9;vus &#xE0; cet effet.</li>
+<li><strong>upload_files</strong>: Permet d&apos;uploader des fichiers.</li>
+</ul>
+<blockquote>
+<p>Un token avec le scope <code>base</code> ne devrait <strong>jamais</strong> &#xEA;tre expos&#xE9; &#xE0; un client. L&apos;obtention de ce token par un tiers constitue une faille de s&#xE9;curit&#xE9;</p>
+</blockquote>
+<h3 id="donner-acc-s-aux-images-des-utilisateurs-anonymes"><a class="heading-anchor" href="#donner-acc-s-aux-images-des-utilisateurs-anonymes"><span></span></a>Donner acc&#xE8;s aux images &#xE0; des utilisateurs anonymes</h3>
+<p>Si une application (grant type <code>client_credentials</code>) a besoin d&apos;afficher une image &#xE0; ses utilisateurs qui ne sont pas eux m&#xEA;mes authentifi&#xE9;s sur Partners, les scopes permettent d&apos;exposer un token non critique pour effectuer cet affichage.</p>
+<p>Obtenir un access token pour les fichiers:</p>
+<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token&quot; -d &apos;grant_type=client_credentials&apos; -d &apos;scope=files&apos;
+</code></pre><blockquote>
+<p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
+remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em>
+Remarquer <em>scope=files</em></p>
+</blockquote>
+<p>R&#xE9;ponse:</p>
+<pre><code>{
+    &quot;access_token&quot;: &quot;MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg&quot;,
+    &quot;expires_in&quot;: 3600,
+    &quot;token_type&quot;: &quot;bearer&quot;,
+    &quot;scope&quot;: &quot;files&quot;
+}
+</code></pre><p>Ce token peut maintenant &#xEA;tre joint &#xE0; l&apos;url d&apos;une image :</p>
+<pre><code>&lt;img src=&quot;https://api.creads-partners.com/v1/img/whateverImage.png?access_token=ACCESS_TOKEN&quot;&gt;
+</code></pre><blockquote>
+<p>remplacer <code>ACCESS_TOKEN</code> par la valeur de ce champ dans la r&#xE9;ponse obtenue pr&#xE9;c&#xE9;demment</p>
+</blockquote>
+
+                        </div>
+
+                        <div class="col_one_third col_last nobottommargin">
+
+                            <ul class="sidenav">
+                                
+                                <li ><a href="/partners-doc/api"><i class="icon-chevron-left"></i>Overview</a></li>
+                                
+                                <li class="ui-tabs-active"><a href="/partners-doc/api/oauth2"><i class="icon-chevron-left"></i>OAuth2</a></li>
+                                
+                                <li ><a href="/partners-doc/api/ressources"><i class="icon-chevron-left"></i>Ressources</a></li>
+                                
+                                <li ><a href="/partners-doc/api/changelogs"><i class="icon-chevron-left"></i>CHANGELOGS</a></li>
+                                
+                                
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+
+
+        <!-- Footer
+        ============================================= -->
+        <footer id="footer" class="dark">
+
+            <!-- Copyrights
+            ============================================= -->
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        Copyright &copy; 2015 Creads Partners
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="fright clearfix">
+                            <a href="http://www.facebook.com/creads" class="social-icon si-small si-borderless si-facebook">
+                                <i class="icon-facebook"></i>
+                                <i class="icon-facebook"></i>
+                            </a>
+
+                            <a href="http://www.twitter.com/creads" class="social-icon si-small si-borderless si-twitter">
+                                <i class="icon-twitter"></i>
+                                <i class="icon-twitter"></i>
+                            </a>
+
+                            <a href="https://plus.google.com/+creads" class="social-icon si-small si-borderless si-gplus">
+                                <i class="icon-gplus"></i>
+                                <i class="icon-gplus"></i>
+                            </a>
+
+                            <a href="https://fr.pinterest.com/agencecreads/" class="social-icon si-small si-borderless si-pinterest">
+                                <i class="icon-pinterest"></i>
+                                <i class="icon-pinterest"></i>
+                            </a>
+
+
+                            <a href="https://github.com/creads" class="social-icon si-small si-borderless si-github">
+                                <i class="icon-github"></i>
+                                <i class="icon-github"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/company/creads" class="social-icon si-small si-borderless si-linkedin">
+                                <i class="icon-linkedin"></i>
+                                <i class="icon-linkedin"></i>
+                            </a>
+                        </div>
+
+                        <div class="clear"></div>
+
+                        <a href="mailto:info@creads-partners.com" target="_blank"><i class="icon-envelope2"></i>  info@creads-partners.com</a> <span class="middot">&middot;</span> <a href="tel:+330155347874" target="_blank"><i class="icon-headphones"></i> 01 55 34 78 74</a> <span class="middot">&middot;</span> <i class="icon-skype2"></i> creadspartners
+                    </div>
+
+                </div>
+
+            </div><!-- #copyrights end -->
+
+        </footer><!-- #footer end -->
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="/partners-doc/js/functions.js"></script>
+
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-57696122-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+</body>
+</html>

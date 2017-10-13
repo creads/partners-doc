@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Product",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "href": {
+      "type": "string",
+      "readOnly": true
+    },
+    "creads_product_group_id": {
+      "type": "integer",
+      "required": true,
+      "maxLength": 255
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "is_enabled": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "is_cumulative": {
+      "type": "boolean"
+    },
+    "default": {
+      "type": "boolean"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 80,
+      "required": true
+    },
+    "available_options": {
+      "type": ["object","array"],
+      "items": {
+        "$ref": "#/definitions/available_options"
+      }
+    },
+    "additional_meta" : {
+      "type": ["object","array"]
+    },
+    "category": {
+      "$ref": "reference.json",
+      "required": true
+    },
+    "interface": {
+      "type": "string",
+      "required": false,
+      "enum": [
+        "default",
+        "text"
+      ]
+    },
+    "weight": {
+      "type": "integer",
+      "required": false,
+      "min": 0
+    },
+    "is_deleted": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "synonyms": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "icon": {
+      "oneOf": [
+          {"type": "null"},
+          {"type": "string"}
+      ],
+      "required": false
+    }
+  },
+  "definitions": {
+    "available_options": {
+        "properties": {
+            "type": {
+              "type": "string",
+              "required": false
+            },
+            "default": {
+              "required": false
+            },
+            "enum": {
+              "type": "array"
+            },
+            "required": {
+              "type": "boolean",
+              "default": false
+            }
+        },
+        "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

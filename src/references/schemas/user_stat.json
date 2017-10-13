@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "last_seen": {
+      "type": ["null", "string"],
+      "format": "date-time",
+      "readOnly": true
+    },
+    "projects_count": {
+      "type": "integer",
+      "readOnly": true,
+      "required": false
+    },
+    "works_count": {
+      "type": "integer",
+      "readOnly": true,
+      "required": false
+    },
+    "workers_count": {
+      "type": "integer",
+      "readOnly": true,
+      "required": false
+    }
+  },
+  "additionalProperties": false
+}

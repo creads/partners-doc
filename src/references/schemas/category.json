@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Category",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "href": {
+      "type": "string",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "is_removable": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 80,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "weight": {
+      "type": "integer",
+      "required": false,
+      "min": 0
+    }
+  },
+  "additionalProperties": false
+}

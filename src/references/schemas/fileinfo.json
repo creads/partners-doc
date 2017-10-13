@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Fileinfo",
+  "type": "object",
+  "properties": {
+    "size": {
+      "type": "integer",
+      "readOnly": true,
+      "required": true
+    },
+    "mime_type": {
+      "type": "string",
+      "readOnly": true,
+      "required": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true,
+      "required": true
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true,
+      "required": true
+    }
+  },
+  "additionalProperties": false
+}

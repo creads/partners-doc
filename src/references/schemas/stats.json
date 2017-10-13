@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "monthly_billable_amount": {
+      "type": "number",
+      "readOnly": true,
+      "required": false
+    },
+    "annual_billable_amount": {
+      "type": "number",
+      "readOnly": true,
+      "required": false
+    }
+  },
+  "additionalProperties": false
+}

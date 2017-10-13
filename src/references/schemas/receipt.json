@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "properties": {
+        "gid": {
+            "type": "string",
+            "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "modified_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "href": {
+            "type": "string",
+            "readOnly": true
+        },
+        "user": {
+            "$ref": "user.reference.json",
+            "readOnly": true
+        },
+        "title": {
+            "type": "string",
+            "maxLength": 80,
+            "required": true
+        },
+        "organization": {
+            "$ref": "reference.json",
+            "required": true
+        },
+        "project": {
+            "$ref": "project.json",
+            "required": false
+        },
+        "price": {
+            "$ref": "price_value.embed.json",
+            "required": true
+        },
+        "vat": {
+            "$ref": "price_value.embed.json",
+            "readOnly": true
+        },
+        "receipt_file": {
+            "oneOf": [
+              {"type": "null"},
+              {"$ref": "file.json"}
+            ],
+            "required": false
+        },
+    },
+    "additionalProperties": false
+}

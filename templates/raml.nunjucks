@@ -1,0 +1,268 @@
+{% extends '_layout.nunjucks' %}
+{% block head %}
+{{ super() }}
+{#
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
+ #}
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        {#
+        $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+
+        $('[data-toggle]').click(function() {
+          var selector = $(this).data('target') + ' pre code';
+          $(selector).each(function(i, block) {
+            hljs.highlightBlock(block);
+          });
+        });
+        #}
+
+        // open modal on hashes like #_action_get
+        $(window).bind('hashchange', function(e) {
+          var anchor_id = document.location.hash.substr(1); //strip #
+          var element = $('#' + anchor_id);
+
+          // do we have such element + is it a modal?  --> show it
+          if (element.length && element.hasClass('modal')) {
+            element.modal('show');
+          }
+        });
+
+        // execute hashchange on first page load
+        $(window).trigger('hashchange');
+
+        // remove url fragment on modal hide
+        $('.modal').on('hidden.bs.modal', function() {
+          if(history && history.replaceState) {
+            history.replaceState({}, '', '#');
+          }
+        });
+      });
+    </script>
+
+    <style>
+      {#
+      .hljs {
+        background: transparent;
+      }
+      #}
+      .parent {
+        color: #999;
+      }
+      .list-group-item > .label {
+        float: none;
+        margin-right: 6px;
+      }
+      .panel-title > .methods {
+        float: right;
+      }
+      .label {
+        text-transform: uppercase;
+        padding: .2em .5em;
+        border-radius: 0;
+        width: 70px;
+        font-weight: normal;
+        color: #f3f3f6;
+        line-height: normal;
+        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+        font-size: 13px;
+        display: inline-block;
+      }
+      .label-get {
+        background-color: #63a8e2;
+      }
+      .label-post {
+        background-color: #6cbd7d;
+      }
+      .label-put {
+        background-color: #22bac4;
+      }
+      .label-delete {
+        background-color: #d26460;
+      }
+      .label-patch {
+        background-color: #ccc444;
+      }
+      .list-group, .panel-group {
+        margin-bottom: 0;
+      }
+      .panel-group .panel+.panel-white {
+        margin-top: 0;
+      }
+      .panel-group .panel-white {
+        border-bottom: 1px solid #F5F5F5;
+        border-radius: 0;
+      }
+      .panel-white:last-child {
+        border-bottom-color: white;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+      .panel-white .panel-heading {
+        background: white;
+      }
+      .tab-pane ul {
+        padding-left: 2em;
+      }
+      .tab-pane h2 {
+        font-size: 1.2em;
+        padding-bottom: 4px;
+        border-bottom: 1px solid #ddd;
+      }
+      .tab-pane h3 {
+        font-size: 1.1em;
+      }
+      .tab-content {
+        border-left: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+      }
+      {#
+        #sidebar {
+        margin-top: 30px;
+        padding-right: 5px;
+        overflow: auto;
+        height: 90%;
+      }
+      .top-resource-description {
+        border-bottom: 1px solid #ddd;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      #}
+      .resource-description {
+        border-bottom: 1px solid #fcfcfc;
+        background: #fcfcfc;
+        padding: 15px 15px 0 15px;
+        margin: -15px -15px 10px -15px;
+      }
+      .resource-description p:last-child {
+        margin: 0;
+      }
+      .list-group .label {
+        float: left;
+      }
+      .method_description {
+        margin-left: 85px;
+      }
+      .method_description p:last-child {
+        margin: 0;
+      }
+      .list-group-item {
+        cursor: pointer;
+      }
+      .list-group-item:hover {
+        background-color: #f5f5f5;
+      }
+
+      #fix themeforest
+      h1 > span.label, h2 > span.label, h3 > span.label, h4 > span.label, h5 > span.label, h6 > span.label {
+        color: #fff !important;
+      }
+
+      #content p {
+        line-height: 1.42857143
+      }
+
+      p {
+        margin: 0 0 10px;
+      }
+      h1, .h1, h2, .h2, h3, .h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      #comments {
+        position: static;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 1px solid #ddd;
+      }
+
+      @media (min-width: 768px) {
+        #side-navigation .col_one_third {
+          float: right;
+        }
+      }
+    </style>
+{% endblock %}
+{% block content %}
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="side-navigation">
+
+                        <div class="col_one_third col_last nobottommargin">
+
+                            <ul class="sidenav">
+                                {% for resource in resources %}
+                                  <li {#% if loop.first %}class="ui-tabs-active"{% endif %#}><a href="#{{ resource.uniqueId|default("root") }}"><i class="icon-chevron-left"></i>{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
+                                {% endfor %}
+                            </ul>
+
+                        </div>
+
+                        <div class="col_two_third nobottommargin">
+
+                          {% for resource in resources %}
+                            <div id="{{ resource.uniqueId|default("root") }}" class="panel panel-default" >
+                              <div class="panel-heading">
+                                <h3 class="panel-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
+                              </div>
+
+                              <div class="panel-body">
+                                {% if resource.description %}
+                                  <div class="top-resource-description">
+                                    {% markdown %}{{ resource.description }}{% endmarkdown %}
+                                  </div>
+                                {% endif %}
+
+                                <div class="panel-group">
+                                  {% include "_resource.raml.nunjucks" %}
+                                </div>
+                              </div>
+                            </div>
+                          {% endfor %}
+
+                        </div>
+
+                    </div>
+
+                    <script>
+                      $(function() {
+                        $( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } })
+                          .on( "tabsactivate", function(event, ui) {
+                              history.pushState({}, "", ui.newTab.find('a.ui-tabs-anchor').attr('href'));
+                          });
+
+                        if(window.location.hash) {
+                          $('#side-navigation').find('ul > li > a').each(function (index, a) {
+                            console.log($(a).attr('href'))
+                            if ($(a).attr('href') == window.location.hash) {
+                              $('#side-navigation').tabs('option', 'active', index);
+                            }
+                          });
+                          setTimeout(function() {
+                            window.scrollTo(0, 0);
+                          }, 1);
+                        }
+                      });
+                    </script>
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+{% endblock %}

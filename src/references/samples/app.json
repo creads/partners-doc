@@ -1,0 +1,14 @@
+{
+    "gid": "559bee7c1e8d9",
+    "created_at": "2015-06-11T11:51:16+0200",
+    "app_id": "1_2kdg0sbb9r8kgg04g4gwo4og888kwg40k8ock8co8kscsgkwkg",
+    "app_secret": "hmcp8emwobsoosgss4g0okg88k0wkcwcg4ko8gg48skkosgks",
+    "callback_url": "http://localhost:3000",
+    "allowed_grant_types": ["password"],
+    "name": "App",
+    "href": "/apps/559bee7c1e8d9",
+    "owner": {
+        "gid": "559bee86b11b6",
+        "href": "/users/559bee86b11b6"
+    }
+}

@@ -1,0 +1,57 @@
+{
+  "gid": "559befeeab59f",
+  "short_code": "Zd85moz",
+  "href": "/project/559befeeab59f",
+  "created_at": "2014-09-08T22:47:31-07:00",
+  "modified_at": null,
+  "published_at": "2014-09-09T22:47:31-07:00",
+  "started_at": "2014-09-09T22:47:31-07:00",
+  "status": "in_progress",
+  "state": "published",
+  "title": "Lorem ipsum dolor",
+  "description": "<p>lorem ipsum</p> <strong>bold</strong> <em>emphsize</em> ",
+  "price": {
+    "amount": 1020.00,
+    "currency": "EUR"
+  },
+  "options": {
+    "mode": "solo",
+    "due": 5,
+    "quantity": 4
+  },
+  "product": {
+    "gid": "559beff50d074",
+    "title": "Logo"
+  },
+  "owner": {
+    "gid": "559beff95ef1f",
+    "firstname": "John",
+    "lastname": "Doe"
+  },
+  "organization": {
+    "gid": "559beffe2c12c"
+  },
+  "brief_files": [
+    {
+      "url": "https://cre.ads/43348e3ea6-1.zip",
+    },
+    {
+      "url": "https://cre.ads/43348e3ea6-2.zip",
+    },
+    {
+      "url": "https://cre.ads/43348e3ea6-3.zip"
+    }
+  ],
+  "source_files": [
+    {
+      "url": "https://cre.ads/43348e3ea6-1.zip",
+    },
+    {
+      "url": "https://cre.ads/43348e3ea6-2.zip",
+    },
+    {
+      "url": "https://cre.ads/43348e3ea6-3.zip"
+    }
+  ],
+  "deadline_at": "2014-09-14T22:47:31-07:00"
+}

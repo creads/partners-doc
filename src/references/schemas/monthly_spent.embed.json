@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "properties": {
+        "price": {
+          "$ref": "price_value.embed.json"
+        },
+        "vat": {
+          "$ref": "price_value.embed.json"
+        }
+    },
+    "additionalProperties": false
+}

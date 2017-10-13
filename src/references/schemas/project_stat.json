@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "works_count": {
+      "$ref": "#/definitions/works_count",
+      "required": false
+    },
+    "messages_count": {
+      "$ref": "#/definitions/messages_count",
+      "required": false
+    }
+  },
+  "definitions": {
+    "works_count": {
+      "total": {
+        "type": "integer",
+        "readOnly": true,
+        "required": true
+      }
+    },
+    "messages_count": {
+      "total": {
+        "type": "integer",
+        "readOnly": true,
+        "required": true
+      },
+      "deliveries": {
+        "type": "integer",
+        "readOnly": true,
+        "required": true
+      },
+      "with_attachments": {
+        "type": "integer",
+        "readOnly": true,
+        "required": true
+      },
+      "deliveries_with_attachments": {
+        "type": "integer",
+        "readOnly": true,
+        "required": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

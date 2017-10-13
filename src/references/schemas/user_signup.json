@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "firstname": {
+      "type": "string",
+      "required": true
+    },
+    "lastname": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": ["string", "null"],
+      "required": false
+    },
+    "locale": {
+      "type": "string",
+      "default": "fr_FR",
+      "required": false
+    },
+    "newsletters_optin": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "profession": {
+      "oneOf": [
+          {"type": "null"},
+          {"$ref": "reference.json"}
+      ],
+      "default": null,
+      "required": false
+    }
+  },
+  "additionalProperties": false
+}

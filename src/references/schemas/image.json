@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+
+  "type": "object",
+
+  "properties": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "required": true
+    },
+    "variations": {
+      "$ref": "image_variations.json",
+      "required": false,
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false
+}

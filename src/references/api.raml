@@ -1,0 +1,994 @@
+#%RAML 0.8
+baseUri: https://api.creads-partners.com/v1
+title: Creads Partners
+version: 1.0.0-rc24.5
+mediaType: application/json
+
+resourceTypes:
+
+ - readOnlyCollection:
+    get:
+      description: Get a collection of <<resourcePathName>>.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include ./schemas/collection.json
+              example:  !include ./samples/collection.json
+        403:
+          description: Your are not authorized to see <<resourcePathName>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to see <<resourcePathName>>"
+                  }
+                }
+ - collection:
+    get:
+      description: Get a collection of <<resourcePathName>>.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include ./schemas/collection.json
+              example:  !include ./samples/collection.json
+        403:
+          description: Your are not authorized to see <<resourcePathName>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to see <<resourcePathName>>"
+                  }
+                }
+    post:
+      description: Create a new <<resourcePathName | !singularize>>
+      body:
+        application/json:
+          schema: <<schema>>
+
+      responses:
+        201:
+          headers:
+            Location:
+              description: Location of the newly created <<resourcePathName | !singularize>>
+              type: string
+              required: true
+        400:
+          description: Data missing or invalid
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 400,
+                    "message" : "Data missing or invalid"
+                  }
+                }
+        403:
+          description: Your are not authorized to create <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to create <<resourcePathName | !singularize>>"
+                  }
+                }
+ - collectionCount:
+    get:
+      description: Count items in collection of <<resourcePathName>>.
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "total_count": 3
+                }
+        403:
+          description: Your are not authorized to count items in collection of <<resourcePathName>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to count items in collection of <<resourcePathName>>"
+                  }
+                }
+ - resource:
+    get:
+      description: Get <<resourcePathName | !singularize>>.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: <<schema>>
+              example: <<example>>
+        403:
+          description: Your are not authorized to see this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to see this <<resourcePathName | !singularize>>"
+                  }
+                }
+        404:
+          description: Could not find this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 404,
+                    "message" : "Could not find this <<resourcePathName | !singularize>>"
+                  }
+                }
+    delete:
+      description: Delete resource <<resourcePathName>>.
+      responses:
+        204:
+          description: <<resourcePathName>> deleted
+        403:
+          description: Your are not authorized to delete this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to delete this <<resourcePathName>>"
+                  }
+                }
+        404:
+          description: Could not find this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 404,
+                    "message" : "Could not this <<resourcePathName | !singularize>>"
+                  }
+                }
+    put:
+      description: Update resource <<resourcePathName | !singularize>>
+      body:
+        application/json:
+          schema: <<schema>>
+      responses:
+        204:
+          description: <<resourcePathName>> updated
+        400:
+          description: Data missing or invalid
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 400,
+                    "message" : "Data missing or invalid"
+                  }
+                }
+        403:
+          description: Your are not authorized to update this <<resourcePathName>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to update this <<resourcePathName>>"
+                  }
+                }
+        404:
+          description: Could not find this <<resourcePathName>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 404,
+                    "message" : "Could not this <<resourcePathName>>"
+                  }
+                }
+
+ - readOnlyResource:
+    get:
+      description: Get <<resourcePathName | !singularize>>.
+      responses:
+        200:
+          body:
+            application/json:
+              schema: <<schema>>
+              example: <<example>>
+        403:
+          description: Your are not authorized to see this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to see this <<resourcePathName | !singularize>>"
+                  }
+                }
+        404:
+          description: Could not find this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 404,
+                    "message" : "Could not find this <<resourcePathName | !singularize>>"
+                  }
+                }
+
+ - searchEngine:
+    get:
+      description: This endpoint provide a way to search among indexed <<resourcePathName | !singularize>> providing a full text query
+      queryParameters:
+        query:
+          description: A string containing terms or words to look for
+          type: string
+          default: null
+          required: true
+      responses:
+        200:
+          body:
+            application/json:
+              schema: !include ./schemas/collection.json
+              example:  !include ./samples/collection.json
+
+securitySchemes:
+  - headerToken:
+      type: x-header-bearer-token
+      describedBy:
+        headers:
+            Authorization:
+                description: |
+                   Bearer TOKEN
+
+                   See https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/
+                type: string
+                required: true
+
+traits:
+
+ - secured:
+    usage: The endpoint is only accessible to authenticated user
+    headers:
+      Authorization:
+        description: |
+          Authorization: Bearer TOKEN
+
+           See https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/
+        type: string
+        required: true
+
+ - managerOnly:
+    usage: The endpoint is only accessible to manager user
+
+ - pageable:
+    queryParameters:
+      offset:
+        description: Skip over a number of elements by specifying an offset value for the query
+        type: integer
+        required: false
+        example: 20
+        default: 0
+      limit:
+        description: Limit the number of elements on the response
+        type: integer
+        required: false
+        example: 80
+        default: 10
+
+ - orderable:
+    queryParameters:
+      orderBy:
+        description: |
+          Order by field: <<fields>>
+        type: string
+        default: gid
+        required: false
+      sort:
+        description: Order
+        enum: [desc, asc]
+        default: desc
+        required: false
+
+ - searchable:
+    queryParameters:
+      query:
+        description: |
+          JSON array: *[["field1","operator1","value1"], ["field2","operator2","value2"], ..., ["fieldN","operatorN","valueN"]]*
+
+          * Valid operators: **==**, **!=**, **like**, **>**, **<**, **>=**, **<=**
+          * Valid searchable fields: <<fields>>
+        example: <<example>>
+
+ - cherryPickable:
+    queryParameters:
+      fields:
+        description: |
+          If set, the endpoint will only return the requested fields of the entity (plus the generic ones)
+          Comma separated values: *field1,field2,field3*
+
+/:
+  displayName: Root
+  description: Say hello to our api (Public)
+  get:
+    responses:
+      200:
+        body:
+          application/xml:
+            example: |
+              <?xml version="1.0" encoding="UTF-8"?>
+              <api>
+                <name>Creads Partners API</name>
+                <say>hello!</say>
+                <version>1.0.0-beta7</version>
+              </api>
+          application/json:
+            schema: !include ./schemas/root.json
+            example: |
+              {
+                "name": "Creads Partners API"
+                "say": "hello!",
+                "version": "1.0.0-beta7
+              }
+
+/categories:
+  displayName: Categories
+  description: |
+    Collection of product categories. A product is associated to only one category.
+    Will only return categories that have product you are allowed to order.
+  type: readOnlyCollection
+  get:
+    is:
+     - searchable:
+        fields: '**title, description, gid **'
+        example: '["title", "==", "Web & Mobile"]'
+     - orderable:
+        fields: '**weight**'
+
+/products:
+  displayName: Products
+  is: [secured]
+  description: |
+    Searchable and pageable collection of Products.
+    As standard user you can only see enabled products for organization you are member of,
+    As manager user, you can only see enabled products for organization you are manager of. And you can not create, update or delete a product.
+  type: readOnlyCollection
+
+  get:
+    is:
+     - secured
+     - searchable:
+        fields: '**category.id, organizations.gid **'
+        example: '["category.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+     - orderable:
+        fields: '**title**, **category.title**, **weight**'
+
+  /total_count:
+    description: Count number of products in collection
+    is: [secured]
+    type: collectionCount
+    get:
+      is:
+       - searchable:
+          fields: '**category.id, organizations.gid **'
+          example: '["category.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+  /search:
+    description: Search products and products synonyms from a string query
+    type: searchEngine
+
+  /{gid}:
+    is: [secured]
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/product.json
+        example: !include ./samples/product.json
+
+/projects:
+  displayName: Projects
+  description: |
+    Searchable, pageable and orderable collection of projets.
+    As standard user you can only see your own projects.
+    As manager user, you can only see every projets for organizations you are manager of.
+  is: [secured]
+  type:
+    collection:
+      schema: !include ./schemas/project.json
+  get:
+    is:
+     - pageable
+     - orderable:
+        fields: '**created_at**, **modified_at**, **title**, **due_date**'
+     - searchable:
+        fields: '**organization.gid**, **owner.gid**, **status**, **created_at**, **gid**, **short_code**'
+        example: '["owner.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+  /total_count:
+    description: Count number of projects in collection
+    is: [secured]
+    type: collectionCount
+    get:
+      is:
+       - searchable:
+          fields: '**owner**, **status**'
+          example: '["owner", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+  /{gid}:
+    is: [secured]
+    description: |
+      A project (submitted by partner to workers
+      Available status :
+        * draft
+        * canceled
+        * in_progress
+        * finished (receipt need to be generated, user can give reviews on worker, waiting for sources, sources are downloadable)
+        * paid
+    type:
+      resource:
+        schema: !include ./schemas/project.json
+        example: !include ./samples/project.json
+    delete:
+      description: Delete a project. A project can be only deleted if its status is "draft"
+    put:
+      description: Update a project. A project can be only updated if its status is "draft". Product can not be changed.
+
+    /shared_with:
+      type:
+        collection:
+          schema: !include ./schemas/shared_with.json
+      get:
+        description: Get the list of user with whom a given project is shared.
+
+      post:
+        description: Share a project with a given user.
+
+      /{userGid}:
+        delete:
+          description: Unshare a project with a user.
+
+    /messages:
+      type:
+        collection:
+          schema: !include ./schemas/project_message.json
+
+      get:
+        description: Get the list of message posted inside a project.
+
+      post:
+        description: Post a new message to a project
+
+    /stat:
+      type: readOnlyCollection
+      get:
+        description: Get stats about given project
+
+    /files:
+      type: readOnlyCollection
+      get:
+        description: Get list of starred files among the project
+
+/prices:
+  displayName: Prices
+  is:
+    - secured
+    - searchable:
+        fields: '**organization.gid**, **product.gid**'
+        example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+  description: |
+    Price resources for products in given organization.
+  type: readOnlyCollection
+
+  /total_count:
+    description: Count number of prices in collection
+    is: [secured]
+    type: collectionCount
+    get:
+      is:
+       - searchable:
+          fields: '**organization.gid**, **product.gid**'
+          example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+  /for:
+    description: |
+      Get price corresponding to project set (product, organization and options).
+      It's an alias to search on /prices.
+    get:
+      is: [secured]
+      queryParameters:
+        product.gid:
+          description: Current product gid
+          type: string
+          required: true
+          example: a615569f1e949b647ba10ed0adca790c
+        organization.gid:
+          description: Current organization gid
+          type: string
+          required: true
+          example: a615569f1e949b647ba10ed0adca790c
+        options.due:
+          description: Choosen option value
+          type: integer
+          required: true
+          example: 1
+        options.mode:
+          description: Choosen option value
+          type: string
+          required: true
+          example: solo
+      responses:
+        200:
+          body:
+            application/json:
+              example: |
+                {
+                  "product": {
+                    "gid": "774ad87f6fe7c9aa1eacc591e3307746"
+                  },
+                  "options": {
+                    "mode": "solo",
+                    "due": 7
+                  },
+                  "amount": 1020.00,
+                  "currency": "EUR"
+                }
+  /{gid}:
+    is: [secured]
+    description: Price for a product
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/unspecified.json
+        example: !include ./samples/price.json
+
+/works:
+  displayName: Works
+  is: [secured]
+  description: |
+    Searchable, pageable and orderable collection of works.
+    A standard user can not create a new work and can only see works related to its own projects.
+  type: readOnlyCollection
+  get:
+    is:
+     - pageable
+     - orderable:
+        fields: '**created_at**'
+     - searchable:
+        fields: '**worker.gid**, **project.gid**, **won_at**, **parent.gid**, **parent**, **gid**, **created_at**'
+        example: '[["project.gid", "==", "a615569f1e949b647ba10ed0adca790c"], ["won_at", "!=", null], ["parent", "==", null]]'
+
+  /{gid}:
+    is: [secured]
+    description: Work done on a project. A standard user can not update or delete a work.
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/work.json
+        example: !include ./samples/work.json
+
+/workers:
+  displayName: Workers
+  description: |
+    Searchable collection of workers.
+  type: readOnlyCollection
+  get:
+    is:
+     - secured
+     - searchable:
+        fields: '**works.project.gid**'
+        example: '[["works.project.gid", "==", "a615569f1e949b647ba10ed0adca790c"]]'
+
+  /{gid}:
+    is: [secured]
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/worker.json
+        example: !include ./samples/worker.json
+
+/comments:
+  displayName: Comments
+  is: [secured]
+  description: |
+    Generic comments system able to comment any REST resource (based on its relative URI).
+    Standard user can not list every comments.
+  type:
+    collection:
+      schema: !include ./schemas/comment.json
+  get:
+    is:
+     - secured
+     - pageable
+     - orderable:
+        fields: '**created_at**'
+     - searchable:
+        fields: '**uri**, **author.gid**, **worker.gid**, **created_at**, **modified_at**'
+        example: '["uri", "==", "/my-page"]'
+  /{gid}:
+    type:
+      resource:
+        schema: !include ./schemas/comment.json
+        example: !include ./samples/comment.json
+
+/reviews:
+  displayName: Reviews
+  is: [secured]
+  description: |
+      review resource collection.
+      A standard user can only see review on its own project.
+      A standard user can only create review for its own project.
+  type:
+    collection:
+      schema: !include ./schemas/review.json
+  get:
+    is:
+     - secured
+     - pageable
+     - searchable:
+        fields: '**worker.gid**, **project.gid**'
+        example: '["worker.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+  /{gid}:
+    is: [secured]
+    description: |
+      review on a worker for a given project.
+      A standard user can only see review on its own project.
+      A standard user can not update or delete a review.
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/review.json
+        example: !include ./samples/review.json
+
+/users:
+  displayName: Users
+  is: [secured]
+  description: |
+    Orderable, Searchable and pageable collection of Users.
+    As standard user, you can only see your user.
+    As manager user, you can see, create, update and delete users for organizations you are manager of.
+
+  type: readOnlyCollection
+
+  get:
+    is:
+     - secured
+     - orderable:
+        fields: '**created_at**, **modified_at**'
+     - pageable
+     - searchable:
+        fields: '**member_of.organization.gid**, **created_at**, **modified_at**, **gid**'
+        example: '["member_of.organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+  /total_count:
+    description: Count number of users in collection
+    is: [secured]
+    type: collectionCount
+    get:
+      is:
+       - searchable:
+          fields: '**member_of.organization.gid**, **created_at**, **modified_at**'
+          example: '["member_of.organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+  /{gid}:
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/user.json
+        example: !include ./samples/user.json
+
+    /member_of:
+      type: readOnlyCollection
+      get:
+        is:
+         - searchable:
+            fields: '**organization.gid**'
+            example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+      /{orgaGid}:
+        type:
+          readOnlyResource:
+            schema: !include ./schemas/membership.json
+            example: !include ./samples/membership.json
+
+/invitations:
+  displayName: Invitations
+  is: [secured]
+  description: |
+    Invitations to create user account or add to organization existing user.
+  type:
+    collection:
+      schema: !include ./schemas/invitation.json
+  get:
+    is:
+     - secured
+     - searchable:
+        fields: '**organization.gid**'
+        example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+  /{gid}:
+    is: [secured]
+    description: |
+      A specific invitation
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/invitation.json
+        example: !include ./samples/invitation.json
+    delete:
+      description: Delete resource <<resourcePathName>>.
+      responses:
+        204:
+          description: <<resourcePathName>> deleted
+        403:
+          description: Your are not authorized to delete this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              example: |
+                {
+                  "error": {
+                    "code": 403,
+                    "message" : "Your are not authorized to delete this <<resourcePathName>>"
+                  }
+                }
+        404:
+          description: Could not find this <<resourcePathName | !singularize>>
+          body:
+            application/json:
+              schema: !include ./schemas/exception.json
+              example: |
+                {
+                  "error": {
+                    "code": 404,
+                    "message" : "Could not this <<resourcePathName | !singularize>>"
+                  }
+                }
+/me:
+  displayName: Me
+  is: [secured, cherryPickable]
+  description: |
+    Current logged User. Alias for /user/{gid}
+    Will throw 403 if authenticated with `client_creadentials`
+  type:
+    readOnlyResource:
+      schema: !include ./schemas/user.json
+      example: !include ./samples/user.json
+
+  put:
+    description: Update current user
+    body:
+      application/json:
+        schema: !include ./schemas/user.json
+    responses:
+      204:
+        description: current user updated
+      400:
+        description: Data missing or invalid
+        body:
+          application/json:
+            schema: !include ./schemas/exception.json
+            example: |
+              {
+                "error": {
+                  "code": 400,
+                  "message" : "Data missing or invalid"
+                }
+              }
+
+  /member_of:
+    description: |
+      Alias for /user/{gid}/member_of
+      Will throw 403 if authenticated with `client_creadentials`
+    type:
+      readOnlyCollection
+    get:
+      is:
+       - secured
+       - searchable:
+          fields: '**organization.gid**'
+          example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+/organizations:
+  displayName: Organizations
+  is: [secured]
+  description: |
+    Searchable and pageable collection of Organizations.
+    As standard or manager user, you can only see your organizations.
+  type: readOnlyCollection
+  get:
+    is:
+     - secured
+     - searchable:
+        fields: '**products.gid**, **modified_at**'
+        example: '["products.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+     - orderable:
+        fields: '**modified_at**, **name**, **parent.name**'
+
+  /{gid}:
+    is: [secured]
+    type:
+      readOnlyResource:
+        schema: !include ./schemas/organization.json
+        example: !include ./samples/organization.json
+
+    /prices/fetch:
+      get:
+        description: |
+          Gives order to import prices from Google Spreadsheet if its configured for the organization
+
+/orgs:
+  displayName: Organizations (shorthand)
+  is: [secured]
+
+  /{orgGid}:
+
+    /member_of:
+      is: [secured, managerOnly]
+      type: readOnlyCollection
+      get:
+        is:
+         - searchable:
+            fields: '**organization.gid**'
+            example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+    /products:
+      is: [secured]
+      displayName: Products of an organization
+      description: Available products for the current organization
+      type: readOnlyCollection
+
+      /search:
+        is: [secured]
+        displayName: Product search
+        description: Search products and products synonyms among an organization from a string query
+        type: searchEngine
+
+    /users/search:
+      is: [secured]
+      displayName: Users search
+      description: Search users among an organization from a string query
+      type: searchEngine
+
+/p:
+  displayName: Public
+  description: Publicly accessible resources
+
+  /invitations:
+
+    /{token}:
+      get:
+        description: Gets the invitation (whether it creates a new user or not)
+        responses:
+          200:
+            body:
+              application/json:
+                example: |
+                  {
+                    "has_user": true
+                  }
+
+    /user:
+      post:
+        description: |
+          Create a user using invitation token
+        body:
+          application/json:
+            schema: !include ./schemas/user.json
+        responses:
+          204:
+            description: user created
+          400:
+            description: Data missing or invalid
+            body:
+              application/json:
+                schema: !include ./schemas/exception.json
+                example: |
+                  {
+                    "error": {
+                      "code": 400,
+                      "message" : "Data missing or invalid"
+                    }
+                  }
+
+/files/{url}:
+  displayName: Files
+  get:
+    description: |
+      Generate a signed URL (or renew an old one) to get a file.
+      `{url}` parameter can be relative, absolute not signed or absolute signed. For instance, following values are valid :
+        * https://s3-eu-west-1.amazonaws.com/dev.creads-partners/user-55f307dce28df/avatar.png?X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJK2Z7DGSCXXE42UQ%2F20161124%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20161124T111617Z&X-Amz-SignedHeaders=host&X-Amz-Expires=600&X-Amz-Signature=735845ff10204fd6b30aa397e52da27e7644d94f9699e2ae2c3d40fa8b5dbbcc
+        * user-55f307dce28df/avatar.png
+        * https://s3-eu-west-1.amazonaws.com/dev.creads-partners/user-55f307dce28df/avatar.png
+      `{url}` value should be url encoded when sending.
+    responses:
+      302:
+        headers:
+            Location:
+              description: Location of the file
+              type: string
+              required: true
+
+/fileinfo/{url}:
+  displayName: File Info
+  get:
+    description: |
+      Get informations about a file.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: !include ./schemas/fileinfo.json
+            example: !include ./samples/fileinfo.json
+
+/receipts:
+  displayName: Receipts
+  description: |
+    Searchable, pageable and orderable collection of receipts.
+    As standard user you can only see your own receipts.
+    As manager user, you can only see every receipts for organizations you are manager of.
+  is: [secured]
+  type: readOnlyCollection
+  get:
+    is:
+     - pageable
+     - orderable:
+        fields: '**created_at**'
+     - searchable:
+        fields: '**organization.gid**, **user.gid**, **project.gid**, **gid**'
+        example: '["user.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+/invoices:
+  displayName: Invoices
+  description: |
+    Searchable, pageable and orderable collection of invoices.
+    As standard user you cant see any invoice.
+    As a owner of an organization, you can only see every invoice for your organization.
+  is: [secured]
+  type: readOnlyCollection
+  get:
+    is:
+     - pageable
+     - orderable:
+        fields: '**created_at**'
+     - searchable:
+        fields: '**organization.gid**'
+        example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
+
+/files:
+  displayName: Starred files
+  description: |
+    Allows filepaths (already uploaded) to be marked as starred.
+    Only supported (visible) for project messages attachments for now.
+  is: [secured]
+  post:
+    description: Mark a file as starred
+    body:
+      application/json:
+        schema: !include ./schemas/array.json
+  /{filepath}:
+    delete:
+      is: [secured]
+

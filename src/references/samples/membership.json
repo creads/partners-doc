@@ -1,0 +1,17 @@
+{
+  "gid": "559bf015e3af0",
+  "organization": {
+    "gid": "559bf04ba85a5",
+    "name": "Creads",
+    "href": "/organization/559bf04ba85a5"
+  },
+  "monthly_budget": {
+    "amount": 2000,
+    "currency": "EUR"
+  },
+  "monthly_spent": {
+    "amount": 200,
+    "currency": "EUR",
+  },
+  "is_manager": false
+}

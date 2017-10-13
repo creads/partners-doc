@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+
+  "type": "object",
+
+  "properties": {
+    "icon": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "file.json"}
+      ],
+      "required": false,
+      "readOnly": true
+    },
+    "thumb": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "file.json"}
+      ],
+      "required": false,
+      "readOnly": true
+    },
+    "xs": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "file.json"}
+      ],
+      "required": false,
+      "readOnly": true
+    },
+    "sm": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "file.json"}
+      ],
+      "required": false,
+      "readOnly": true
+    },
+    "md": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "file.json"}
+      ],
+      "required": false,
+      "readOnly": true
+    },
+    "lg": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "file.json"}
+      ],
+      "required": false,
+      "readOnly": true
+    }
+  },
+  "additionalProperties": false
+}

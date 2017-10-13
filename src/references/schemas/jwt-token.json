@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "properties": {
+        "token": {
+            "type": "string",
+            "required": true
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "emum": [
+              "user",
+              "admin"
+            ]
+          },
+          "required": true
+        },
+        "expires_in": {
+            "type": "integer",
+            "required": true
+        },
+        "refresh_token": {
+          "type": "string",
+          "required": true
+        }
+    },
+    "additionalProperties": false
+}

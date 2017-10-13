@@ -1,0 +1,57 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "properties": {
+        "gid": {
+            "type": "string",
+            "required": true
+        },
+        "href": {
+            "type": "string",
+            "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "modified_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "firstname": {
+            "type": "string",
+            "readOnly": true
+        },
+        "lastname": {
+            "type": "string",
+            "readOnly": true
+        },
+        "email": {
+            "type": "string",
+            "readOnly": true
+        },
+        "avatar": {
+          "oneOf": [
+              {"type": "null"},
+              {"type": "string", "format": "uri"},
+              {"$ref": "image.json"}
+          ],
+          "required": false,
+          "readOnly": true
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "emum": [
+              "user",
+              "admin"
+            ]
+          },
+          "readOnly": true
+        }
+    },
+    "additionalProperties": false
+}

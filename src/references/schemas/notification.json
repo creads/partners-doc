@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "gid": {
+      "type": "string",
+      "readOnly": true
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "modified_at": {
+      "type": "string",
+      "format": "date-time",
+      "readOnly": true
+    },
+    "message": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255,
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 255,
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": false,
+      "enum": [
+          "user.new",
+          "project.new",
+          "work.new",
+          "comment.new"
+      ]
+    },
+    "user": {
+        "oneOf": [
+            {"type": "null"},
+            {"$ref": "user.reference.json"}
+        ],
+        "required": false
+    },
+    "work": {
+        "oneOf": [
+            {"type": "null"},
+            {"$ref": "reference.json"}
+        ],
+        "required": false
+    },
+    "project": {
+        "oneOf": [
+            {"type": "null"},
+            {"$ref": "reference.json"}
+        ],
+        "required": false
+    },
+    "comment": {
+        "oneOf": [
+            {"type": "null"},
+            {"$ref": "reference.json"}
+        ],
+        "required": false
+    },
+    "project_message": {
+        "oneOf": [
+            {"type": "null"},
+            {"$ref": "reference.json"}
+        ],
+        "required": false
+    },
+    "organization": {
+        "oneOf": [
+            {"type": "null"},
+            {"$ref": "reference.json"}
+        ],
+        "required": false
+    }
+  },
+  "definitions": {
+  }
+}

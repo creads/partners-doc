@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "properties": {
+    "projects_count": {
+      "type": "integer",
+      "readOnly": true,
+      "required": false
+    },
+    "will_work_again_count": {
+      "type": "integer",
+      "readOnly": true,
+      "required": false
+    },
+    "wont_work_again_count": {
+      "type": "integer",
+      "readOnly": true,
+      "required": false
+    },
+    "quality": {
+      "type": ["null", "number"],
+      "readOnly": true,
+      "required": false
+    },
+    "reactivity": {
+      "type": ["null", "number"],
+      "readOnly": true,
+      "required": false
+    },
+    "communicativeness": {
+      "type": ["null", "number"],
+      "readOnly": true,
+      "required": false
+    },
+    "overall_mark": {
+      "type": ["null", "number"],
+      "readOnly": true,
+      "required": false
+    }
+  },
+  "additionalProperties": false
+}

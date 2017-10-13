@@ -1,0 +1,53 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "type": "object",
+    "properties": {
+        "gid": {
+            "type": "string",
+            "readOnly": true
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "modified_at": {
+          "type": "string",
+          "format": "date-time",
+          "readOnly": true
+        },
+        "href": {
+            "type": "string",
+            "readOnly": true
+        },
+        "options": {
+            "type": "object",
+            "required": true
+        },
+        "organization": {
+            "$ref": "reference.json",
+            "required": true
+        },
+        "product": {
+            "$ref": "product.reference.json",
+            "required": true
+        },
+        "amount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 999999,
+            "required": true
+        },
+        "currency": {
+            "type": "string",
+            "required": false
+        },
+        "vat_amount": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 999999,
+            "readOnly": true
+        }
+    },
+    "additionalProperties": false
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "title": "Product search result",
+  "type": "object",
+  "properties": {
+    "term": {
+      "type": "string",
+      "readOnly": true
+    },
+    "synonym": {
+      "type": "boolean",
+      "readOnly": true
+    },
+    "product": {
+      "$ref": "reference.json",
+      "readOnly": true
+    }
+  },
+  "definitions": {
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,49 @@
+{
+  "gid": "559befe84f871",
+  "title": "Détourage photo",
+  "available_options": {
+    "mode": {
+      "type": "string",
+      "enum": ["solo", "multi"],
+      "default": "solo",
+      "required": true
+    },
+    "due": {
+      "type": "integer",
+      "enum": [1, 2, 7, 20],
+      "default": 7,
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 1,
+      "required": false
+    },
+    "skill": {
+      "type": "string",
+      "enum": ["execution", "conception"],
+      "default": "execution",
+      "required": true
+    },
+  },
+  "additional_meta" : {
+    "solo_mode_meta": {
+      "description": "",
+      "brief_template": "Décrivez votre besoin, le contexte du projet, les livrables attendus..."
+    },
+    "multi_mode_meta": {
+      "description": "",
+      "brief_template": "Décrivez votre besoin, le contexte du projet, les livrables attendus..."
+    }
+  },
+  "category": {
+    "gid": "559befe84f871",
+    "title": "lorem ipsum"
+  },
+  "interface": "default",
+  "synonyms": [
+    "Detourage photographie",
+    "Montage de photo",
+    "Incrustation photo"
+  ]
+}
