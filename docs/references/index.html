@@ -454,27 +454,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "readOnly": true
-    },
-    "version": {
-      "type": "string",
-      "readOnly": true
-    },
-    "env": {
-      "type": "string",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -697,25 +676,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -738,39 +698,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -1019,25 +946,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -1060,39 +968,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -1316,39 +1191,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -1517,25 +1359,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -1720,119 +1543,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "title": "Product",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "creads_product_group_id": {
-      "type": "integer",
-      "required": true,
-      "maxLength": 255
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "is_enabled": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "is_cumulative": {
-      "type": "boolean"
-    },
-    "default": {
-      "type": "boolean"
-    },
-    "title": {
-      "type": "string",
-      "maxLength": 80,
-      "required": true
-    },
-    "available_options": {
-      "type": ["object","array"],
-      "items": {
-        "$ref": "#/definitions/available_options"
-      }
-    },
-    "additional_meta" : {
-      "type": ["object","array"]
-    },
-    "category": {
-      "$ref": "reference.json",
-      "required": true
-    },
-    "interface": {
-      "type": "string",
-      "required": false,
-      "enum": [
-        "default",
-        "text"
-      ]
-    },
-    "weight": {
-      "type": "integer",
-      "required": false,
-      "min": 0
-    },
-    "is_deleted": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "synonyms": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "icon": {
-      "oneOf": [
-          {"type": "null"},
-          {"type": "string"}
-      ],
-      "required": false
-    }
-  },
-  "definitions": {
-    "available_options": {
-        "properties": {
-            "type": {
-              "type": "string",
-              "required": false
-            },
-            "default": {
-              "required": false
-            },
-            "enum": {
-              "type": "array"
-            },
-            "required": {
-              "type": "boolean",
-              "default": false
-            }
-        },
-        "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -1902,39 +1612,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -1960,39 +1637,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -2304,25 +1948,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -2345,39 +1970,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -2482,181 +2074,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "type": "object",
-    "properties": {
-        "gid": {
-            "type": "string",
-            "readOnly": true
-        },
-        "short_code": {
-            "type": "string",
-            "readOnly": true
-        },
-        "custom_short_code": {
-            "type": ["string", "null"],
-            "required": false
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "modified_at": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "href": {
-            "type": "string",
-            "readOnly": true
-        },
-        "started_at": {
-            "type": ["string", "null"],
-            "format": "date-time"
-        },
-        "published_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "canceled_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "finished_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "owner": {
-            "$ref": "user.reference.json",
-            "readOnly": true
-        },
-        "status": {
-            "type": "string",
-            "enum": [
-                "unstarted",
-                "in_progress",
-                "finished",
-                "waiting_for_sources",
-                "waiting_for_decision",
-                "canceled"
-            ]
-        },
-        "state": {
-            "type": "string",
-            "enum": [
-                "draft",
-                "canceled",
-                "published",
-                "require_approval"
-            ]
-        },
-        "title": {
-            "type": "string",
-            "maxLength": 80,
-            "required": true
-        },
-        "description": {
-            "type": "string",
-            "required": false
-        },
-        "options": {
-            "type": "object",
-            "required": true
-        },
-        "organization": {
-            "$ref": "reference.json",
-            "required": true
-        },
-        "product": {
-            "$ref": "product.reference.json",
-            "required": true
-        },
-        "price": {
-            "$ref": "price_value.embed.json",
-            "required": true
-        },
-        "vat": {
-            "$ref": "price_value.embed.json",
-            "readOnly": true
-        },
-        "brief_files": {
-            "type": "array",
-            "items": {
-                "$ref": "file.json"
-            }
-        },
-        "source_files": {
-            "type": "array",
-            "items": {
-                "$ref": "file.json"
-            }
-        },
-        "winner": {
-            "oneOf": [
-                {"type": "null"},
-                {"$ref": "reference.json"}
-            ]
-        },
-        "quantity": {
-            "type": "integer",
-            "required": false,
-            "default": 1,
-            "maximum": 999,
-            "minimum": 0
-        },
-        "deadline_at": {
-          "type": ["string", "null"],
-          "format": "date-time",
-          "readOnly": true
-        },
-        "invited_users": {
-            "type": "array",
-            "items": {
-                "$ref": "reference.json"
-            }
-        },
-        "assigned_workers": {
-            "type": "array",
-            "items": {
-                "$ref": "reference.json"
-            }
-        },
-        "is_cancelable": {
-          "type": "boolean",
-          "required": false,
-          "readOnly": true
-        },
-        "is_deletable": {
-          "type": "boolean",
-          "required": false,
-          "readOnly": true
-        }
-    },
-    "definitions": {
-        "options": {
-            "properties": {
-                "mode": {
-                    "type": "string",
-                    "required": true
-                },
-                "due": {
-                    "type": "integer",
-                    "required": true
-                }
-            },
-            "additionalProperties": false
-        }
-    },
-    "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -2708,39 +2125,6 @@ label label-post
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -2766,39 +2150,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -3021,39 +2372,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -3288,181 +2606,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "type": "object",
-    "properties": {
-        "gid": {
-            "type": "string",
-            "readOnly": true
-        },
-        "short_code": {
-            "type": "string",
-            "readOnly": true
-        },
-        "custom_short_code": {
-            "type": ["string", "null"],
-            "required": false
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "modified_at": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "href": {
-            "type": "string",
-            "readOnly": true
-        },
-        "started_at": {
-            "type": ["string", "null"],
-            "format": "date-time"
-        },
-        "published_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "canceled_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "finished_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "owner": {
-            "$ref": "user.reference.json",
-            "readOnly": true
-        },
-        "status": {
-            "type": "string",
-            "enum": [
-                "unstarted",
-                "in_progress",
-                "finished",
-                "waiting_for_sources",
-                "waiting_for_decision",
-                "canceled"
-            ]
-        },
-        "state": {
-            "type": "string",
-            "enum": [
-                "draft",
-                "canceled",
-                "published",
-                "require_approval"
-            ]
-        },
-        "title": {
-            "type": "string",
-            "maxLength": 80,
-            "required": true
-        },
-        "description": {
-            "type": "string",
-            "required": false
-        },
-        "options": {
-            "type": "object",
-            "required": true
-        },
-        "organization": {
-            "$ref": "reference.json",
-            "required": true
-        },
-        "product": {
-            "$ref": "product.reference.json",
-            "required": true
-        },
-        "price": {
-            "$ref": "price_value.embed.json",
-            "required": true
-        },
-        "vat": {
-            "$ref": "price_value.embed.json",
-            "readOnly": true
-        },
-        "brief_files": {
-            "type": "array",
-            "items": {
-                "$ref": "file.json"
-            }
-        },
-        "source_files": {
-            "type": "array",
-            "items": {
-                "$ref": "file.json"
-            }
-        },
-        "winner": {
-            "oneOf": [
-                {"type": "null"},
-                {"$ref": "reference.json"}
-            ]
-        },
-        "quantity": {
-            "type": "integer",
-            "required": false,
-            "default": 1,
-            "maximum": 999,
-            "minimum": 0
-        },
-        "deadline_at": {
-          "type": ["string", "null"],
-          "format": "date-time",
-          "readOnly": true
-        },
-        "invited_users": {
-            "type": "array",
-            "items": {
-                "$ref": "reference.json"
-            }
-        },
-        "assigned_workers": {
-            "type": "array",
-            "items": {
-                "$ref": "reference.json"
-            }
-        },
-        "is_cancelable": {
-          "type": "boolean",
-          "required": false,
-          "readOnly": true
-        },
-        "is_deletable": {
-          "type": "boolean",
-          "required": false,
-          "readOnly": true
-        }
-    },
-    "definitions": {
-        "options": {
-            "properties": {
-                "mode": {
-                    "type": "string",
-                    "required": true
-                },
-                "due": {
-                    "type": "integer",
-                    "required": true
-                }
-            },
-            "additionalProperties": false
-        }
-    },
-    "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -3540,39 +2683,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -3598,39 +2708,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -3802,39 +2879,6 @@ label label-delete
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -3959,181 +3003,6 @@ label label-put
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "type": "object",
-    "properties": {
-        "gid": {
-            "type": "string",
-            "readOnly": true
-        },
-        "short_code": {
-            "type": "string",
-            "readOnly": true
-        },
-        "custom_short_code": {
-            "type": ["string", "null"],
-            "required": false
-        },
-        "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "modified_at": {
-          "type": "string",
-          "format": "date-time",
-          "readOnly": true
-        },
-        "href": {
-            "type": "string",
-            "readOnly": true
-        },
-        "started_at": {
-            "type": ["string", "null"],
-            "format": "date-time"
-        },
-        "published_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "canceled_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "finished_at": {
-            "type": ["string", "null"],
-            "format": "date-time",
-            "readOnly": true
-        },
-        "owner": {
-            "$ref": "user.reference.json",
-            "readOnly": true
-        },
-        "status": {
-            "type": "string",
-            "enum": [
-                "unstarted",
-                "in_progress",
-                "finished",
-                "waiting_for_sources",
-                "waiting_for_decision",
-                "canceled"
-            ]
-        },
-        "state": {
-            "type": "string",
-            "enum": [
-                "draft",
-                "canceled",
-                "published",
-                "require_approval"
-            ]
-        },
-        "title": {
-            "type": "string",
-            "maxLength": 80,
-            "required": true
-        },
-        "description": {
-            "type": "string",
-            "required": false
-        },
-        "options": {
-            "type": "object",
-            "required": true
-        },
-        "organization": {
-            "$ref": "reference.json",
-            "required": true
-        },
-        "product": {
-            "$ref": "product.reference.json",
-            "required": true
-        },
-        "price": {
-            "$ref": "price_value.embed.json",
-            "required": true
-        },
-        "vat": {
-            "$ref": "price_value.embed.json",
-            "readOnly": true
-        },
-        "brief_files": {
-            "type": "array",
-            "items": {
-                "$ref": "file.json"
-            }
-        },
-        "source_files": {
-            "type": "array",
-            "items": {
-                "$ref": "file.json"
-            }
-        },
-        "winner": {
-            "oneOf": [
-                {"type": "null"},
-                {"$ref": "reference.json"}
-            ]
-        },
-        "quantity": {
-            "type": "integer",
-            "required": false,
-            "default": 1,
-            "maximum": 999,
-            "minimum": 0
-        },
-        "deadline_at": {
-          "type": ["string", "null"],
-          "format": "date-time",
-          "readOnly": true
-        },
-        "invited_users": {
-            "type": "array",
-            "items": {
-                "$ref": "reference.json"
-            }
-        },
-        "assigned_workers": {
-            "type": "array",
-            "items": {
-                "$ref": "reference.json"
-            }
-        },
-        "is_cancelable": {
-          "type": "boolean",
-          "required": false,
-          "readOnly": true
-        },
-        "is_deletable": {
-          "type": "boolean",
-          "required": false,
-          "readOnly": true
-        }
-    },
-    "definitions": {
-        "options": {
-            "properties": {
-                "mode": {
-                    "type": "string",
-                    "required": true
-                },
-                "due": {
-                    "type": "integer",
-                    "required": true
-                }
-            },
-            "additionalProperties": false
-        }
-    },
-    "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -4164,39 +3033,6 @@ label label-put
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -4223,39 +3059,6 @@ label label-put
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -4281,39 +3084,6 @@ label label-put
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -4493,25 +3263,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -4534,39 +3285,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -4669,20 +3387,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "required": true
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -4734,39 +3438,6 @@ label label-post
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -4792,39 +3463,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -5152,25 +3790,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -5193,39 +3812,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -5328,82 +3914,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "accepted_at": {
-      "type": [null, "string"],
-      "format": "date-time",
-      "readOnly": true
-    },
-    "message": {
-      "type": "string",
-      "required": false,
-      "maxLength": 8000
-    },
-    "project": {
-      "$ref": "reference.json",
-      "required": false
-    },
-    "mine": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "worker": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "worker.reference.json"}
-      ],
-      "required": false
-    },
-    "user": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "reference.json"}
-      ],
-      "required": false
-    },
-    "type": {
-      "type": "string",
-      "enum": [
-          "simple",
-          "delivery",
-          "reject",
-          "accept"
-      ],
-      "required": false
-    },
-    "attached_files": {
-        "type": "array",
-        "items": {
-            "$ref": "file.json"
-        }
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -5455,39 +3965,6 @@ label label-post
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -5513,39 +3990,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -5710,25 +4154,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -5751,39 +4176,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -5948,25 +4340,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -5989,39 +4362,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -6238,25 +4578,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -6279,39 +4600,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -6534,39 +4822,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -7022,11 +5277,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema"
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -7065,39 +5315,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -7123,39 +5340,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -7449,25 +5633,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -7490,39 +5655,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -7713,82 +5845,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "won_at": {
-      "type": [null, "string"],
-      "format": "date-time",
-      "readOnly": true
-    },
-    "description": {
-      "type": "string",
-      "required": true,
-      "maxLength": 8000
-    },
-    "project": {
-      "$ref": "reference.json",
-      "required": true
-    },
-    "worker": {
-      "$ref": "worker.reference.json",
-      "required": true
-    },
-    "parent": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "reference.json"}
-        ],
-        "required": false
-    },
-    "image": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false
-    },
-    "thumbnail": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false
-    },
-    "content": {
-      "type": ["null", "string"],
-      "required": false,
-      "maxLength": 1024
-    },
-    "weight": {
-      "type": "integer",
-      "required": false,
-      "min": 0
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -7823,39 +5879,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -7881,39 +5904,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -8128,25 +6118,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -8169,39 +6140,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -8387,56 +6325,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "username": {
-      "type": "string",
-      "required": false,
-      "maxLength": 45,
-      "minLength": 3
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "firstname": {
-      "type": "string",
-      "required": true,
-      "maxLength": 255
-    },
-    "lastname": {
-      "type": "string",
-      "required": true,
-      "maxLength": 255
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false
-    }
-  }
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -8465,39 +6353,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -8523,39 +6378,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -8866,25 +6688,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -8907,39 +6710,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -9044,72 +6814,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "message": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 8000,
-      "required": true
-    },
-    "uri": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 255,
-      "required": true
-    },
-    "author": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "user.public.json"}
-        ],
-        "required": false
-    },
-    "worker": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "worker.reference.json"}
-        ],
-        "required": false
-    },
-    "mine": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "nickname": {
-      "type": "string",
-      "readOnly": true
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    }
-  },
-  "definitions": {
-  }
-}
-</code></pre>
-                        
 
                         
                       
@@ -9161,39 +6865,6 @@ label label-post
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -9219,39 +6890,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -9448,72 +7086,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "message": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 8000,
-      "required": true
-    },
-    "uri": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 255,
-      "required": true
-    },
-    "author": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "user.public.json"}
-        ],
-        "required": false
-    },
-    "worker": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "worker.reference.json"}
-        ],
-        "required": false
-    },
-    "mine": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "nickname": {
-      "type": "string",
-      "readOnly": true
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    }
-  },
-  "definitions": {
-  }
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -9546,39 +7118,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -9604,39 +7143,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -9785,39 +7291,6 @@ label label-delete
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -9919,72 +7392,6 @@ label label-put
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "message": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 8000,
-      "required": true
-    },
-    "uri": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 255,
-      "required": true
-    },
-    "author": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "user.public.json"}
-        ],
-        "required": false
-    },
-    "worker": {
-        "oneOf": [
-            {"type": "null"},
-            {"$ref": "worker.reference.json"}
-        ],
-        "required": false
-    },
-    "mine": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "nickname": {
-      "type": "string",
-      "readOnly": true
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    }
-  },
-  "definitions": {
-  }
-}
-</code></pre>
-                        
 
                         
                       
@@ -10015,39 +7422,6 @@ label label-put
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -10074,39 +7448,6 @@ label label-put
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -10132,39 +7473,6 @@ label label-put
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -10442,25 +7750,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -10483,39 +7772,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -10620,81 +7876,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "quality": {
-      "description": "Creative&#39;s work quality",
-      "type": "integer",
-      "maximum": 5,
-      "minimum": 1,
-      "required": true
-    },
-    "reactivity": {
-      "description": "Creative&#39;s reactivity",
-      "type": "integer",
-      "maximum": 5,
-      "minimum": 1,
-      "required": true
-    },
-    "communicativeness": {
-      "description": "Ability to communicate with partner",
-      "type": "integer",
-      "maximum": 5,
-      "minimum": 1,
-      "required": true
-    },
-    "work_with_again": {
-      "description": "Would you like to work with him/her again? 0: no, 1: yes, 2: don&#39;t know",
-      "type": "integer",
-      "maximum": 2,
-      "minimum": 0,
-      "required": true
-    },
-    "public_comment": {
-      "description": "Some comments about the creative",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1024
-    },
-    "private_comment": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1024
-    },
-    "worker": {
-        "$ref": "worker.reference.json",
-        "required": true
-    },
-    "project": {
-        "$ref": "reference.json",
-        "required": true
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -10746,39 +7927,6 @@ label label-post
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -10804,39 +7952,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -11029,81 +8144,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "quality": {
-      "description": "Creative&#39;s work quality",
-      "type": "integer",
-      "maximum": 5,
-      "minimum": 1,
-      "required": true
-    },
-    "reactivity": {
-      "description": "Creative&#39;s reactivity",
-      "type": "integer",
-      "maximum": 5,
-      "minimum": 1,
-      "required": true
-    },
-    "communicativeness": {
-      "description": "Ability to communicate with partner",
-      "type": "integer",
-      "maximum": 5,
-      "minimum": 1,
-      "required": true
-    },
-    "work_with_again": {
-      "description": "Would you like to work with him/her again? 0: no, 1: yes, 2: don&#39;t know",
-      "type": "integer",
-      "maximum": 2,
-      "minimum": 0,
-      "required": true
-    },
-    "public_comment": {
-      "description": "Some comments about the creative",
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1024
-    },
-    "private_comment": {
-      "type": "string",
-      "minLength": 0,
-      "maxLength": 1024
-    },
-    "worker": {
-        "$ref": "worker.reference.json",
-        "required": true
-    },
-    "project": {
-        "$ref": "reference.json",
-        "required": true
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -11139,39 +8179,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -11197,39 +8204,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -11524,25 +8498,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -11565,39 +8520,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -11821,39 +8743,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -12017,201 +8906,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "firstname": {
-      "type": "string",
-      "required": true
-    },
-    "lastname": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string",
-      "format": "email",
-      "required": true
-    },
-    "pending_email": {
-      "type": [null, "string"],
-      "format": "email",
-      "readOnly": true
-    },
-    "phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "mobile_phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "locale": {
-      "type": "string",
-      "default": "fr_FR",
-      "required": false
-    },
-    "member_of": {
-      "type": "array",
-      "items": {
-        "$ref": "membership.json",
-        "required": true
-      }
-    },
-    "roles": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "emum": [
-          "user",
-          "admin"
-        ]
-      },
-      "readOnly": true
-    },
-    "notify_work": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_comment": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_misc": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_coworkers": {
-      "type": "boolean",
-      "required": false
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    },
-    "hubspot_contact_url": {
-        "type": [null, "string"],
-        "readOnly": true
-    },
-    "upload_form": {
-      "$ref": "#/definitions/upload_form",
-      "readOnly": true,
-      "required": false
-    },
-    "newsletters_optin": {
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    "profession": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "reference.json"}
-      ],
-      "default": null,
-      "required": false
-    }
-  },
-  "definitions": {
-    "upload_form": {
-      "properties": {
-        "form_attributes": {
-          "$ref": "#/definitions/form_attributes",
-          "required": true
-        },
-        "form_inputs": {
-          "$ref": "#/definitions/form_inputs",
-          "required": true
-        },
-        "expires_at": {
-          "format": "date-time",
-          "required": true
-        }
-      }
-    },
-    "form_attributes": {
-      "properties": {
-        "action": {
-          "type": "string",
-          "format": "uri",
-          "required": true
-        },
-        "method": {
-          "type": "string",
-          "enum": [
-              "POST"
-          ],
-          "required": true
-        },
-        "enctype": {
-          "type": "string",
-          "enum": [
-              "multipart/form-data"
-          ],
-          "required": true
-        }
-      }
-    },
-    "form_inputs": {
-      "properties": {
-        "key": {
-          "type": "string",
-          "required": true
-        },
-        "acl": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Credential": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Algorithm": {
-          "type": "string",
-          "enum": [
-              "AWS4-HMAC-SHA256"
-          ],
-          "required": true
-        },
-        "X-Amz-Date": {
-          "format": "string",
-          "required": true
-        },
-        "Policy": {
-          "format": "string",
-          "required": true
-        }
-      }
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -12266,39 +8960,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -12324,39 +8985,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -12550,25 +9178,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -12591,39 +9200,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -12802,58 +9378,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "is_manager": {
-      "type": "boolean",
-      "required": false
-    },
-    "monthly_budget": {
-      "oneOf": [
-        {"type": "null"},
-        {"$ref": "price_value.embed.json"}
-      ],
-      "required": false
-    },
-    "monthly_spent": {
-        "$ref": "monthly_spent.embed.json",
-        "readOnly": true
-    },
-    "organization": {
-      "$ref": "reference.json",
-      "required": false
-    },
-    "user": {
-      "$ref": "user.reference.json",
-      "required": false,
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -12891,39 +9415,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -12949,39 +9440,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -13217,25 +9675,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -13258,39 +9697,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -13395,70 +9801,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "href": {
-        "type": "string",
-        "readOnly": true
-    },
-    "token": {
-      "type": "string",
-      "readOnly": true
-    },
-    "has_user": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "email": {
-      "type": "string",
-      "required": true
-    },
-    "organization": {
-      "$ref": "reference.json",
-      "required": true
-    },
-    "user_rank": {
-      "type": "string",
-      "required": false,
-      "enum": [
-          "user",
-          "manager",
-          "owner"
-      ]
-    },
-    "budget": {
-      "oneOf": [
-        {"type": "null"},
-        {"$ref": "price_value.embed.json"}
-      ],
-      "required": false
-    },
-    "locale": {
-      "type": "string",
-      "required": false
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -13510,39 +9852,6 @@ label label-post
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -13568,39 +9877,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -13808,70 +10084,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "href": {
-        "type": "string",
-        "readOnly": true
-    },
-    "token": {
-      "type": "string",
-      "readOnly": true
-    },
-    "has_user": {
-      "type": "boolean",
-      "readOnly": true
-    },
-    "email": {
-      "type": "string",
-      "required": true
-    },
-    "organization": {
-      "$ref": "reference.json",
-      "required": true
-    },
-    "user_rank": {
-      "type": "string",
-      "required": false,
-      "enum": [
-          "user",
-          "manager",
-          "owner"
-      ]
-    },
-    "budget": {
-      "oneOf": [
-        {"type": "null"},
-        {"$ref": "price_value.embed.json"}
-      ],
-      "required": false
-    },
-    "locale": {
-      "type": "string",
-      "required": false
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -13900,39 +10112,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -13958,39 +10137,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -14161,39 +10307,6 @@ label label-delete
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -14418,201 +10531,6 @@ Comma separated values: <em>field1,field2,field3</em></p>
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "firstname": {
-      "type": "string",
-      "required": true
-    },
-    "lastname": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string",
-      "format": "email",
-      "required": true
-    },
-    "pending_email": {
-      "type": [null, "string"],
-      "format": "email",
-      "readOnly": true
-    },
-    "phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "mobile_phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "locale": {
-      "type": "string",
-      "default": "fr_FR",
-      "required": false
-    },
-    "member_of": {
-      "type": "array",
-      "items": {
-        "$ref": "membership.json",
-        "required": true
-      }
-    },
-    "roles": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "emum": [
-          "user",
-          "admin"
-        ]
-      },
-      "readOnly": true
-    },
-    "notify_work": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_comment": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_misc": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_coworkers": {
-      "type": "boolean",
-      "required": false
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    },
-    "hubspot_contact_url": {
-        "type": [null, "string"],
-        "readOnly": true
-    },
-    "upload_form": {
-      "$ref": "#/definitions/upload_form",
-      "readOnly": true,
-      "required": false
-    },
-    "newsletters_optin": {
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    "profession": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "reference.json"}
-      ],
-      "default": null,
-      "required": false
-    }
-  },
-  "definitions": {
-    "upload_form": {
-      "properties": {
-        "form_attributes": {
-          "$ref": "#/definitions/form_attributes",
-          "required": true
-        },
-        "form_inputs": {
-          "$ref": "#/definitions/form_inputs",
-          "required": true
-        },
-        "expires_at": {
-          "format": "date-time",
-          "required": true
-        }
-      }
-    },
-    "form_attributes": {
-      "properties": {
-        "action": {
-          "type": "string",
-          "format": "uri",
-          "required": true
-        },
-        "method": {
-          "type": "string",
-          "enum": [
-              "POST"
-          ],
-          "required": true
-        },
-        "enctype": {
-          "type": "string",
-          "enum": [
-              "multipart/form-data"
-          ],
-          "required": true
-        }
-      }
-    },
-    "form_inputs": {
-      "properties": {
-        "key": {
-          "type": "string",
-          "required": true
-        },
-        "acl": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Credential": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Algorithm": {
-          "type": "string",
-          "enum": [
-              "AWS4-HMAC-SHA256"
-          ],
-          "required": true
-        },
-        "X-Amz-Date": {
-          "format": "string",
-          "required": true
-        },
-        "Policy": {
-          "format": "string",
-          "required": true
-        }
-      }
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -14667,39 +10585,6 @@ Comma separated values: <em>field1,field2,field3</em></p>
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -14725,39 +10610,6 @@ Comma separated values: <em>field1,field2,field3</em></p>
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -14885,201 +10737,6 @@ Comma separated values: <em>field1,field2,field3</em></p>
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "firstname": {
-      "type": "string",
-      "required": true
-    },
-    "lastname": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string",
-      "format": "email",
-      "required": true
-    },
-    "pending_email": {
-      "type": [null, "string"],
-      "format": "email",
-      "readOnly": true
-    },
-    "phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "mobile_phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "locale": {
-      "type": "string",
-      "default": "fr_FR",
-      "required": false
-    },
-    "member_of": {
-      "type": "array",
-      "items": {
-        "$ref": "membership.json",
-        "required": true
-      }
-    },
-    "roles": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "emum": [
-          "user",
-          "admin"
-        ]
-      },
-      "readOnly": true
-    },
-    "notify_work": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_comment": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_misc": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_coworkers": {
-      "type": "boolean",
-      "required": false
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    },
-    "hubspot_contact_url": {
-        "type": [null, "string"],
-        "readOnly": true
-    },
-    "upload_form": {
-      "$ref": "#/definitions/upload_form",
-      "readOnly": true,
-      "required": false
-    },
-    "newsletters_optin": {
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    "profession": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "reference.json"}
-      ],
-      "default": null,
-      "required": false
-    }
-  },
-  "definitions": {
-    "upload_form": {
-      "properties": {
-        "form_attributes": {
-          "$ref": "#/definitions/form_attributes",
-          "required": true
-        },
-        "form_inputs": {
-          "$ref": "#/definitions/form_inputs",
-          "required": true
-        },
-        "expires_at": {
-          "format": "date-time",
-          "required": true
-        }
-      }
-    },
-    "form_attributes": {
-      "properties": {
-        "action": {
-          "type": "string",
-          "format": "uri",
-          "required": true
-        },
-        "method": {
-          "type": "string",
-          "enum": [
-              "POST"
-          ],
-          "required": true
-        },
-        "enctype": {
-          "type": "string",
-          "enum": [
-              "multipart/form-data"
-          ],
-          "required": true
-        }
-      }
-    },
-    "form_inputs": {
-      "properties": {
-        "key": {
-          "type": "string",
-          "required": true
-        },
-        "acl": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Credential": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Algorithm": {
-          "type": "string",
-          "enum": [
-              "AWS4-HMAC-SHA256"
-          ],
-          "required": true
-        },
-        "X-Amz-Date": {
-          "format": "string",
-          "required": true
-        },
-        "Policy": {
-          "format": "string",
-          "required": true
-        }
-      }
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -15109,39 +10766,6 @@ Comma separated values: <em>field1,field2,field3</em></p>
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -15343,25 +10967,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -15384,39 +10989,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -15666,25 +11238,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -15707,39 +11260,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -15925,185 +11445,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "name": {
-      "type": "string",
-      "maxLength": 80,
-      "required": true
-    },
-    "domain": {
-      "type": [null, "string"]
-    },
-    "hostname": {
-      "type": [null, "string"]
-    },
-    "vat": {
-      "type": [null, "string"],
-      "minLength": 5,
-      "maxLength": 17,
-      "required": false
-    },
-    "billing_address": {
-      "$ref": "#/definitions/address",
-      "required": true
-    },
-    "billing_contact": {
-      "$ref": "#/definitions/billing_contact",
-      "required": false
-    },
-    "logo": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false
-    },
-    "additional_meta" : {
-      "type": ["object","array"]
-    },
-    "tax_inclusive": {
-      "type": "boolean"
-    },
-    "parent": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "reference.json"}
-      ],
-      "required": false
-    },
-    "spreadsheet_id": {
-      "type": [null, "string"],
-      "readOnly": true
-    },
-    "is_deleted": {
-      "type": "boolean",
-      "required": false
-    },
-    "email_enabled": {
-      "type": "boolean",
-      "required": false
-    },
-    "owner": {
-      "$ref": "user.reference.json",
-      "required": true
-    },
-    "test": {
-      "type": "boolean",
-      "required": false
-    },
-    "hubspot_id": {
-      "type": [null, "integer"],
-      "required": false
-    },
-    "sageone_contact_url": {
-        "type": [null, "string"],
-        "readOnly": true
-    },
-    "hubspot_company_url": {
-        "type": [null, "string"],
-        "readOnly": true
-    },
-    "subscription_price": {
-        "$ref": "price_value.embed.json",
-        "required": false
-    },
-    "is_facebook_enabled": {
-      "type": "boolean",
-      "required": false
-    }
-  },
-  "definitions": {
-    "address": {
-      "properties": {
-        "division": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": false
-        },
-        "address1": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": true
-        },
-        "address2": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": false
-        },
-        "zipcode": {
-          "type": "string",
-          "maxLength": 10,
-          "required": true
-        },
-        "city": {
-          "type": "string",
-          "maxLength": 80,
-          "required": true
-        },
-        "state": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": false
-        },
-        "country": {
-          "type": "string",
-          "maxLength": 2,
-          "required": true
-        },
-        "country_name": {
-          "type": "string",
-          "readOnly": true
-        },
-        "additional": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": false
-        }
-      },
-      "additionalProperties": false
-    },
-    "billing_contact": {
-      "properties": {
-        "phone": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": false
-        },
-        "email": {
-          "type": [null, "string"],
-          "maxLength": 80,
-          "required": false
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -16156,39 +11497,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -16214,39 +11522,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -16619,25 +11894,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -16660,39 +11916,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -16885,25 +12108,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -16926,39 +12130,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -17171,25 +12342,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -17401,25 +12553,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -17740,201 +12873,6 @@ label label-post
                         
 
                         
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "type": "object",
-  "properties": {
-    "gid": {
-      "type": "string",
-      "readOnly": true
-    },
-    "href": {
-      "type": "string",
-      "readOnly": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true
-    },
-    "firstname": {
-      "type": "string",
-      "required": true
-    },
-    "lastname": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string",
-      "format": "email",
-      "required": true
-    },
-    "pending_email": {
-      "type": [null, "string"],
-      "format": "email",
-      "readOnly": true
-    },
-    "phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "mobile_phone": {
-      "type": ["string", "null"],
-      "required": false
-    },
-    "locale": {
-      "type": "string",
-      "default": "fr_FR",
-      "required": false
-    },
-    "member_of": {
-      "type": "array",
-      "items": {
-        "$ref": "membership.json",
-        "required": true
-      }
-    },
-    "roles": {
-      "type": "array",
-      "items": {
-        "type": "string",
-        "emum": [
-          "user",
-          "admin"
-        ]
-      },
-      "readOnly": true
-    },
-    "notify_work": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_comment": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_misc": {
-      "type": "boolean",
-      "required": false
-    },
-    "notify_coworkers": {
-      "type": "boolean",
-      "required": false
-    },
-    "avatar": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "image.json"}
-      ],
-      "required": false,
-      "readOnly": true
-    },
-    "hubspot_contact_url": {
-        "type": [null, "string"],
-        "readOnly": true
-    },
-    "upload_form": {
-      "$ref": "#/definitions/upload_form",
-      "readOnly": true,
-      "required": false
-    },
-    "newsletters_optin": {
-      "type": "boolean",
-      "default": false,
-      "required": false
-    },
-    "profession": {
-      "oneOf": [
-          {"type": "null"},
-          {"$ref": "reference.json"}
-      ],
-      "default": null,
-      "required": false
-    }
-  },
-  "definitions": {
-    "upload_form": {
-      "properties": {
-        "form_attributes": {
-          "$ref": "#/definitions/form_attributes",
-          "required": true
-        },
-        "form_inputs": {
-          "$ref": "#/definitions/form_inputs",
-          "required": true
-        },
-        "expires_at": {
-          "format": "date-time",
-          "required": true
-        }
-      }
-    },
-    "form_attributes": {
-      "properties": {
-        "action": {
-          "type": "string",
-          "format": "uri",
-          "required": true
-        },
-        "method": {
-          "type": "string",
-          "enum": [
-              "POST"
-          ],
-          "required": true
-        },
-        "enctype": {
-          "type": "string",
-          "enum": [
-              "multipart/form-data"
-          ],
-          "required": true
-        }
-      }
-    },
-    "form_inputs": {
-      "properties": {
-        "key": {
-          "type": "string",
-          "required": true
-        },
-        "acl": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Credential": {
-          "type": "string",
-          "required": true
-        },
-        "X-Amz-Algorithm": {
-          "type": "string",
-          "enum": [
-              "AWS4-HMAC-SHA256"
-          ],
-          "required": true
-        },
-        "X-Amz-Date": {
-          "format": "string",
-          "required": true
-        },
-        "Policy": {
-          "format": "string",
-          "required": true
-        }
-      }
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                        
 
                         
                       
@@ -17964,39 +12902,6 @@ label label-post
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -18366,39 +13271,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-  "title": "Fileinfo",
-  "type": "object",
-  "properties": {
-    "size": {
-      "type": "integer",
-      "readOnly": true,
-      "required": true
-    },
-    "mime_type": {
-      "type": "string",
-      "readOnly": true,
-      "required": true
-    },
-    "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true,
-      "required": true
-    },
-    "modified_at": {
-      "type": "string",
-      "format": "date-time",
-      "readOnly": true,
-      "required": true
-    }
-  },
-  "additionalProperties": false
-}
-</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -18689,25 +13561,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -18730,39 +13583,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -19055,25 +13875,6 @@ label label-get
                           <p><strong>Type: application/json</strong></p>
 
                           
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "total_count": {
-      "type": "integer",
-      "readOnly": true
-    },
-    "items": {
-      "type": "array",
-      "readOnly": true
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
-                          
 
                           
                             <p><strong>Example</strong>:</p>
@@ -19096,39 +13897,6 @@ label label-get
                         
                           <p><strong>Type: application/json</strong></p>
 
-                          
-                            <p><strong>Schema</strong>:</p>
-                            <pre><code>{
-  "$schema": "http://json-schema.org/draft-04/schema",
-
-  "type": "object",
-
-  "properties": {
-    "error": { "$ref": "#/definitions/error"}
-  },
-
-  "definitions": {
-    "error": {
-      "type": "object",
-      "properties": {
-        "code":  {
-          "type": "integer",
-          "readOnly": true
-        },
-        "message": {
-          "type": "string",
-          "readOnly": true
-        },
-        "exception": {
-          "type": "array",
-          "readOnly": true
-        }
-      },
-      "additionalProperties": false
-    }
-  },
-  "additionalProperties": false
-}</code></pre>
                           
 
                           
@@ -19295,12 +14063,6 @@ label label-post
                         <p><strong>Type: application/json</strong></p>
                         
 
-                        
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{
-    "$schema": "http://json-schema.org/draft-04/schema",
-    "type": "array"
-}</code></pre>
                         
 
                         
