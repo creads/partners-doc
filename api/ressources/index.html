@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/partners-doc/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="/partners-doc/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="/partners-doc/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/highlight/prism-okaidia.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -128,41 +129,41 @@
 <p>Pour les exemples de cette documentation nous utilisons curl comme solution g&#xE9;n&#xE9;rique.
 Une variable <code>TOKEN</code> est initialis&#xE9;e avec la valeur du token OAuth obtenu lors de l&apos;authentification OAuth2.</p>
 <p>Par exemple :</p>
-<pre><code class="lang-sh">export TOKEN=MjZjNGFiZjExN2U1NzIzMGI3MmI5ZGIxZGRjYzA5YTIyMTVhOGVkMTk1YzUxYzkxYmI2YmVhYjgyZjNhZmM1NA
+<pre class="language-bash"><code class="language-bash"><span class="token function">export</span> TOKEN<span class="token operator">=</span>MjZjNGFiZjExN2U1NzIzMGI3MmI5ZGIxZGRjYzA5YTIyMTVhOGVkMTk1YzUxYzkxYmI2YmVhYjgyZjNhZmM1NA
 </code></pre>
 <h2 id="organization"><a class="heading-anchor" href="#organization"><span></span></a>Organization</h2>
 <p>Une ressource <code>Organization</code> (organisation) repr&#xE9;sente un partenaire ou une sous-entit&#xE9; d&apos;un partenaire. Elle isole les utilisateurs, produits, projets, travaux et factures par entit&#xE9;.</p>
 <p><strong>Seules les organisations desquelles vous &#xEA;tes membre ou manager sont accessibles.</strong></p>
 <h3 id="obtenir-la-liste-des-organisations"><a class="heading-anchor" href="#obtenir-la-liste-des-organisations"><span></span></a>Obtenir la liste des organisations</h3>
-<pre><code class="lang-bash">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/organizations
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/organizations
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;total_count&quot;: 3,
-    &quot;items&quot;: [
-        {
-            &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-            &quot;created_at&quot;: &quot;2015-09-11T10:22:46+0000&quot;,
-            &quot;modified_at&quot;: &quot;2015-09-11T10:22:46+0000&quot;,
-            &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-            &quot;name&quot;: &quot;WayneCorp&quot;,
-            &quot;hostname&quot;: null,
-            &quot;vat&quot;: null,
-            &quot;billing_address&quot;: {
-                &quot;division&quot;: null,
-                &quot;address1&quot;: null,
-                &quot;address2&quot;: null,
-                &quot;zipcode&quot;: &quot;10007&quot;,
-                &quot;city&quot;: &quot;Gotham City&quot;,
-                &quot;state&quot;: null,
-                &quot;country&quot;: &quot;US&quot;,
-                &quot;additional&quot;: null,
-                &quot;country_name&quot;: &quot;&#xC9;tats-Unis&quot;
-            }
-        }
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:22:46+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:22:46+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;billing_address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;division&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;address1&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;address2&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;zipcode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10007&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gotham City&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;state&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;US&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;additional&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;country_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#xC9;tats-Unis&quot;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
         ...
-    ]
-}
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="chercher-des-organisations"><a class="heading-anchor" href="#chercher-des-organisations"><span></span></a>Chercher des organisations</h3>
 <p>Le param&#xE8;tre d&apos;URL <code>query</code> appliqu&#xE9; au <em>endpoint</em> <a href="#Obtenir la liste des organisations">pr&#xE9;c&#xE9;dement &#xE9;voqu&#xE9;</a> permet d&apos;effectuer une recherche dans les organisations. Pour savoir comment utiliser ce param&#xE8;tre d&apos;URL veuillez vous r&#xE9;f&#xE9;rer &#xE0; <a href="overview#Recherche dans une collection">Recherche dans une collection</a>.</p>
@@ -171,32 +172,32 @@ Une variable <code>TOKEN</code> est initialis&#xE9;e avec la valeur du token OAu
 <li><code>products.gid</code> : les organisations pour lesquelles un produit donn&#xE9; est activ&#xE9;</li>
 </ul>
 <p>Par exemple, pour rechercher des organisations qui ont le produit de gid <code>55a6842ac3f6b</code> activ&#xE9; :</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; &apos;https://api.creads-partners.com/v1/organizations?query=\[&quot;products.gid&quot;,&quot;==&quot;,&quot;55a6842ac3f6b&quot;\]&apos;
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/organizations?query=\[&quot;products.gid&quot;,&quot;==&quot;,&quot;55a6842ac3f6b&quot;\]&apos;</span>
 </code></pre>
 <h3 id="obtenir-une-organisation-par-son-gid-"><a class="heading-anchor" href="#obtenir-une-organisation-par-son-gid-"><span></span></a>Obtenir une organisation (par son GID)</h3>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/organizations/55f2ab761d0bd
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/organizations/55f2ab761d0bd
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-    &quot;created_at&quot;: &quot;2015-09-11T10:22:46+0000&quot;,
-    &quot;modified_at&quot;: &quot;2015-09-11T10:22:46+0000&quot;,
-    &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-    &quot;name&quot;: &quot;WayneCorp&quot;,
-    &quot;hostname&quot;: null,
-    &quot;vat&quot;: null,
-    &quot;billing_address&quot;: {
-        &quot;division&quot;: null,
-        &quot;address1&quot;: null,
-        &quot;address2&quot;: null,
-        &quot;zipcode&quot;: &quot;10007&quot;,
-        &quot;city&quot;: &quot;Gotham City&quot;,
-        &quot;state&quot;: null,
-        &quot;country&quot;: &quot;US&quot;,
-        &quot;additional&quot;: null,
-        &quot;country_name&quot;: &quot;&#xC9;tats-Unis&quot;
-    }
-}
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:22:46+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:22:46+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;billing_address&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;division&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;address1&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;address2&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;zipcode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;10007&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;city&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Gotham City&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;state&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;country&quot;</span><span class="token operator">:</span> <span class="token string">&quot;US&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;additional&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;country_name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&#xC9;tats-Unis&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="cr-er-une-organisation"><a class="heading-anchor" href="#cr-er-une-organisation"><span></span></a>Cr&#xE9;er une organisation</h3>
 <p><strong>Seul un utilisateur <em>admin</em> peut cr&#xE9;er une organisation.</strong></p>
@@ -215,48 +216,48 @@ Un manager a alors le droit de :</p>
 </ul>
 <p><strong>Seuls votre compte utilisateur et les utilisateurs des organisations desquelles vous &#xEA;tes <em>manager</em> sont accessibles.</strong></p>
 <h3 id="obtenir-la-liste-des-utilisateurs"><a class="heading-anchor" href="#obtenir-la-liste-des-utilisateurs"><span></span></a>Obtenir la liste des utilisateurs</h3>
-<pre><code class="lang-sh">curl -i -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/users
+<pre class="language-bash"><code class="language-bash">curl -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/users
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;total_count&quot;: 22,
-    &quot;items&quot;: [
-        {
-            &quot;gid&quot;: &quot;55f2a84f150a2&quot;,
-            &quot;created_at&quot;: &quot;2015-09-11T10:09:19+0000&quot;,
-            &quot;modified_at&quot;: &quot;2015-09-11T10:09:19+0000&quot;,
-            &quot;href&quot;: &quot;/users/55f2a84f150a2&quot;,
-            &quot;firstname&quot;: &quot;Doe&quot;,
-            &quot;lastname&quot;: &quot;John&quot;,
-            &quot;email&quot;: &quot;j.doe@creads.org&quot;,
-            &quot;locale&quot;: &quot;FR&quot;,
-            &quot;phone&quot;: null,
-            &quot;mobile_phone&quot;: null,
-            &quot;member_of&quot;: [
-                {
-                    &quot;gid&quot;: &quot;55f2ac24163ed&quot;,
-                    &quot;monthly_budget&quot;: null,
-                    &quot;is_manager&quot;: false,
-                    &quot;monthly_spent&quot;: {
-                        &quot;amount&quot;: 0,
-                        &quot;currency&quot;: &quot;EUR&quot;
-                    },
-                    &quot;organization&quot;: {
-                        &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-                        &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-                        &quot;name&quot;: &quot;WayneCorp&quot;,
-                        &quot;hostname&quot;: null
-                    }
-                }
-            ],
-            &quot;roles&quot;: [
-                &quot;user&quot;
-            ],
-            &quot;pending_email&quot;: null
-        }
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2a84f150a2&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:09:19+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:09:19+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/users/55f2a84f150a2&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;j.doe@creads.org&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;locale&quot;</span><span class="token operator">:</span> <span class="token string">&quot;FR&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;phone&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;mobile_phone&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;member_of&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token punctuation">{</span>
+                    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ac24163ed&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;monthly_budget&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;is_manager&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;monthly_spent&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;organization&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+                        <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;roles&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;user&quot;</span>
+            <span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;pending_email&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+        <span class="token punctuation">}</span>
         ...
-    ]
-}
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="chercher-des-utilisateurs"><a class="heading-anchor" href="#chercher-des-utilisateurs"><span></span></a>Chercher des utilisateurs</h3>
 <p>Le param&#xE8;tre d&apos;URL <code>query</code> appliqu&#xE9; au <em>endpoint</em> <a href="#Obtenir la liste des utilisateurs">pr&#xE9;c&#xE9;dement &#xE9;voqu&#xE9;</a> permet d&apos;effectuer une recherche dans les organisations. Pour savoir comment utiliser ce param&#xE8;tre d&apos;URL veuillez vous r&#xE9;f&#xE9;rer &#xE0; <a href="overview#Recherche dans une collection">Recherche dans une collection</a>.</p>
@@ -267,45 +268,45 @@ Un manager a alors le droit de :</p>
 <li><code>member_of.organization.gid</code> : les utilisateurs membres d&apos;une organisation donn&#xE9;e</li>
 </ul>
 <p>Par exemple, pour rechercher un utilisateur cr&#xE9;&#xE9; apr&#xE8;s minuit du 11/09/2015 (en temps universel) :</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; &apos;https://api.creads-partners.com/v1/users?query=\[&quot;created_at&quot;,&quot;&gt;&quot;,&quot;2015-09-11T00:00:00Z&quot;\]&apos;
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/users?query=\[&quot;created_at&quot;,&quot;&gt;&quot;,&quot;2015-09-11T00:00:00Z&quot;\]&apos;</span>
 </code></pre>
 <h3 id="obtenir-un-utilisateur-par-son-gid-"><a class="heading-anchor" href="#obtenir-un-utilisateur-par-son-gid-"><span></span></a>Obtenir un utilisateur (par son GID)</h3>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/users/55f2a84f150a2
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/users/55f2a84f150a2
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;gid&quot;: &quot;55f2a84f150a2&quot;,
-    &quot;created_at&quot;: &quot;2015-09-11T10:09:19+0000&quot;,
-    &quot;modified_at&quot;: &quot;2015-09-11T10:09:19+0000&quot;,
-    &quot;href&quot;: &quot;/users/55f2a84f150a2&quot;,
-    &quot;firstname&quot;: &quot;Doe&quot;,
-    &quot;lastname&quot;: &quot;John&quot;,
-    &quot;email&quot;: &quot;j.doe@creads.org&quot;,
-    &quot;locale&quot;: &quot;FR&quot;,
-    &quot;phone&quot;: null,
-    &quot;mobile_phone&quot;: null,
-    &quot;member_of&quot;: [
-        {
-            &quot;gid&quot;: &quot;55f2ac24163ed&quot;,
-            &quot;monthly_budget&quot;: null,
-            &quot;is_manager&quot;: false,
-            &quot;monthly_spent&quot;: {
-                &quot;amount&quot;: 0,
-                &quot;currency&quot;: &quot;EUR&quot;
-            },
-            &quot;organization&quot;: {
-                &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-                &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-                &quot;name&quot;: &quot;WayneCorp&quot;,
-                &quot;hostname&quot;: null
-            }
-        }
-    ],
-    &quot;roles&quot;: [
-        &quot;user&quot;
-    ],
-    &quot;pending_email&quot;: null
-}
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2a84f150a2&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:09:19+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T10:09:19+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/users/55f2a84f150a2&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;firstname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Doe&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;lastname&quot;</span><span class="token operator">:</span> <span class="token string">&quot;John&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;j.doe@creads.org&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;locale&quot;</span><span class="token operator">:</span> <span class="token string">&quot;FR&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;phone&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;mobile_phone&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;member_of&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ac24163ed&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;monthly_budget&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;is_manager&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;monthly_spent&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;organization&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;roles&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token string">&quot;user&quot;</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;pending_email&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="cr-er-un-utilisateur"><a class="heading-anchor" href="#cr-er-un-utilisateur"><span></span></a>Cr&#xE9;er un utilisateur</h3>
 <p><strong>Seul un utilisateur <em>admin</em> peut cr&#xE9;er un utilisateur.</strong></p>
@@ -318,71 +319,71 @@ Un manager a alors le droit de :</p>
 <p><strong>Seuls les produits activ&#xE9;s dans les organisations desquelles vous &#xEA;tes membre ou <em>manager</em> sont accessibles.</strong></p>
 <h3 id="obtenir-la-liste-des-produits"><a class="heading-anchor" href="#obtenir-la-liste-des-produits"><span></span></a>Obtenir la liste des produits</h3>
 <p>Pour une organisation donn&#xE9;e, vous pouvez obtenir la liste des produits possibles &#xE0; commander</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/orgs/55f2ab761d0bd/products
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/orgs/55f2ab761d0bd/products
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;total_count&quot;: 14,
-    &quot;items&quot;: [
-        {
-            &quot;gid&quot;: &quot;55a6842ac3f6b&quot;,
-            &quot;created_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-            &quot;modified_at&quot;: &quot;2015-09-11T12:22:06+0000&quot;,
-            &quot;href&quot;: &quot;/products/55a6842ac3f6b&quot;,
-            &quot;category&quot;: {
-                &quot;gid&quot;: &quot;55c0d9279d5a6&quot;,
-                &quot;href&quot;: &quot;/categories/55c0d9279d5a6&quot;,
-                &quot;title&quot;: &quot;Logo &amp; Identit&#xE9;&quot;
-            },
-            &quot;title&quot;: &quot;Logo&quot;,
-            &quot;available_options&quot;: {
-                &quot;due&quot;: {
-                    &quot;type&quot;: &quot;integer&quot;,
-                    &quot;default&quot;: 5,
-                    &quot;required&quot;: true,
-                    &quot;enum&quot;: [
-                        1,
-                        2,
-                        5,
-                        10
-                    ]
-                },
-                &quot;mode&quot;: {
-                    &quot;type&quot;: &quot;string&quot;,
-                    &quot;default&quot;: &quot;solo&quot;,
-                    &quot;required&quot;: true,
-                    &quot;enum&quot;: [
-                        &quot;solo&quot;,
-                        &quot;multi&quot;
-                    ]
-                },
-                &quot;skill&quot;: {
-                    &quot;type&quot;: &quot;string&quot;,
-                    &quot;default&quot;: &quot;conception&quot;,
-                    &quot;required&quot;: true,
-                    &quot;enum&quot;: [
-                        &quot;conception&quot;,
-                        &quot;execution&quot;
-                    ]
-                }
-            },
-            &quot;additional_meta&quot;: {
-                &quot;solo_mode_meta&quot;: {
-                    &quot;description&quot;: &quot;- Sollicitation d&apos;un designer professionnel pour votre projet.\n- Recevez 3 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;,
-                    &quot;brief_template&quot;: &quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;
-                },
-                &quot;multi_mode_meta&quot;: {
-                    &quot;description&quot;: &quot;- Sollicitation de 3 designers professionnels pour votre projet.\n- Recevez 9 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;,
-                    &quot;brief_template&quot;: &quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;
-                }
-            },
-            &quot;is_enabled&quot;: true,
-            &quot;is_cumulative&quot;: false,
-            &quot;interface&quot;: &quot;default&quot;
-        },
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">14</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T12:22:06+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/products/55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;category&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55c0d9279d5a6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/categories/55c0d9279d5a6&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Logo &amp; Identit&#xE9;&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Logo&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;available_options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;due&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token number">2</span><span class="token punctuation">,</span>
+                        <span class="token number">5</span><span class="token punctuation">,</span>
+                        <span class="token number">10</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;mode&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+                        <span class="token string">&quot;multi&quot;</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;skill&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;conception&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                        <span class="token string">&quot;conception&quot;</span><span class="token punctuation">,</span>
+                        <span class="token string">&quot;execution&quot;</span>
+                    <span class="token punctuation">]</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;additional_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;solo_mode_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;- Sollicitation d&apos;un designer professionnel pour votre projet.\n- Recevez 3 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;brief_template&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;multi_mode_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;- Sollicitation de 3 designers professionnels pour votre projet.\n- Recevez 9 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;</span><span class="token punctuation">,</span>
+                    <span class="token property">&quot;brief_template&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;is_enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;is_cumulative&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;interface&quot;</span><span class="token operator">:</span> <span class="token string">&quot;default&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
         ...
-    ]
-}
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="chercher-des-produits"><a class="heading-anchor" href="#chercher-des-produits"><span></span></a>Chercher des produits</h3>
 <p>Le param&#xE8;tre d&apos;URL <code>query</code> appliqu&#xE9; au <em>endpoint</em> <a href="#Obtenir la liste des produits">pr&#xE9;c&#xE9;dement &#xE9;voqu&#xE9;</a> permet d&apos;effectuer une recherche dans les produits. Pour savoir comment utiliser ce param&#xE8;tre d&apos;URL veuillez vous r&#xE9;f&#xE9;rer &#xE0; <a href="overview#Recherche dans une collection">Recherche dans une collection</a>.</p>
@@ -392,76 +393,76 @@ Un manager a alors le droit de :</p>
 <li><code>organizations.gid</code> : les produits activ&#xE9;s dans une organisation donn&#xE9;e</li>
 </ul>
 <p>Par exemple, pour rechercher la produits de la cat&#xE9;gorie <em>Logo &amp; Identit&#xE9;</em> :</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; &apos;https://api.creads-partners.com/v1/products?query=\[&quot;category.gid&quot;,&quot;==&quot;,&quot;55c0d9279d5a6&quot;\]&apos;
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/products?query=\[&quot;category.gid&quot;,&quot;==&quot;,&quot;55c0d9279d5a6&quot;\]&apos;</span>
 </code></pre>
 <h3 id="obtenir-un-produit-par-son-gid-"><a class="heading-anchor" href="#obtenir-un-produit-par-son-gid-"><span></span></a>Obtenir un produit (par son GID)</h3>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/products/55a6842ac3f6b
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/products/55a6842ac3f6b
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;gid&quot;: &quot;55a6842ac3f6b&quot;,
-    &quot;created_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-    &quot;modified_at&quot;: &quot;2015-09-11T12:22:06+0000&quot;,
-    &quot;href&quot;: &quot;/products/55a6842ac3f6b&quot;,
-    &quot;category&quot;: {
-        &quot;gid&quot;: &quot;55c0d9279d5a6&quot;,
-        &quot;href&quot;: &quot;/categories/55c0d9279d5a6&quot;,
-        &quot;title&quot;: &quot;Logo &amp; Identit&#xE9;&quot;
-    },
-    &quot;title&quot;: &quot;Logo&quot;,
-    &quot;available_options&quot;: {
-        &quot;due&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;default&quot;: 5,
-            &quot;required&quot;: true,
-            &quot;enum&quot;: [
-                1,
-                2,
-                5,
-                10
-            ]
-        },
-        &quot;mode&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;default&quot;: &quot;solo&quot;,
-            &quot;required&quot;: true,
-            &quot;enum&quot;: [
-                &quot;solo&quot;,
-                &quot;multi&quot;
-            ]
-        },
-        &quot;skill&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;default&quot;: &quot;conception&quot;,
-            &quot;required&quot;: true,
-            &quot;enum&quot;: [
-                &quot;conception&quot;,
-                &quot;execution&quot;
-            ]
-        }
-    },
-    &quot;additional_meta&quot;: {
-        &quot;solo_mode_meta&quot;: {
-            &quot;description&quot;: &quot;- Sollicitation d&apos;un designer professionnel pour votre projet.\n- Recevez 3 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;,
-            &quot;brief_template&quot;: &quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;
-        },
-        &quot;multi_mode_meta&quot;: {
-            &quot;description&quot;: &quot;- Sollicitation de 3 designers professionnels pour votre projet.\n- Recevez 9 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;,
-            &quot;brief_template&quot;: &quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;
-        }
-    },
-    &quot;is_enabled&quot;: true,
-    &quot;is_cumulative&quot;: false,
-    &quot;interface&quot;: &quot;default&quot;,
-    &quot;organizations&quot;: [
-        {
-            &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-            &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-            &quot;name&quot;: &quot;WayneCorp&quot;,
-            &quot;hostname&quot;: null
-        }
-    ]
-}
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T12:22:06+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/products/55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;category&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55c0d9279d5a6&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/categories/55c0d9279d5a6&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Logo &amp; Identit&#xE9;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Logo&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;available_options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;due&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token number">5</span><span class="token punctuation">,</span>
+                <span class="token number">10</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;mode&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;multi&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;skill&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;conception&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;conception&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;execution&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;additional_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;solo_mode_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;- Sollicitation d&apos;un designer professionnel pour votre projet.\n- Recevez 3 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;brief_template&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;multi_mode_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;- Sollicitation de 3 designers professionnels pour votre projet.\n- Recevez 9 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;brief_template&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;is_enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;is_cumulative&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;interface&quot;</span><span class="token operator">:</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;organizations&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="cr-er-un-produit"><a class="heading-anchor" href="#cr-er-un-produit"><span></span></a>Cr&#xE9;er un produit</h3>
 <p><strong>Seul un utilisateur <em>admin</em> peut cr&#xE9;er un produit.</strong></p>
@@ -474,59 +475,59 @@ Un manager a alors le droit de :</p>
 <p><strong>En tant que qu&apos;utilisateur simple, seuls les projets que vous avez cr&#xE9;&#xE9;s ou auxquels vous &#xEA;tes invit&#xE9;s &#xE0; collaborer sont accessibles.</strong>
 <strong>En tant qu&apos;utilisateur <em>manager</em>, seuls les projets cr&#xE9;&#xE9;s dans les organisations desquelles vous &#xEA;tes <em>manager</em> sont accessibles.</strong></p>
 <h3 id="obtenir-la-liste-des-projets"><a class="heading-anchor" href="#obtenir-la-liste-des-projets"><span></span></a>Obtenir la liste des projets</h3>
-<pre><code class="lang-bash">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/projects
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/projects
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;total_count&quot;: 4,
-    &quot;items&quot;: [
-        {
-            &quot;gid&quot;: &quot;55c0d927cad5c&quot;,
-            &quot;created_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-            &quot;modified_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-            &quot;href&quot;: &quot;/projects/55c0d927cad5c&quot;,
-            &quot;started_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-            &quot;finished_at&quot;: null,
-            &quot;status&quot;: &quot;in_progress&quot;,
-            &quot;title&quot;: &quot;Malesuada&quot;,
-            &quot;description&quot;: &quot;Caesaris observante&quot;,
-            &quot;options&quot;: {
-                &quot;due&quot;: 1,
-                &quot;mode&quot;: &quot;solo&quot;,
-                &quot;skill&quot;: &quot;conception&quot;
-            },
-            &quot;quantity&quot;: 1,
-            &quot;owner&quot;: {
-                &quot;gid&quot;: &quot;55f2a84f150a2&quot;,
-                &quot;href&quot;: &quot;/users/55f2a84f150a2&quot;
-            },
-            &quot;organization&quot;:         {
-                &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-                &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-                &quot;name&quot;: &quot;WayneCorp&quot;,
-                &quot;hostname&quot;: null
-            },
-            &quot;product&quot;: {
-                &quot;gid&quot;: &quot;55a6842ac3f6b&quot;,
-                &quot;href&quot;: &quot;/products/55a6842ac3f6b&quot;
-            },
-            &quot;brief_files&quot;: [],
-            &quot;source_files&quot;: [],
-            &quot;receipt_file&quot;: null,
-            &quot;price&quot;: {
-                &quot;amount&quot;: 1470,
-                &quot;currency&quot;: &quot;EUR&quot;
-            },
-            &quot;vat&quot;: {
-                &quot;amount&quot;: 0,
-                &quot;ratio&quot;: 0,
-                &quot;currency&quot;: &quot;EUR&quot;
-            },
-            &quot;winner&quot;: null
-        },
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55c0d927cad5c&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/projects/55c0d927cad5c&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;started_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;finished_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token string">&quot;in_progress&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Malesuada&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Caesaris observante&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;due&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;mode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;skill&quot;</span><span class="token operator">:</span> <span class="token string">&quot;conception&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;owner&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2a84f150a2&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/users/55f2a84f150a2&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;organization&quot;</span><span class="token operator">:</span>         <span class="token punctuation">{</span>
+                <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/products/55a6842ac3f6b&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;brief_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;source_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;receipt_file&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1470</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;ratio&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;winner&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
         ...
-    ]
-}
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="chercher-des-projets"><a class="heading-anchor" href="#chercher-des-projets"><span></span></a>Chercher des projets</h3>
 <p>Le param&#xE8;tre d&apos;URL <code>query</code> appliqu&#xE9; au <em>endpoint</em> <a href="#Obtenir la liste des projets">pr&#xE9;c&#xE9;dement &#xE9;voqu&#xE9;</a> permet d&apos;effectuer une recherche dans les projets. Pour savoir comment utiliser ce param&#xE8;tre d&apos;URL veuillez vous r&#xE9;f&#xE9;rer &#xE0; <a href="overview#Recherche dans une collection">Recherche dans une collection</a>.</p>
@@ -538,56 +539,56 @@ Un manager a alors le droit de :</p>
 <li><code>created_at</code> : les projets cr&#xE9;&#xE9;s par rapport &#xE0; une date donn&#xE9;e.</li>
 </ul>
 <p>Par exemple, pour rechercher les projets cr&#xE9;&#xE9;s dans l&apos;organization <em>WayneCorp</em> depuis le d&#xE9;but de l&apos;ann&#xE9;e :</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; &apos;https://api.creads-partners.com/v1/projects?query=\[\[&quot;organization.gid&quot;,&quot;==&quot;,&quot;55f2ab761d0bd&quot;\],\[&quot;created_at&quot;,&quot;&gt;=&quot;,&quot;2015-01-01T00:00:00Z&quot;\]\]&apos;
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/projects?query=\[\[&quot;organization.gid&quot;,&quot;==&quot;,&quot;55f2ab761d0bd&quot;\],\[&quot;created_at&quot;,&quot;&gt;=&quot;,&quot;2015-01-01T00:00:00Z&quot;\]\]&apos;</span>
 </code></pre>
 <h3 id="obtenir-un-projet-par-son-gid-"><a class="heading-anchor" href="#obtenir-un-projet-par-son-gid-"><span></span></a>Obtenir un projet (par son GID)</h3>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/project/55c0d927cad5c
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/project/55c0d927cad5c
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;gid&quot;: &quot;55c0d927cad5c&quot;,
-    &quot;created_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-    &quot;modified_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-    &quot;href&quot;: &quot;/projects/55c0d927cad5c&quot;,
-    &quot;started_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-    &quot;finished_at&quot;: null,
-    &quot;status&quot;: &quot;in_progress&quot;,
-    &quot;title&quot;: &quot;Malesuada&quot;,
-    &quot;description&quot;: &quot;Caesaris observante&quot;,
-    &quot;options&quot;: {
-        &quot;due&quot;: 1,
-        &quot;mode&quot;: &quot;solo&quot;,
-        &quot;skill&quot;: &quot;conception&quot;
-    },
-    &quot;quantity&quot;: 1,
-    &quot;owner&quot;: {
-        &quot;gid&quot;: &quot;55f2a84f150a2&quot;,
-        &quot;href&quot;: &quot;/users/55f2a84f150a2&quot;
-    },
-    &quot;organization&quot;:         {
-        &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-        &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-        &quot;name&quot;: &quot;WayneCorp&quot;,
-        &quot;hostname&quot;: null
-    },
-    &quot;product&quot;: {
-        &quot;gid&quot;: &quot;55a6842ac3f6b&quot;,
-        &quot;href&quot;: &quot;/products/55a6842ac3f6b&quot;
-    },
-    &quot;brief_files&quot;: [],
-    &quot;source_files&quot;: [],
-    &quot;receipt_file&quot;: null,
-    &quot;price&quot;: {
-        &quot;amount&quot;: 1470,
-        &quot;currency&quot;: &quot;EUR&quot;
-    },
-    &quot;vat&quot;: {
-        &quot;amount&quot;: 0,
-        &quot;ratio&quot;: 0,
-        &quot;currency&quot;: &quot;EUR&quot;
-    },
-    &quot;winner&quot;: null
-}
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55c0d927cad5c&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/projects/55c0d927cad5c&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;started_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;finished_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token string">&quot;in_progress&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Malesuada&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Caesaris observante&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;due&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;mode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;skill&quot;</span><span class="token operator">:</span> <span class="token string">&quot;conception&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;quantity&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;owner&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2a84f150a2&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/users/55f2a84f150a2&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;organization&quot;</span><span class="token operator">:</span>         <span class="token punctuation">{</span>
+        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/products/55a6842ac3f6b&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;brief_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;source_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;receipt_file&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;price&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">1470</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;vat&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;ratio&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;winner&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h3 id="cr-er-un-projet"><a class="heading-anchor" href="#cr-er-un-projet"><span></span></a>Cr&#xE9;er un projet</h3>
 <p>Un projet est une commande d&apos;un produit dans une configuration donn&#xE9;e.</p>
@@ -595,72 +596,73 @@ Un manager a alors le droit de :</p>
 <p>Avant de cr&#xE9;er un projet, on doit d&apos;abord connaitre les options disponibles pour le produit du projet (mode, d&#xE9;lai, m&#xE9;tier...) et s&apos;il peut &#xEA;tre cumul&#xE9;.
 Cette r&#xE9;cup&#xE9;ration peut &#xEA;tre faite une fois pour toute car l&apos;on suppose qu&apos;un produit ne perdra pas ou ne changera pas de caract&#xE9;ristique.</p>
 <p>Obtention du produit &quot;Logo&quot; :</p>
-<pre><code>curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/products/55a6842ac3f6b
-</code></pre><p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;gid&quot;: &quot;55a6842ac3f6b&quot;,
-    &quot;created_at&quot;: &quot;2015-08-04T15:24:23+0000&quot;,
-    &quot;modified_at&quot;: &quot;2015-09-11T12:22:06+0000&quot;,
-    &quot;href&quot;: &quot;/products/55a6842ac3f6b&quot;,
-    &quot;category&quot;: {
-        &quot;gid&quot;: &quot;55c0d9279d5a6&quot;,
-        &quot;href&quot;: &quot;/categories/55c0d9279d5a6&quot;,
-        &quot;title&quot;: &quot;Logo &amp; Identit&#xE9;&quot;
-    },
-    &quot;title&quot;: &quot;Logo&quot;,
-    &quot;available_options&quot;: {
-        &quot;due&quot;: {
-            &quot;type&quot;: &quot;integer&quot;,
-            &quot;default&quot;: 5,
-            &quot;required&quot;: true,
-            &quot;enum&quot;: [
-                1,
-                2,
-                5,
-                10
-            ]
-        },
-        &quot;mode&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;default&quot;: &quot;solo&quot;,
-            &quot;required&quot;: true,
-            &quot;enum&quot;: [
-                &quot;solo&quot;,
-                &quot;multi&quot;
-            ]
-        },
-        &quot;skill&quot;: {
-            &quot;type&quot;: &quot;string&quot;,
-            &quot;default&quot;: &quot;conception&quot;,
-            &quot;required&quot;: true,
-            &quot;enum&quot;: [
-                &quot;conception&quot;,
-                &quot;execution&quot;
-            ]
-        }
-    },
-    &quot;additional_meta&quot;: {
-        &quot;solo_mode_meta&quot;: {
-            &quot;description&quot;: &quot;- Sollicitation d&apos;un designer professionnel pour votre projet.\n- Recevez 3 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;,
-            &quot;brief_template&quot;: &quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;
-        },
-        &quot;multi_mode_meta&quot;: {
-            &quot;description&quot;: &quot;- Sollicitation de 3 designers professionnels pour votre projet.\n- Recevez 9 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;,
-            &quot;brief_template&quot;: &quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;
-        }
-    },
-    &quot;is_enabled&quot;: true,
-    &quot;is_cumulative&quot;: false,
-    &quot;interface&quot;: &quot;default&quot;,
-    &quot;organizations&quot;: [
-        {
-            &quot;gid&quot;: &quot;55f2ab761d0bd&quot;,
-            &quot;href&quot;: &quot;/organizations/55f2ab761d0bd&quot;,
-            &quot;name&quot;: &quot;WayneCorp&quot;,
-            &quot;hostname&quot;: null
-        }
-    ]
-}
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/products/55a6842ac3f6b
+</code></pre>
+<p>R&#xE9;ponse :</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-08-04T15:24:23+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T12:22:06+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/products/55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;category&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55c0d9279d5a6&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/categories/55c0d9279d5a6&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Logo &amp; Identit&#xE9;&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Logo&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;available_options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;due&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;integer&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token number">1</span><span class="token punctuation">,</span>
+                <span class="token number">2</span><span class="token punctuation">,</span>
+                <span class="token number">5</span><span class="token punctuation">,</span>
+                <span class="token number">10</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;mode&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;multi&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;skill&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;string&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;default&quot;</span><span class="token operator">:</span> <span class="token string">&quot;conception&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;required&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;enum&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token string">&quot;conception&quot;</span><span class="token punctuation">,</span>
+                <span class="token string">&quot;execution&quot;</span>
+            <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;additional_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;solo_mode_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;- Sollicitation d&apos;un designer professionnel pour votre projet.\n- Recevez 3 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;brief_template&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;multi_mode_meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;- Sollicitation de 3 designers professionnels pour votre projet.\n- Recevez 9 propositions de logo.\n- 3 aller/retours sur celle de votre choix et recevez les fichiers sources.&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;brief_template&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;crivez votre besoin, le contexte du projet, les livrables attendus...&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;is_enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;is_cumulative&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;interface&quot;</span><span class="token operator">:</span> <span class="token string">&quot;default&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;organizations&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/organizations/55f2ab761d0bd&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WayneCorp&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;hostname&quot;</span><span class="token operator">:</span> <span class="token null">null</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Le champ <code>available_options</code> indique au format <a href="http://json-schema.org/">JSON Schema</a> les diff&#xE9;rentes options disponibles &#xE0; la cr&#xE9;ation du projet:</p>
 <ul>
@@ -678,32 +680,34 @@ Cette r&#xE9;cup&#xE9;ration peut &#xEA;tre faite une fois pour toute car l&apos
 <p>La cr&#xE9;ation d&apos;un projet n&#xE9;cessite la v&#xE9;rification et l&apos;approbation du prix de ce projet
 Pour ce faire, le prix correct du projet doit &#xEA;tre calcul&#xE9; puis soumis &#xE0; la cr&#xE9;ation du projet (<code>POST /projects</code>).</p>
 <p>Par exemple, calcul du prix pour une commande en 2 jours d&apos;un <em>Logo</em> en mode <em>solo</em> en <em>Direction artistique</em> :</p>
-<pre><code>curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/prices/for?product.gid=55a6842ac3f6b&amp;organization.gid=55f2ab761d0bd&amp;options.due=2&amp;options.mode=solo&amp;options.skill=conception
-</code></pre><p>R&#xE9;ponse :</p>
-<pre><code>{
-    &quot;gid&quot;: &quot;55f307e922d88&quot;,
-    &quot;created_at&quot;: &quot;2015-09-11T16:57:13+0000&quot;,
-    &quot;modified_at&quot;: &quot;2015-09-11T16:57:13+0000&quot;,
-    &quot;href&quot;: &quot;/prices/55f307e922d88&quot;,
-    &quot;organization&quot;: null,
-    &quot;product&quot;: {
-        &quot;gid&quot;: &quot;55a6842ac3f6b&quot;,
-        &quot;href&quot;: &quot;/products/55a6842ac3f6b&quot;
-    },
-    &quot;options&quot;: {
-        &quot;mode&quot;: &quot;solo&quot;,
-        &quot;due&quot;: 2,
-        &quot;skill&quot;: &quot;conception&quot;
-    },
-    &quot;amount&quot;: 735,
-    &quot;currency&quot;: &quot;EUR&quot;
-}
-</code></pre><h4 id="cr-er-le-projet"><a class="heading-anchor" href="#cr-er-le-projet"><span></span></a>Cr&#xE9;er le projet</h4>
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/prices/for?product.gid<span class="token operator">=</span>55a6842ac3f6b<span class="token operator">&amp;</span>organization.gid<span class="token operator">=</span>55f2ab761d0bd<span class="token operator">&amp;</span>options.due<span class="token operator">=</span>2<span class="token operator">&amp;</span>options.mode<span class="token operator">=</span>solo<span class="token operator">&amp;</span>options.skill<span class="token operator">=</span>conception
+</code></pre>
+<p>R&#xE9;ponse :</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55f307e922d88&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T16:57:13+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-11T16:57:13+0000&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/prices/55f307e922d88&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;organization&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;product&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55a6842ac3f6b&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/products/55a6842ac3f6b&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;options&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;mode&quot;</span><span class="token operator">:</span> <span class="token string">&quot;solo&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;due&quot;</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;skill&quot;</span><span class="token operator">:</span> <span class="token string">&quot;conception&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">735</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="cr-er-le-projet"><a class="heading-anchor" href="#cr-er-le-projet"><span></span></a>Cr&#xE9;er le projet</h4>
 <p>Un projet peut &#xEA;tre cr&#xE9;&#xE9; en &#xE9;tat de brouillon (<code>state: draft</code>) pour pouvoir &#xEA;tre modifi&#xE9; avant lancement d&#xE9;finitif de la commande, ou d&#xE9;finitivement lanc&#xE9; (`state: published).
 Les options du projet doivent &#xEA;tre pr&#xE9;cis&#xE9;es (voir <a href="#Obtenir les options du produit">Obtenir les options du produit</a>).
 Le prix calcul&#xE9; au pr&#xE9;alable doit &#xEA;tre soumis &#xE0; titre d&apos;approbation (voir <a href="#Calculer le prix d&apos;un projet">Calculer le prix d&apos;un projet</a>).</p>
 <p>Par exemple, cr&#xE9;ation d&apos;une commande en 2 jours d&apos;un <em>Logo</em> en mode <em>solo</em> et <em>Direction artistique</em> avec validation du prix &#xE0; 990.0&#x20AC; :</p>
-<pre><code>curl -i -H &quot;Authorization: Bearer $TOKEN&quot; -d &apos;{
+<pre class="language-bash"><code class="language-bash">curl -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;title&quot;: &quot;titre du projet&quot;,
     &quot;description&quot;: &quot;Description pr&#xE9;cise de la commande (brief)&quot;,
     &quot;product&quot;: {&quot;gid&quot;: &quot;55a6842ac3f6b&quot;},
@@ -711,11 +715,12 @@ Le prix calcul&#xE9; au pr&#xE9;alable doit &#xEA;tre soumis &#xE0; titre d&apos
     &quot;options&quot;: {&quot;due&quot;:2, &quot;mode&quot;: &quot;solo&quot;, &quot;skill&quot;: &quot;conception&quot;},
     &quot;price&quot;: {&quot;amount&quot;: 735.0},
     &quot;status&quot;: &quot;in_progress&quot;
-}&apos; -X POST https://api-preprod.creads-partners.com/v1/projects
-</code></pre><p>R&#xE9;ponse :</p>
+}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects
+</code></pre>
+<p>R&#xE9;ponse :</p>
 <pre><code>
 </code></pre><p>Second exemple, cr&#xE9;ation d&apos;une commande en 2 jours de 3 <em>Logos</em> en mode <em>multi</em> et <em>Execution</em> avec validation du prix &#xE0; 1800.0&#x20AC; &#xE0; l&apos;&#xE9;tat de brouillon :</p>
-<pre><code>curl -H &quot;Authorization: Bearer $TOKEN&quot; -d &apos;{
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;title&quot;: &quot;titre du projet 2&quot;,
     &quot;description&quot;: &quot;Description pr&#xE9;cise de la commande (brief)&quot;,
     &quot;product&quot;: {&quot;gid&quot;: &quot;55a6842ac3f6b&quot;},
@@ -724,8 +729,9 @@ Le prix calcul&#xE9; au pr&#xE9;alable doit &#xEA;tre soumis &#xE0; titre d&apos
     &quot;price&quot;: {&quot;amount&quot;: 1800.0},
     &quot;state&quot;: &quot;draft&quot;,
     &quot;quantity&quot;: 3
-}&apos; -X POST https://api.creads-partners.com/v1/projects
-</code></pre><p>R&#xE9;ponse :</p>
+}&apos;</span> -X POST https://api.creads-partners.com/v1/projects
+</code></pre>
+<p>R&#xE9;ponse :</p>
 <pre><code>HTTP/1.1 201 Created
 Cache-Control: no-cache
 Content-Type: application/json
@@ -735,17 +741,17 @@ Server: nginx/1.6.2
 Content-Length: 0
 Connection: keep-alive
 </code></pre><p>En compl&#xE9;ment, le project accepte un tableau de fichiers de brief qui peuvent accompagner la commande pour guider les cr&#xE9;atifs.</p>
-<pre><code class="lang-json">&quot;brief_files&quot;: [
-    {
-        &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-1.zip&quot;,
-    },
-    {
-        &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-2.zip&quot;,
-    },
-    {
-        &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-3.zip&quot;
-    }
-],
+<pre class="language-json"><code class="language-json"><span class="token property">&quot;brief_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-1.zip&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-2.zip&quot;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-3.zip&quot;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">]</span><span class="token punctuation">,</span>
 </code></pre>
 <h3 id="modifier-un-projet"><a class="heading-anchor" href="#modifier-un-projet"><span></span></a>Modifier un projet</h3>
 <p><strong>En tant que qu&apos;utilisateur, seuls les les projets que vous avez cr&#xE9;&#xE9; sont modifiables.</strong></p>
@@ -759,111 +765,114 @@ Connection: keep-alive
 <p>Le cr&#xE9;atif postera ses questions et ses propositions qui apparaitront comme des messages. Le client peut r&#xE9;pondre sous la m&#xEA;me forme.</p>
 <p>Ces messages acceptent des pi&#xE8;ces jointes (<code>attached_files</code>).</p>
 <p>Vous pouvez obtenir la liste des messages existants dans un projet :</p>
-<pre><code class="lang-bash">curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.creads-partners.com/v1/projects/55c0d927cad5c/messages
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/projects/55c0d927cad5c/messages
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;total_count&quot;: 1,
-    &quot;items&quot;: [
-        {
-          &quot;gid&quot;: &quot;559befeeab59f&quot;,
-          &quot;href&quot;: &quot;/project-message/559befeeab59f&quot;,
-          &quot;created_at&quot;: &quot;2014-09-08T22:47:31-07:00&quot;,
-          &quot;modified_at&quot;: &quot;2014-09-08T22:47:31-07:00&quot;,
-          &quot;accepted_at&quot;: null,
-          &quot;rejected_at&quot;: null,
-          &quot;message&quot;: &quot;Lorem ipsum dolor sit amet&quot;,
-          &quot;project&quot;: {
-            &quot;gid&quot;: &quot;559befeeab59a&quot;
-          },
-          &quot;mine&quot;: false,
-          &quot;worker&quot;: {
-            &quot;gid&quot;: &quot;559befeeab59b&quot;
-          },
-          &quot;user&quot;: null,
-          &quot;type&quot;: &quot;simple&quot;,
-          &quot;attached_files&quot;: [
-            {
-              &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-1.zip&quot;
-            },
-            {
-              &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-2.zip&quot;,
-            }
-          ]
-        },
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;559befeeab59f&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;href&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/project-message/559befeeab59f&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2014-09-08T22:47:31-07:00&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2014-09-08T22:47:31-07:00&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;accepted_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;rejected_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;message&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Lorem ipsum dolor sit amet&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;project&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;559befeeab59a&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;mine&quot;</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;worker&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;559befeeab59b&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;user&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;simple&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;attached_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-1.zip&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-2.zip&quot;</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
         ...
-    ]
-}
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Les utilisateurs ayant acc&#xE8;s au projet peuvent poster des messages sur ce m&#xEA;me endpoint.</p>
-<pre><code>curl -i -H &quot;Authorization: Bearer $TOKEN&quot; -d &apos;{
+<pre class="language-bash"><code class="language-bash">curl -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;message&quot;: &quot;Veuillez me faire une proposition&quot;
-}&apos; -X POST https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8/messages
-</code></pre><p>Lorsque le cr&#xE9;atif postera un message livraison (<code>type</code> &#xE0; <code>delivery</code>), il faudra r&#xE9;pondre &#xE0; ce message par une acceptation (mesage de type <code>accept</code>, qui finira le projet) ou un refus (type <code>reject</code>) pour continuer a discuter.</p>
+}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8/messages
+</code></pre>
+<p>Lorsque le cr&#xE9;atif postera un message livraison (<code>type</code> &#xE0; <code>delivery</code>), il faudra r&#xE9;pondre &#xE0; ce message par une acceptation (mesage de type <code>accept</code>, qui finira le projet) ou un refus (type <code>reject</code>) pour continuer a discuter.</p>
 <h1 id="work"><a class="heading-anchor" href="#work"><span></span></a>Work</h1>
 <p>Dans le cas d&apos;un projet multi, une ressource <code>Work</code> (travail) repr&#xE9;sente une cr&#xE9;ation envoy&#xE9;e par un cr&#xE9;atif pour un projet.</p>
 <p><strong>En tant que qu&apos;utilisateur simple, seuls les travaux des projets que vous avez cr&#xE9;&#xE9; ou auxquels vous avez &#xE9;t&#xE9; invit&#xE9; sont accessibles.</strong>
 <strong>En tant qu&apos;utilisateur <em>manager</em>, seuls les travaux des projets des organisations desquelles vous &#xEA;tes <em>manager</em> sont accessibles.</strong></p>
 <p>Il contient soit une image (<code>image</code>), soit dans le cas des concours de r&#xE9;daction un contenu texte (<code>content</code>). Il est rattach&#xE9; &#xE0; un cr&#xE9;atif (<code>Worker</code>) et peut avoir un autre <code>Work</code> parent. Les <em>enfants</em> d&apos;un <code>work</code> sont des images (d&#xE9;clinaisons) que le cr&#xE9;atif a souhait&#xE9; grouper sous la m&#xEA;me cr&#xE9;ation.</p>
 <p>Par exemple, pour obtenir les cr&#xE9;ations principales (parentes) d&apos;un projet:</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; &apos;https://api.creads-partners.com/v1/works?query=\[\[&quot;project.gid&quot;,&quot;==&quot;,&quot;55c0d927cad5c&quot;\],\[&quot;parent&quot;,&quot;==&quot;,null\]\]&apos;
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/works?query=\[\[&quot;project.gid&quot;,&quot;==&quot;,&quot;55c0d927cad5c&quot;\],\[&quot;parent&quot;,&quot;==&quot;,null\]\]&apos;</span>
 </code></pre>
 <p>R&#xE9;ponse :</p>
-<pre><code class="lang-json">{
-    &quot;total_count&quot;: 4,
-    &quot;items&quot;: [
-        {
-          &quot;gid&quot;: &quot;559bf0527764e&quot;,
-          &quot;created_at&quot;: &quot;2014-09-08T22:47:31-07:00&quot;,
-          &quot;won_at&quot;: null,
-          &quot;description&quot; : &quot;Quisque ac ligula faucibus, pretium orci ac, porta velit. Cras ante enim, lacinia a commodo ut, iaculis et sem. Sed faucibus leo id justo imperdiet sollicitudin. Nunc tempor et risus vitae pulvinar. Quisque sed lacinia erat, vitae efficitur turpis. Fusce vel mollis tortor. Vivamus fermentum lacus in ultricies euismod.&quot;,
-          &quot;image&quot;: &quot;https://cre.ads/43348e3ea6-1.jpg&quot;,
-          &quot;worker&quot;: {
-            &quot;gid&quot;: &quot;559bf0683e9a5&quot;
-          },
-          &quot;project&quot;: {
-            &quot;gid&quot;: &quot;559bf06dc73e8&quot;,
-            &quot;title&quot;: &quot;lorem ipsum dolor&quot;
-          }
-        },
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;559bf0527764e&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2014-09-08T22:47:31-07:00&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;won_at&quot;</span><span class="token operator">:</span> <span class="token null">null</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;description&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Quisque ac ligula faucibus, pretium orci ac, porta velit. Cras ante enim, lacinia a commodo ut, iaculis et sem. Sed faucibus leo id justo imperdiet sollicitudin. Nunc tempor et risus vitae pulvinar. Quisque sed lacinia erat, vitae efficitur turpis. Fusce vel mollis tortor. Vivamus fermentum lacus in ultricies euismod.&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;image&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-1.jpg&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;worker&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;559bf0683e9a5&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;project&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;559bf06dc73e8&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;lorem ipsum dolor&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
         ...
-    ]
-}
+    <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Pour terminer un projet et recevoir des fichiers sources lorsque vous &#xEA;tes satisfait d&apos;une cr&#xE9;ation, il faut s&#xE9;lectionner un vainqueur.
 Mettre &#xE0; jour le projet en lui indiquant la cr&#xE9;ation gagnante:</p>
-<pre><code>curl -i -H &quot;Authorization: Bearer $TOKEN&quot; -d &apos;{
+<pre class="language-bash"><code class="language-bash">curl -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;winner&quot;: {
         &quot;gid&quot;: &quot;559bf0527764e&quot;
     }
-}&apos; -X PUT https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8
-</code></pre><p>Le projet est alors termin&#xE9;. Lorsque des <strong>fichiers sources</strong> arriveront, ils apparaitront dans la resource <code>project</code> en tant que <code>source_files</code>:</p>
-<pre><code class="lang-json">{
-    &quot;source_files&quot;: [
-        {
-            &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-1.zip&quot;,
-        },
-        {
-            &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-2.zip&quot;,
-        },
-        {
-            &quot;url&quot;: &quot;https://cre.ads/43348e3ea6-3.zip&quot;
-        }
-    ],
+}&apos;</span> -X PUT https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8
+</code></pre>
+<p>Le projet est alors termin&#xE9;. Lorsque des <strong>fichiers sources</strong> arriveront, ils apparaitront dans la resource <code>project</code> en tant que <code>source_files</code>:</p>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;source_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-1.zip&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-2.zip&quot;</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://cre.ads/43348e3ea6-3.zip&quot;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
     ...
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="worker"><a class="heading-anchor" href="#worker"><span></span></a>Worker</h2>
 <p>Une ressource <code>Worker</code> (travailleur) repr&#xE9;sente un cr&#xE9;atif.</p>
 <p>Il est caract&#xE9;ris&#xE9; par son nom et un avatar.</p>
 <h2 id="comments"><a class="heading-anchor" href="#comments"><span></span></a>Comments</h2>
 <p>Il est possible de commenter des resources. Par exemple, pour &#xE9;changer avec le cr&#xE9;atif sur un <code>Work</code>, il suffit de poster un commentaire portant le <code>uri</code> du commentaire.</p>
-<pre><code>curl -i -H &quot;Authorization: Bearer $TOKEN&quot; -d &apos;{
+<pre class="language-bash"><code class="language-bash">curl -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
   &quot;message&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque viverra sodales. Vestibulum quis fringilla nisi. Donec congue neque ac consequat vestibulum. Praesent sed urna maximus ante ornare vestibulum. In in vulputate sapien. Ut elementum bibendum mi sit amet congue. Aliquam suscipit turpis vitae dapibus efficitur. Nullam quis lacinia ligula. Nam at lectus sem.&quot;,
   &quot;uri&quot;: &quot;/works/559bef4a9b600&quot;
-}&apos; -X POST https://api-preprod.creads-partners.com/v1/comments
-</code></pre><p>Et pour r&#xE9;cuperer les autres commentaires de la m&#xEA;me ressource</p>
-<pre><code class="lang-sh">curl -H &quot;Authorization: Bearer $TOKEN&quot; &apos;https://api.creads-partners.com/v1/comments?query=\[&quot;uri&quot;,&quot;==&quot;,&quot;/works/559bef4a9b600&quot;\]&apos;
+}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/comments
+</code></pre>
+<p>Et pour r&#xE9;cuperer les autres commentaires de la m&#xEA;me ressource</p>
+<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/comments?query=\[&quot;uri&quot;,&quot;==&quot;,&quot;/works/559bef4a9b600&quot;\]&apos;</span>
 </code></pre>
 
                         </div>

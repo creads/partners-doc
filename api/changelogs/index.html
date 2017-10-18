@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/partners-doc/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="/partners-doc/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="/partners-doc/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/highlight/prism-okaidia.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -134,24 +135,24 @@
 <ul>
 <li>changed file and image fields schema. Image variations are embed now to be able to get any image into its right size.</li>
 </ul>
-<pre><code class="lang-json">{
-  &quot;logo&quot;: &quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;
-}
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>becomes:</p>
-<pre><code class="lang-json">{
-  &quot;logo&quot;: {
-    &quot;url&quot;: &quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;,
-    &quot;variations&quot;: {
-      &quot;icon&quot;: {
-        &quot;url&quot;: &quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/cache/icon/myfile.jpg&quot;
-      },
-      &quot;thumb&quot;: {
-        &quot;url&quot;: &quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/cache/icon/myfile.jpg&quot;
-      }
-    }
-  }
-}
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;variations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;icon&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/cache/icon/myfile.jpg&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;thumb&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/cache/icon/myfile.jpg&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <h2 id="1-0-0-rc8"><a class="heading-anchor" href="#1-0-0-rc8"><span></span></a>1.0.0-rc8</h2>
 <ul>
