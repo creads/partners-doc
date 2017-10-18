@@ -172,12 +172,12 @@ label label-{{ method }}
 
                           {% if b.schema %}
                             <p><strong>Schema</strong>:</p>
-                            <pre><code>{{ b.schema | escape }}</code></pre>
+                            <pre class="language-json"><code class="language-json">{{ b.schema | escape }}</code></pre>
                           {% endif %}
 
                           {% if b.example %}
                             <p><strong>Example</strong>:</p>
-                            <pre><code>{{ b.example | escape }}</code></pre>
+                            <pre class="language-json"><code class="language-json">{{ b.example | escape }}</code></pre>
                           {% endif %}
                         {% endfor %}
                       {% endif %}

@@ -11,7 +11,7 @@ Pour les exemples de cette documentation nous utilisons curl comme solution gén
 Une variable `TOKEN` est initialisée avec la valeur du token OAuth obtenu lors de l'authentification OAuth2.
 
 Par exemple :
-```sh
+```bash
 export TOKEN=MjZjNGFiZjExN2U1NzIzMGI3MmI5ZGIxZGRjYzA5YTIyMTVhOGVkMTk1YzUxYzkxYmI2YmVhYjgyZjNhZmM1NA
 ```
 
@@ -66,13 +66,13 @@ Les champs sur lequel on peut effectuer une recherche sont les suivants :
  * `products.gid` : les organisations pour lesquelles un produit donné est activé
 
 Par exemple, pour rechercher des organisations qui ont le produit de gid `55a6842ac3f6b` activé :
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/organizations?query=\["products.gid","==","55a6842ac3f6b"\]'
 ```
 
 ### Obtenir une organisation (par son GID)
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/organizations/55f2ab761d0bd
 ```
 
@@ -126,7 +126,7 @@ Un manager a alors le droit de :
 
 ### Obtenir la liste des utilisateurs
 
-```sh
+```bash
 curl -i -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/users
 ```
 
@@ -184,13 +184,13 @@ Les champs sur lequel on peut effectuer une recherche sont les suivants :
  * `member_of.organization.gid` : les utilisateurs membres d'une organisation donnée
 
 Par exemple, pour rechercher un utilisateur créé après minuit du 11/09/2015 (en temps universel) :
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/users?query=\["created_at",">","2015-09-11T00:00:00Z"\]'
 ```
 
 ### Obtenir un utilisateur (par son GID)
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/users/55f2a84f150a2
 ```
 
@@ -254,7 +254,7 @@ Une ressource `Product` (produit) représente un produit qu'un utilisateur de vo
 
 Pour une organisation donnée, vous pouvez obtenir la liste des produits possibles à commander
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/orgs/55f2ab761d0bd/products
 ```
 
@@ -334,13 +334,13 @@ Les champs sur lesquels on peut effectuer une recherche sont les suivants :
  * `organizations.gid` : les produits activés dans une organisation donnée
 
 Par exemple, pour rechercher la produits de la catégorie *Logo & Identité* :
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/products?query=\["category.gid","==","55c0d9279d5a6"\]'
 ```
 
 ### Obtenir un produit (par son GID)
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/products/55a6842ac3f6b
 ```
 
@@ -504,13 +504,13 @@ Les champs sur lesquels on peut effectuer une recherche sont les suivants :
 
 
 Par exemple, pour rechercher les projets créés dans l'organization *WayneCorp* depuis le début de l'année :
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/projects?query=\[\["organization.gid","==","55f2ab761d0bd"\],\["created_at",">=","2015-01-01T00:00:00Z"\]\]'
 ```
 
 ### Obtenir un projet (par son GID)
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/project/55c0d927cad5c
 ```
 
@@ -572,7 +572,7 @@ Avant de créer un projet, on doit d'abord connaitre les options disponibles pou
 Cette récupération peut être faite une fois pour toute car l'on suppose qu'un produit ne perdra pas ou ne changera pas de caractéristique.
 
 Obtention du produit "Logo" :
-```
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/products/55a6842ac3f6b
 ```
 
@@ -662,12 +662,12 @@ La création d'un projet nécessite la vérification et l'approbation du prix de
 Pour ce faire, le prix correct du projet doit être calculé puis soumis à la création du projet (`POST /projects`).
 
 Par exemple, calcul du prix pour une commande en 2 jours d'un *Logo* en mode *solo* en *Direction artistique* :
-```
+```bash
 curl -H "Authorization: Bearer $TOKEN" https://api.creads-partners.com/v1/prices/for?product.gid=55a6842ac3f6b&organization.gid=55f2ab761d0bd&options.due=2&options.mode=solo&options.skill=conception
 ```
 
 Réponse :
-```
+```json
 {
     "gid": "55f307e922d88",
     "created_at": "2015-09-11T16:57:13+0000",
@@ -695,7 +695,7 @@ Les options du projet doivent être précisées (voir [Obtenir les options du pr
 Le prix calculé au préalable doit être soumis à titre d'approbation (voir [Calculer le prix d'un projet](#Calculer le prix d'un projet)).
 
 Par exemple, création d'une commande en 2 jours d'un *Logo* en mode *solo* et *Direction artistique* avec validation du prix à 990.0€ :
-```
+```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "title": "titre du projet",
     "description": "Description précise de la commande (brief)",
@@ -712,7 +712,7 @@ Réponse :
 ```
 
 Second exemple, création d'une commande en 2 jours de 3 *Logos* en mode *multi* et *Execution* avec validation du prix à 1800.0€ à l'état de brouillon :
-```
+```bash
 curl -H "Authorization: Bearer $TOKEN" -d '{
     "title": "titre du projet 2",
     "description": "Description précise de la commande (brief)",
@@ -814,7 +814,7 @@ Réponse :
 
 Les utilisateurs ayant accès au projet peuvent poster des messages sur ce même endpoint.
 
-```
+```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "message": "Veuillez me faire une proposition"
 }' -X POST https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8/messages
@@ -834,7 +834,7 @@ Il contient soit une image (`image`), soit dans le cas des concours de rédactio
 
 Par exemple, pour obtenir les créations principales (parentes) d'un projet:
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/works?query=\[\["project.gid","==","55c0d927cad5c"\],\["parent","==",null\]\]'
 ```
 
@@ -865,7 +865,7 @@ Réponse :
 Pour terminer un projet et recevoir des fichiers sources lorsque vous êtes satisfait d'une création, il faut sélectionner un vainqueur.
 Mettre à jour le projet en lui indiquant la création gagnante:
 
-```
+```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "winner": {
         "gid": "559bf0527764e"
@@ -902,7 +902,7 @@ Il est caractérisé par son nom et un avatar.
 
 Il est possible de commenter des resources. Par exemple, pour échanger avec le créatif sur un `Work`, il suffit de poster un commentaire portant le `uri` du commentaire.
 
-```
+```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
   "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque viverra sodales. Vestibulum quis fringilla nisi. Donec congue neque ac consequat vestibulum. Praesent sed urna maximus ante ornare vestibulum. In in vulputate sapien. Ut elementum bibendum mi sit amet congue. Aliquam suscipit turpis vitae dapibus efficitur. Nullam quis lacinia ligula. Nam at lectus sem.",
   "uri": "/works/559bef4a9b600"
@@ -912,7 +912,7 @@ curl -i -H "Authorization: Bearer $TOKEN" -d '{
 Et pour récuperer les autres commentaires de la même ressource
 
 
-```sh
+```bash
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/comments?query=\["uri","==","/works/559bef4a9b600"\]'
 ```
 

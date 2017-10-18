@@ -24,7 +24,7 @@ Ce workflow permet d'authentifier une application qui ne nécessite pas d'authen
 
 Obtenir un access token:
 
-```
+```bash
 curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token" -d 'grant_type=client_credentials'
 ```
 
@@ -32,7 +32,7 @@ curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token" -
 > remplacer `CLIENT_SECRET` par votre *Client Secret*
 
 Réponse:
-```
+```json
 {
     "access_token": "MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg",
     "expires_in": 3600,
@@ -49,7 +49,7 @@ Ce workflow permet d'authentifier des utilisateurs Partners différents.
 Le serveur doit obtenir un *access token* et le stocker en l'associant à un utilisateur (en session par exemple).
 L'*access token* devra être associé à toutes les requêtes effectuées par l'utilisateur.
 
-```
+```bash
 curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token?grant_type=password' -d 'grant_type=password&username=USERNAME&password=PASSWORD'
 ```
 
@@ -59,7 +59,7 @@ curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token?gr
 > remplacer `PASSWORD` par le mot de passe saisie par l'utilisateur à authentifier
 
 Réponse:
-```
+```json
 {
     "access_token": "NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ",
     "expires_in": 3600,
@@ -78,7 +78,7 @@ Permet de raffraichir un *access token* OAuth2 sans redemander le mot de passe d
 A l'obtention d'un *access token* et son stockage sur le serveur, on peut également stocker un *refresh token*.
 Ce *refresh token* valable pour une plus longue durée permettra d'obtenir un nouvel *access token* pour un utilisateur Partners sans le forcer à resaisir son mot de passe.
 
-```
+```bash
 curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token?grant_type=password' -d 'grant_type=refresh_token&refresh_token=REFRESH_TOKEN'
 ```
 
@@ -87,7 +87,7 @@ curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token?gr
 > remplacer `REFRESH_TOKEN` par le *refresh token* obtenu avec l'*access token*
 
 Réponse:
-```
+```json
 {
     "access_token": "NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ",
     "expires_in": 3600,
@@ -116,7 +116,7 @@ Si une application (grant type `client_credentials`) a besoin d'afficher une ima
 
 Obtenir un access token pour les fichiers:
 
-```
+```bash
 curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token" -d 'grant_type=client_credentials' -d 'scope=files'
 ```
 
@@ -125,7 +125,7 @@ curl -u CLIENT_ID:CLIENT_SECRET "https://api.creads-partners.com/oauth2/token" -
 > Remarquer *scope=files*
 
 Réponse:
-```
+```json
 {
     "access_token": "MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg",
     "expires_in": 3600,
@@ -136,7 +136,7 @@ Réponse:
 
 Ce token peut maintenant être joint à l'url d'une image :
 
-```
+```html
 <img src="https://api.creads-partners.com/v1/img/whateverImage.png?access_token=ACCESS_TOKEN">
 ```
 

@@ -1,5 +1,5 @@
 var Metalsmith = require('metalsmith'),
-  metadata = require('metalsmith-metadata');
+  metadata = require('metalsmith-metadata'),
   collections = require('metalsmith-collections'),
   markdown = require('metalsmith-markdown'),
   permalinks = require('metalsmith-permalinks'),
@@ -7,7 +7,8 @@ var Metalsmith = require('metalsmith'),
   layouts = require('metalsmith-layouts'),
   ignore = require('metalsmith-ignore'),
   merge = require('merge'),
-  raml = require('./lib/metalsmith-raml.js')
+  raml = require('./lib/metalsmith-raml.js'),
+  metalsmithPrism = require('metalsmith-prism')
 ;
 
 
@@ -39,7 +40,8 @@ var metalsmith = Metalsmith(__dirname)
       "sortBy": "date"
     }
   }))
-  .use(markdown())
+  .use(markdown({ langPrefix: 'language-' }))
+  .use(metalsmithPrism())
   .use(permalinks({
     "pattern": ":collection/:title"
   }))
@@ -56,12 +58,22 @@ var metalsmith = Metalsmith(__dirname)
 ;
 
 // assets duplication
-var metalsmith = Metalsmith(__dirname)
+Metalsmith(__dirname)
   .source('assets/')
   .use(ignore([
     '**/.DS_Store'
   ]))
   .destination('docs/')
+  .build(function(err) {
+    if (err) throw err;
+  })
+;
+Metalsmith(__dirname)
+  .source('node_modules/prismjs/themes/')
+  .use(ignore([
+    '**/.DS_Store'
+  ]))
+  .destination('docs/css/highlight/')
   .build(function(err) {
     if (err) throw err;
   })
@@ -84,6 +96,7 @@ var metalsmith = Metalsmith(__dirname)
     templatesPath: 'templates/',
     mainTemplate: 'raml.nunjucks'
   }))
+  .use(metalsmithPrism())
   .use(function(files, metalsmith, done) {
     files['index.html'] = files['api.html']
     delete(files['api.html']);

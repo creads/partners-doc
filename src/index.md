@@ -16,7 +16,7 @@ Ce document est à l'état de brouillon et peut être incomplet. Pour toute info
 
 Tous les accès à API se font sur couche HTTPS, sur le domaine `api.creads-partners.com`. Toutes les données sont envoyées et reçues en JSON.
 
-```
+```bash
 curl -i https://api.creads-partners.com/v1/
 ```
 
@@ -119,7 +119,7 @@ Pour les requêtes GET, ormis les paramètres obligatoires présents dans le seg
 
 **Exemple**: On récupère la liste des utlisateurs, triés pas date de création:
 
-```sh
+```bash
 curl -i https://api.creads-partners.com/v1/users?orderBy=created_at
 ```
 
@@ -128,7 +128,7 @@ dont l'entête `Content-Type` doit être initialisé à la valeur `application/j
 
 For POST, PATCH, PUT, and DELETE requests, parameters not included in the URL should be encoded as JSON with a Content-Type of ‘application/json’:
 
-```sh
+```bash
 curl -i -X POST -d '{"firstname":"John"}' https://api.creads-partners.com/v1/users/55e80f4af117f
 ```
 
@@ -199,13 +199,13 @@ Il y a deux solutions pour authentifier les requêtes à l'aide du token OAuth2:
 
 **Token Oauth2 envoyé en en-têtes:**
 
-```
+```bash
 curl -H "Authorization: Bearer OAUTH-TOKEN" https://api.creads-partners.com/v1/me
 ```
 
 **Token Oauth2 envoyé en paramètre d'URL:**
 
-```
+```bash
 curl https://api.creads-partners.com/v1/me?access_token=OAUTH-TOKEN
 ```
 
@@ -281,7 +281,7 @@ Les champs et opérateurs utilisables sont définies dans la documentation des r
 
 Exemple: Produit dont le GID est 123456789
 
-```
+```json
 ["gid", "==", "123456789"]
 ```
 
@@ -289,7 +289,7 @@ Exemple: Produit dont le GID est 123456789
 
 Exemple: Produit dont le GID n'est pas 123456789
 
-```
+```json
 ["gid", !=", "123456789"]
 ```
 
@@ -297,7 +297,7 @@ Exemple: Produit dont le GID n'est pas 123456789
 
 Exemple: Projets crééés après le 21 Octobre 2015 (strictement)
 
-```
+```json
 ["created_at", ">", "2015-08-21T01:00:00+0000"]
 ```
 
@@ -312,7 +312,7 @@ Note: la date doit être au format ISO 8601
 
 Exemple: Produits dont le titre contient le mot 'projet'
 
-```
+```json
 ["title", "~=", "projet"]
 ```
 
@@ -320,7 +320,7 @@ Exemple: Produits dont le titre contient le mot 'projet'
 
 Exemple: Produits contenant l'organisation dont le gid est 123456879
 
-```
+```json
 ["gid", "in", ["organizations.gid", "==", "123456789"]]
 ```
 
@@ -328,7 +328,7 @@ Exemple: Produits contenant l'organisation dont le gid est 123456879
 
 Exemple: Produits ne contenant pas l'organisation dont le gid est 123456879
 
-```
+```json
 ["gid", "!in", ["organizations.gid", "==", "123456789"]]
 ```
 
@@ -338,7 +338,7 @@ Vous pouvez également assembler plusieurs expressions dans la même `query` de 
 
 Imaginons cette query sur `/products`
 
-```
+```json
 [["title", "~=", "projet"],["gid", "==", "123456789"],["category.gid", ">=", "12456789"]]
 ```
 
@@ -348,25 +348,25 @@ Cette requête signifie :
 
 Si vous souhaitez la version explicite de cette logique, il faut appliqer un `AND` a la liste d'expressions:
 
-```
+```json
 ["AND", [ ["title", "~=", "projet"], ["gid", "==", "123456789"], ["category.gid", ">=", "12456789"] ]]
 ```
 
 De la même manière, le **OU logique** est possible.:
 
-```
+```json
 ["OR", [ ["title", "~=", "projet"],,["gid", "==", "123456789"], ["category.gid", ">=", "12456789"] ]]
 ```
 
 En d'autres termes:
 
-```
+```json
 ["$OPERATOR", [ $EXPRESSION_LIST ]]
 ```
 
 Pour **prioriser** un opérateur logique, il faut *imbriquer* une query en tant qu'expression :
 
-```
+```json
 ["AND", [["title", "~=", "projet"], ["OR", [["category.gid", ">=", "12456789"], ["gid", "==", "123456789"]]] ] ]
 ```
 

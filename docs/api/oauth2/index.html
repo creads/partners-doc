@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/partners-doc/css/animate.css" type="text/css" />
     <link rel="stylesheet" href="/partners-doc/css/magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="/partners-doc/css/responsive.css" type="text/css" />
+    <link rel="stylesheet" href="/partners-doc/css/highlight/prism-okaidia.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <!--[if lt IE 9]>
       <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
@@ -136,58 +137,64 @@ veuillez contacter contact@creads-partners.com.</p>
 <p><strong>client_credentials</strong> grant type</p>
 <p>Ce workflow permet d&apos;authentifier une application qui ne n&#xE9;cessite pas d&apos;authentification de plusieurs utilisateurs Partners diff&#xE9;rents.</p>
 <p>Obtenir un access token:</p>
-<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token&quot; -d &apos;grant_type=client_credentials&apos;
-</code></pre><blockquote>
+<pre class="language-bash"><code class="language-bash">curl -u CLIENT_ID:CLIENT_SECRET <span class="token string">&quot;https://api.creads-partners.com/oauth2/token&quot;</span> -d <span class="token string">&apos;grant_type=client_credentials&apos;</span>
+</code></pre>
+<blockquote>
 <p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
 remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em></p>
 </blockquote>
 <p>R&#xE9;ponse:</p>
-<pre><code>{
-    &quot;access_token&quot;: &quot;MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg&quot;,
-    &quot;expires_in&quot;: 3600,
-    &quot;token_type&quot;: &quot;bearer&quot;,
-    &quot;scope&quot;: &quot;base&quot;
-}
-</code></pre><h2 id="workflow-pour-une-application-serveur-avec-authentification-de-chaque-utilisateur-partners"><a class="heading-anchor" href="#workflow-pour-une-application-serveur-avec-authentification-de-chaque-utilisateur-partners"><span></span></a>Workflow pour une application serveur avec authentification de chaque utilisateur Partners</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;access_token&quot;</span><span class="token operator">:</span> <span class="token string">&quot;MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;expires_in&quot;</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;token_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bearer&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;scope&quot;</span><span class="token operator">:</span> <span class="token string">&quot;base&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="workflow-pour-une-application-serveur-avec-authentification-de-chaque-utilisateur-partners"><a class="heading-anchor" href="#workflow-pour-une-application-serveur-avec-authentification-de-chaque-utilisateur-partners"><span></span></a>Workflow pour une application serveur avec authentification de chaque utilisateur Partners</h2>
 <p><strong>password</strong> grant type</p>
 <p>Ce workflow permet d&apos;authentifier des utilisateurs Partners diff&#xE9;rents.
 Le serveur doit obtenir un <em>access token</em> et le stocker en l&apos;associant &#xE0; un utilisateur (en session par exemple).
 L&apos;<em>access token</em> devra &#xEA;tre associ&#xE9; &#xE0; toutes les requ&#xEA;tes effectu&#xE9;es par l&apos;utilisateur.</p>
-<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token?grant_type=password&apos; -d &apos;grant_type=password&amp;username=USERNAME&amp;password=PASSWORD&apos;
-</code></pre><blockquote>
+<pre class="language-bash"><code class="language-bash">curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token?grant_type<span class="token operator">=</span>password<span class="token string">&apos; -d &apos;</span>grant_type<span class="token operator">=</span>password<span class="token operator">&amp;</span>username<span class="token operator">=</span>USERNAME<span class="token operator">&amp;</span>password<span class="token operator">=</span>PASSWORD&apos;
+</code></pre>
+<blockquote>
 <p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
 remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em>
 remplacer <code>USERNAME</code> par l&apos;email de l&apos;utilisateur &#xE0; authentifier
 remplacer <code>PASSWORD</code> par le mot de passe saisie par l&apos;utilisateur &#xE0; authentifier</p>
 </blockquote>
 <p>R&#xE9;ponse:</p>
-<pre><code>{
-    &quot;access_token&quot;: &quot;NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ&quot;,
-    &quot;expires_in&quot;: 3600,
-    &quot;token_type&quot;: &quot;bearer&quot;,
-    &quot;scope&quot;: &quot;base&quot;,
-    &quot;refresh_token&quot;: &quot;ZWNmZWEwNjU0OTY5ZjUxMThjN2VlM2NkMjI5MDk1OWM3MGE1NTI2OTNmMzUwZWU3M2MzZTc0ZmFiMmVhYTk4Nw&quot;
-}
-</code></pre><h2 id="refresh-token-refresh_token-grant-type-"><a class="heading-anchor" href="#refresh-token-refresh_token-grant-type-"><span></span></a>Refresh token (<em>refresh_token</em> grant type)</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;access_token&quot;</span><span class="token operator">:</span> <span class="token string">&quot;NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;expires_in&quot;</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;token_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bearer&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;scope&quot;</span><span class="token operator">:</span> <span class="token string">&quot;base&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;refresh_token&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ZWNmZWEwNjU0OTY5ZjUxMThjN2VlM2NkMjI5MDk1OWM3MGE1NTI2OTNmMzUwZWU3M2MzZTc0ZmFiMmVhYTk4Nw&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="refresh-token-refresh_token-grant-type-"><a class="heading-anchor" href="#refresh-token-refresh_token-grant-type-"><span></span></a>Refresh token (<em>refresh_token</em> grant type)</h2>
 <p><strong>refresh_token</strong> grant type</p>
 <p>Permet de raffraichir un <em>access token</em> OAuth2 sans redemander le mot de passe de l&apos;utilisateur.
 A l&apos;obtention d&apos;un <em>access token</em> et son stockage sur le serveur, on peut &#xE9;galement stocker un <em>refresh token</em>.
 Ce <em>refresh token</em> valable pour une plus longue dur&#xE9;e permettra d&apos;obtenir un nouvel <em>access token</em> pour un utilisateur Partners sans le forcer &#xE0; resaisir son mot de passe.</p>
-<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token?grant_type=password&apos; -d &apos;grant_type=refresh_token&amp;refresh_token=REFRESH_TOKEN&apos;
-</code></pre><blockquote>
+<pre class="language-bash"><code class="language-bash">curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token?grant_type<span class="token operator">=</span>password<span class="token string">&apos; -d &apos;</span>grant_type<span class="token operator">=</span>refresh_token<span class="token operator">&amp;</span>refresh_token<span class="token operator">=</span>REFRESH_TOKEN&apos;
+</code></pre>
+<blockquote>
 <p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
 remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em>
 remplacer <code>REFRESH_TOKEN</code> par le <em>refresh token</em> obtenu avec l&apos;<em>access token</em></p>
 </blockquote>
 <p>R&#xE9;ponse:</p>
-<pre><code>{
-    &quot;access_token&quot;: &quot;NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ&quot;,
-    &quot;expires_in&quot;: 3600,
-    &quot;token_type&quot;: &quot;bearer&quot;,
-    &quot;scope&quot;: &quot;base&quot;,
-    &quot;refresh_token&quot;: &quot;ZWNmZWEwNjU0OTY5ZjUxMThjN2VlM2NkMjI5MDk1OWM3MGE1NTI2OTNmMzUwZWU3M2MzZTc0ZmFiMmVhYTk4Nw&quot;
-}
-</code></pre><h2 id="scopes"><a class="heading-anchor" href="#scopes"><span></span></a>Scopes</h2>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;access_token&quot;</span><span class="token operator">:</span> <span class="token string">&quot;NWE4MmVmZjgyYjA1NTBkODI5ZDY1ZmFlMGZlZmIyZTE1NDE1MWM2ZmQ0NjEwMjNlYmI0M2MxNDYxOTMyNmFlMQ&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;expires_in&quot;</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;token_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bearer&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;scope&quot;</span><span class="token operator">:</span> <span class="token string">&quot;base&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;refresh_token&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ZWNmZWEwNjU0OTY5ZjUxMThjN2VlM2NkMjI5MDk1OWM3MGE1NTI2OTNmMzUwZWU3M2MzZTc0ZmFiMmVhYTk4Nw&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="scopes"><a class="heading-anchor" href="#scopes"><span></span></a>Scopes</h2>
 <p>L&apos;API Partners permet de demander un <code>access_token</code> pour un <code>scope</code> particulier lors de l&apos;authentification. Par d&#xE9;faut, cette valeur est d&#xE9;finie &#xE0; <code>base</code>.</p>
 <h3 id="scopes-existants"><a class="heading-anchor" href="#scopes-existants"><span></span></a>Scopes existants</h3>
 <ul>
@@ -201,22 +208,25 @@ remplacer <code>REFRESH_TOKEN</code> par le <em>refresh token</em> obtenu avec l
 <h3 id="donner-acc-s-aux-images-des-utilisateurs-anonymes"><a class="heading-anchor" href="#donner-acc-s-aux-images-des-utilisateurs-anonymes"><span></span></a>Donner acc&#xE8;s aux images &#xE0; des utilisateurs anonymes</h3>
 <p>Si une application (grant type <code>client_credentials</code>) a besoin d&apos;afficher une image &#xE0; ses utilisateurs qui ne sont pas eux m&#xEA;mes authentifi&#xE9;s sur Partners, les scopes permettent d&apos;exposer un token non critique pour effectuer cet affichage.</p>
 <p>Obtenir un access token pour les fichiers:</p>
-<pre><code>curl -u CLIENT_ID:CLIENT_SECRET &quot;https://api.creads-partners.com/oauth2/token&quot; -d &apos;grant_type=client_credentials&apos; -d &apos;scope=files&apos;
-</code></pre><blockquote>
+<pre class="language-bash"><code class="language-bash">curl -u CLIENT_ID:CLIENT_SECRET <span class="token string">&quot;https://api.creads-partners.com/oauth2/token&quot;</span> -d <span class="token string">&apos;grant_type=client_credentials&apos;</span> -d <span class="token string">&apos;scope=files&apos;</span>
+</code></pre>
+<blockquote>
 <p>remplacer <code>CLIENT_ID</code> par votre <em>Client ID</em>
 remplacer <code>CLIENT_SECRET</code> par votre <em>Client Secret</em>
 Remarquer <em>scope=files</em></p>
 </blockquote>
 <p>R&#xE9;ponse:</p>
-<pre><code>{
-    &quot;access_token&quot;: &quot;MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg&quot;,
-    &quot;expires_in&quot;: 3600,
-    &quot;token_type&quot;: &quot;bearer&quot;,
-    &quot;scope&quot;: &quot;files&quot;
-}
-</code></pre><p>Ce token peut maintenant &#xEA;tre joint &#xE0; l&apos;url d&apos;une image :</p>
-<pre><code>&lt;img src=&quot;https://api.creads-partners.com/v1/img/whateverImage.png?access_token=ACCESS_TOKEN&quot;&gt;
-</code></pre><blockquote>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">&quot;access_token&quot;</span><span class="token operator">:</span> <span class="token string">&quot;MWFjYjgxZGRmMTRjMDA0MDUyYmNmODA5ZDRlNzFjYTc1NTZlYzc0ODMwYTc2OTE3NzIzYzY4ZDc0OGE4YWRhYg&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;expires_in&quot;</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;token_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bearer&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;scope&quot;</span><span class="token operator">:</span> <span class="token string">&quot;files&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Ce token peut maintenant &#xEA;tre joint &#xE0; l&apos;url d&apos;une image :</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://api.creads-partners.com/v1/img/whateverImage.png?access_token<span class="token punctuation">=</span>ACCESS_TOKEN<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<blockquote>
 <p>remplacer <code>ACCESS_TOKEN</code> par la valeur de ce champ dans la r&#xE9;ponse obtenue pr&#xE9;c&#xE9;demment</p>
 </blockquote>
 

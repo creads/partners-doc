@@ -31,7 +31,7 @@
 
   {% if item.schema %}
     <p><strong>Schema</strong>:</p>
-    <pre><code>{{ item.schema | escape }}</code></pre>
+    <pre class="language-json"><code class="language-json">{{ item.schema | escape }}</code></pre>
   {% endif %}
 
   {% if item.example %}
@@ -39,7 +39,7 @@
     {% if item.type == 'string' %}
       <pre>{{ item.example| escape }}</pre>
     {% else %}
-      <pre><code>{{ item.example | escape }}</code></pre>
+      <pre class="language-json"><code class="language-json">{{ item.example | escape }}</code></pre>
     {% endif %}
   {% endif %}
 </li>
