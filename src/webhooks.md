@@ -87,8 +87,4 @@ Voici une liste à date des évènements webhooks qui sont disponibles, par ress
 * `resource.deleted`
 
 
-### Comment
-* `resource.created`
-
-
 
