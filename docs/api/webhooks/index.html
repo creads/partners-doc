@@ -3,7 +3,7 @@
 <head>
     <!-- Document Title
     ============================================= -->
-    <title>CHANGELOGS | Documentation Creads Partners</title>
+    <title>Webhooks | Documentation Creads Partners</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
     
@@ -125,83 +125,115 @@
                     <div id="side-navigation">
 
                         <div class="col_two_third nobottommargin">
-                        <h1 id="changelogs"><a class="heading-anchor" href="#changelogs"><span></span></a>Changelogs</h1>
-<h2 id="1-0-0-rc15"><a class="heading-anchor" href="#1-0-0-rc15"><span></span></a>1.0.0-rc15</h2>
+                        <h1 id="webhooks"><a class="heading-anchor" href="#webhooks"><span></span></a>Webhooks</h1>
+<p>Des webhooks sont disponibles sur l&apos;API Creads Partners. Il vous permetteront d&apos;&#xEA;tre notifi&#xE9; des changements et &#xE9;v&#xE8;nements qui op&#xE8;rent au sein de votre Organisation.</p>
+<h2 id="activer-les-webhooks"><a class="heading-anchor" href="#activer-les-webhooks"><span></span></a>Activer les webhooks</h2>
+<p>Pour activer les webhooks, il vous faut</p>
 <ul>
-<li>added <code>/projects/{gid}/messages</code> <em>POST</em> and <em>GET</em> endpoints, to send and see project messages to a project</li>
-<li>renamed existing <code>solo</code> mode project to <code>solo_legacy</code>. New <code>solo</code> are meant to be in feed (project messages) form</li>
+<li>Un compte <strong>developer</strong> (contactez notre support pour activer cette option).</li>
+<li>Ajouter un nouveau webhook dans le menu <em>Developer</em> de l&apos;application Creads Partners</li>
+<li>Un serveur qui r&#xE9;pond &#xE0; l&apos;url que vous avez renseign&#xE9;e dans l&apos;interface <em>Developer</em></li>
 </ul>
-<h2 id="1-0-0-rc11"><a class="heading-anchor" href="#1-0-0-rc11"><span></span></a>1.0.0-rc11</h2>
+<h2 id="erreurs"><a class="heading-anchor" href="#erreurs"><span></span></a>Erreurs</h2>
+<p>En cas d&apos;erreur sur un de vos webhooks (erreur HTTP ou bien &#xE9;chec de connexion), nous retenterons de vous notifier plusieurs fois.</p>
+<p>Si trop d&apos;&#xE9;checs successifs se produisent, <strong>le webhook sera d&#xE9;sactiv&#xE9;</strong> le temps que vous r&#xE9;gliez le probl&#xE8;me, et vous serez <strong>notifi&#xE9;s par email</strong> du probl&#xE8;me.</p>
+<h2 id="-v-nements"><a class="heading-anchor" href="#-v-nements"><span></span></a>&#xC9;v&#xE8;nements</h2>
+<p>Les notifications webhooks qui sont envoy&#xE9;es suivent un sch&#xE9;ma d&apos;&#xE9;v&#xE8;nements se constituant comme ceci:</p>
+<table>
+<thead>
+<tr>
+<th>Attribut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>event</code></td>
+<td>Le type d&apos;&#xE9;v&#xE8;nement d&#xE9;clench&#xE9; (cr&#xE9;ation, mise &#xE0; jour, suppression)</td>
+</tr>
+<tr>
+<td><code>resource_type</code></td>
+<td>Le type de la ressource concern&#xE9;e</td>
+</tr>
+<tr>
+<td><code>resource_gid</code></td>
+<td>Le gid de la ressource concern&#xE9;e</td>
+</tr>
+<tr>
+<td><code>resource</code></td>
+<td>La ressource dans son nouvel &#xE9;tat (absent dans le cas de la suppression)</td>
+</tr>
+</tbody>
+</table>
+<p>Les type d&apos;&#xE9;v&#xE8;nements possibles sont les suivants</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>resource.created</code></td>
+<td>La ressource vient d&apos;&#xEA;tre cr&#xE9;&#xE9;e.</td>
+</tr>
+<tr>
+<td><code>resource.updated</code></td>
+<td>La ressource a subie des modifications</td>
+</tr>
+<tr>
+<td><code>resource.deleted</code></td>
+<td>La ressource a &#xE9;t&#xE9; supprim&#xE9;e</td>
+</tr>
+</tbody>
+</table>
+<h2 id="-v-nements-disponibles"><a class="heading-anchor" href="#-v-nements-disponibles"><span></span></a>&#xC9;v&#xE8;nements disponibles</h2>
+<p>Voici une liste &#xE0; date des &#xE9;v&#xE8;nements webhooks qui sont disponibles, par ressource:</p>
+<h3 id="invitation"><a class="heading-anchor" href="#invitation"><span></span></a>Invitation</h3>
 <ul>
-<li>changed file and image fields schema. Image variations are embed now to be able to get any image into its right size.</li>
+<li><code>resource.created</code></li>
+<li><code>resource.updated</code></li>
+<li><code>resource.deleted</code></li>
 </ul>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<p>becomes:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;variations&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token property">&quot;icon&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/cache/icon/myfile.jpg&quot;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;thumb&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/cache/icon/myfile.jpg&quot;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="1-0-0-rc8"><a class="heading-anchor" href="#1-0-0-rc8"><span></span></a>1.0.0-rc8</h2>
+<h3 id="organization"><a class="heading-anchor" href="#organization"><span></span></a>Organization</h3>
 <ul>
-<li>removed /files endpoint</li>
-<li>added <code>logo</code> field in Organization returned by <code>/p/organizations/{hostname}</code></li>
-<li>removed endpoint <code>/organizations/{gid}/logo_{variation}.jpg</code>, use embed S3 URL in Organization returned by <code>/p/organizations/{hostname}</code></li>
-<li>removed  endpoint <code>/dl</code>, use embed S3 URL in resources</li>
-<li>changed <code>organization.logo</code> field type</li>
-<li>changed <code>project.receipt_filepath</code>, <code>project.brief_file</code> and <code>project.source_file</code> field type</li>
-<li>Removed embed file resource in worker.image, replaced by a filepath in worker.avatar_filepath</li>
-<li>changed <code>work.image</code> and <code>work.thumbnail</code> field type</li>
-<li>replaced <code>worker.image</code> field by <code>worker.avatar</code></li>
-<li>added <code>me.upload_form</code> field when responding to GET /me and having scope <code>upload_files</code></li>
+<li><code>resource.updated</code></li>
 </ul>
-<h2 id="1-0-0-rc4"><a class="heading-anchor" href="#1-0-0-rc4"><span></span></a>1.0.0-rc4</h2>
+<h3 id="product"><a class="heading-anchor" href="#product"><span></span></a>Product</h3>
 <ul>
-<li>Added <code>test</code> to organization, option that allows to create Organizations where project are not charged</li>
+<li><code>resource.updated</code></li>
 </ul>
-<h2 id="1-0-0-rc3"><a class="heading-anchor" href="#1-0-0-rc3"><span></span></a>1.0.0-rc3</h2>
+<h3 id="membership"><a class="heading-anchor" href="#membership"><span></span></a>Membership</h3>
 <ul>
-<li>added <code>last_seen</code> and <code>projects_count</code> fields in resource User for admin only</li>
-<li>Added <code>avatar</code> to user, generated from his firstname and lastname</li>
+<li><code>resource.created</code></li>
+<li><code>resource.updated</code></li>
+<li><code>resource.deleted</code></li>
 </ul>
-<h2 id="1-0-0-rc2"><a class="heading-anchor" href="#1-0-0-rc2"><span></span></a>1.0.0-rc2</h2>
+<h3 id="project"><a class="heading-anchor" href="#project"><span></span></a>Project</h3>
 <ul>
-<li>Added <code>budget</code> and <code>user_rank</code> fields to invitation (data to be provided to generated user)</li>
-<li>Added project state <code>require_approval</code> for over-budget project to be launched by manager</li>
+<li><code>resource.created</code></li>
+<li><code>resource.updated</code></li>
+<li><code>resource.deleted</code></li>
 </ul>
-<h2 id="1-0-0-rc1"><a class="heading-anchor" href="#1-0-0-rc1"><span></span></a>1.0.0-rc1</h2>
+<h3 id="project-message"><a class="heading-anchor" href="#project-message"><span></span></a>Project Message</h3>
 <ul>
-<li>/products/{gid}/organizations is now restricted to admin only</li>
+<li><code>resource.created</code></li>
 </ul>
-<h2 id="1-0-0-beta23"><a class="heading-anchor" href="#1-0-0-beta23"><span></span></a>1.0.0-beta23</h2>
+<h3 id="work"><a class="heading-anchor" href="#work"><span></span></a>Work</h3>
 <ul>
-<li>added <code>published_at</code> to <code>project</code> resource to display the date of publication (formerly in <code>started_at</code>)</li>
-<li>added <code>canceled_at</code> to <code>project</code> resource to display the date of cancelation</li>
-<li><code>started_at</code> in <code>project</code> now contains the date at which the project is really in progress</li>
+<li><code>resource.created</code></li>
 </ul>
-<h2 id="1-0-0-beta21"><a class="heading-anchor" href="#1-0-0-beta21"><span></span></a>1.0.0-beta21</h2>
+<h3 id="webhook"><a class="heading-anchor" href="#webhook"><span></span></a>Webhook</h3>
 <ul>
-<li>added new OAuth2 scope <code>files</code> that allows to fetch only files resources</li>
-<li>renamed <code>/me/change-password</code> to <code>/me/password</code></li>
-<li>client authenticated with <code>client_credentials</code> won&apos;t be able to request <code>GET /me, PUT /me, GET /me/member_of</code></li>
-<li>only <em>admin</em> users can request <code>POST /works</code>, <code>PUT /works/{gid}</code>, <code>DELETE /works/{gid}</code></li>
+<li><code>resource.created</code></li>
+<li><code>resource.updated</code></li>
+<li><code>resource.deleted</code></li>
 </ul>
-<h2 id="1-0-0-alpha14"><a class="heading-anchor" href="#1-0-0-alpha14"><span></span></a>1.0.0-alpha14</h2>
-<blockquote>
-<p>everything started here</p>
-</blockquote>
+<h3 id="comment"><a class="heading-anchor" href="#comment"><span></span></a>Comment</h3>
+<ul>
+<li><code>resource.created</code></li>
+</ul>
 
                         </div>
 
@@ -215,9 +247,9 @@
                                 
                                 <li ><a href="/partners-doc/api/ressources"><i class="icon-chevron-left"></i>Ressources</a></li>
                                 
-                                <li class="ui-tabs-active"><a href="/partners-doc/api/changelogs"><i class="icon-chevron-left"></i>CHANGELOGS</a></li>
+                                <li ><a href="/partners-doc/api/changelogs"><i class="icon-chevron-left"></i>CHANGELOGS</a></li>
                                 
-                                <li ><a href="/partners-doc/api/webhooks"><i class="icon-chevron-left"></i>Webhooks</a></li>
+                                <li class="ui-tabs-active"><a href="/partners-doc/api/webhooks"><i class="icon-chevron-left"></i>Webhooks</a></li>
                                 
                                 
                             </ul>
