@@ -231,7 +231,7 @@
 <li><code>resource.deleted</code></li>
 </ul>
 <h2 id="s-curiser-les-webhooks"><a class="heading-anchor" href="#s-curiser-les-webhooks"><span></span></a>S&#xE9;curiser les webhooks</h2>
-<p>Tous les appels fait &#xE0; vos webhooks sont accompagn&#xE9;s d&apos;une signature pr&#xE9;sente dans le header HTTP <code>Partners-Signature</code>.</p>
+<p>Tous les appels fait &#xE0; vos webhooks sont accompagn&#xE9;s d&apos;une signature pr&#xE9;sente dans le header HTTP <code>X-Partners-Signature</code>.</p>
 <p>Nous vous recommandons de v&#xE9;rifier la validit&#xE9; de cette signature afin de vous assurer de l&apos;int&#xE9;grit&#xE9; et de l&apos;origine de la requ&#xEA;te.</p>
 <p>La signature est un hash <code>sha256</code> du <strong>body</strong> (en <em>JSON</em>) de la requ&#xEA;te et de votre <strong>cl&#xE9; secr&#xE8;te</strong> fournie &#xE0; la cr&#xE9;ation du webhook.</p>
 <p>Pour v&#xE9;rifier sa validit&#xE9;, il vous faut donc</p>

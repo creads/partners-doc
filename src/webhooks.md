@@ -89,7 +89,7 @@ Voici une liste à date des évènements webhooks qui sont disponibles, par ress
 
 ## Sécuriser les webhooks
 
-Tous les appels fait à vos webhooks sont accompagnés d'une signature présente dans le header HTTP `Partners-Signature`.
+Tous les appels fait à vos webhooks sont accompagnés d'une signature présente dans le header HTTP `X-Partners-Signature`.
 
 Nous vous recommandons de vérifier la validité de cette signature afin de vous assurer de l'intégrité et de l'origine de la requête.
 
