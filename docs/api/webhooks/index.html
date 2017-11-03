@@ -230,6 +230,20 @@
 <li><code>resource.updated</code></li>
 <li><code>resource.deleted</code></li>
 </ul>
+<h2 id="s-curiser-les-webhooks"><a class="heading-anchor" href="#s-curiser-les-webhooks"><span></span></a>S&#xE9;curiser les webhooks</h2>
+<p>Tous les appels fait &#xE0; vos webhooks sont accompagn&#xE9;s d&apos;une signature pr&#xE9;sente dans le header HTTP <code>Partners-Signature</code>.</p>
+<p>Nous vous recommandons de v&#xE9;rifier la validit&#xE9; de cette signature afin de vous assurer de l&apos;int&#xE9;grit&#xE9; et de l&apos;origine de la requ&#xEA;te.</p>
+<p>La signature est un hash <code>sha256</code> du <strong>body</strong> (en <em>JSON</em>) de la requ&#xEA;te et de votre <strong>cl&#xE9; secr&#xE8;te</strong> fournie &#xE0; la cr&#xE9;ation du webhook.</p>
+<p>Pour v&#xE9;rifier sa validit&#xE9;, il vous faut donc</p>
+<ul>
+<li>Votre cl&#xE9; secr&#xE8;te de webhook</li>
+<li>Le body JSON de la requ&#xEA;te tel qu&apos;il est re&#xE7;u</li>
+<li>G&#xE9;n&#xE9;rer un <strong>hash du body par la cl&#xE9; secr&#xE8;te</strong> avec l&apos;algorithme <code>sha256</code></li>
+<li>Comparer le header envoy&#xE9; avec votre r&#xE9;sultat</li>
+</ul>
+<p>Par exemple, en php, vous obtiendrez le hash en faisant</p>
+<pre class="language-php"><code class="language-php"><span class="token variable">$expectedSignature</span> <span class="token operator">=</span> <span class="token function">hash_hmac</span><span class="token punctuation">(</span><span class="token string">&apos;sha256&apos;</span><span class="token punctuation">,</span> <span class="token variable">$jsonBodyString</span><span class="token punctuation">,</span> <span class="token string">&apos;your_secret_key&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
                         </div>
 
@@ -243,9 +257,9 @@
                                 
                                 <li ><a href="/partners-doc/api/ressources"><i class="icon-chevron-left"></i>Ressources</a></li>
                                 
-                                <li ><a href="/partners-doc/api/changelogs"><i class="icon-chevron-left"></i>CHANGELOGS</a></li>
-                                
                                 <li class="ui-tabs-active"><a href="/partners-doc/api/webhooks"><i class="icon-chevron-left"></i>Webhooks</a></li>
+                                
+                                <li ><a href="/partners-doc/api/changelogs"><i class="icon-chevron-left"></i>CHANGELOGS</a></li>
                                 
                                 
                             </ul>

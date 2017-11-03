@@ -87,4 +87,28 @@ Voici une liste à date des évènements webhooks qui sont disponibles, par ress
 * `resource.deleted`
 
 
+## Sécuriser les webhooks
+
+Tous les appels fait à vos webhooks sont accompagnés d'une signature présente dans le header HTTP `Partners-Signature`.
+
+Nous vous recommandons de vérifier la validité de cette signature afin de vous assurer de l'intégrité et de l'origine de la requête.
+
+
+La signature est un hash `sha256` du **body** (en *JSON*) de la requête et de votre **clé secrète** fournie à la création du webhook.
+
+
+Pour vérifier sa validité, il vous faut donc
+
+* Votre clé secrète de webhook
+* Le body JSON de la requête tel qu'il est reçu
+* Générer un **hash du body par la clé secrète** avec l'algorithme `sha256`
+* Comparer le header envoyé avec votre résultat
+
+
+Par exemple, en php, vous obtiendrez le hash en faisant
+
+```php
+$expectedSignature = hash_hmac('sha256', $jsonBodyString, 'your_secret_key');
+
+```
 
