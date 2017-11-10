@@ -2,10 +2,14 @@
 title: CHANGELOGS
 layout: page.nunjucks
 collection: api
-date: 2015-01-04
+date: 2042-01-04
 ---
 
 # Changelogs
+
+## 1.0.0-rc31
+
+* Added `webhook` resource and endpoints to allow api Users to register their webhooks
 
 ## 1.0.0-rc15
 
