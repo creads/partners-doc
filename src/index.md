@@ -401,3 +401,16 @@ Par exemple, pour obtenir la deuxieme page de la liste de projet, à raison de 1
 /projects?offset=10&limit=10
 ```
 
+### Recherche "Full text" dans une collection
+
+Certaines collections de resource possèdent la caractéristiques "Full Searchable", qui permet, en parallèle avec le tri et la recherche, de ne retourner que les résultats qui correspondent à une recherche textuelle.
+
+Pour effectuer une recherche Full Text, il suffit d'utiliser le paramètre `search` en lui donnant une chaine de caractères.
+
+```
+/orgs/1234567891011/users?search=john
+```
+
+Cette requête vous retournera les résultats les plus pertinents correspondant à la chaine de caractères passées (avec une certaine tolérance).
+
+
