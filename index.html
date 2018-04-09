@@ -425,7 +425,12 @@ L&apos;exemple pr&#xE9;sent sur le fuseau Europe/Paris en heure d&apos;&#xE9;t&#
 </ul>
 <p>Par exemple, pour obtenir la deuxieme page de la liste de projet, &#xE0; raison de 10 &#xE9;l&#xE9;ments par page:</p>
 <pre><code>/projects?offset=10&amp;limit=10
-</code></pre>
+</code></pre><h3 id="recherche-full-text-dans-une-collection"><a class="heading-anchor" href="#recherche-full-text-dans-une-collection"><span></span></a>Recherche &quot;Full text&quot; dans une collection</h3>
+<p>Certaines collections de resource poss&#xE8;dent la caract&#xE9;ristiques &quot;Full Searchable&quot;, qui permet, en parall&#xE8;le avec le tri et la recherche, de ne retourner que les r&#xE9;sultats qui correspondent &#xE0; une recherche textuelle.</p>
+<p>Pour effectuer une recherche Full Text, il suffit d&apos;utiliser le param&#xE8;tre <code>search</code> en lui donnant une chaine de caract&#xE8;res.</p>
+<pre><code>/orgs/1234567891011/users?search=john
+</code></pre><p>Cette requ&#xEA;te vous retournera les r&#xE9;sultats les plus pertinents correspondant &#xE0; la chaine de caract&#xE8;res pass&#xE9;es (avec une certaine tol&#xE9;rance).</p>
+
                         </div>
 
                         <div class="col_one_third col_last nobottommargin">
