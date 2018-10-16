@@ -290,6 +290,8 @@
                                 
                                   <li><a href="#root"><i class="icon-chevron-left"></i>Root</a></li>
                                 
+                                  <li><a href="#batch"><i class="icon-chevron-left"></i>Batch</a></li>
+                                
                                   <li><a href="#categories"><i class="icon-chevron-left"></i>Categories</a></li>
                                 
                                   <li><a href="#products"><i class="icon-chevron-left"></i>Products</a></li>
@@ -469,6 +471,171 @@ label label-get
                       
                     
                   </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+
+                                </div>
+                              </div>
+                            </div>
+                          
+                            <div id="batch" class="panel panel-default">
+                              <div class="panel-heading">
+                                <h3 class="panel-title">Batch</h3>
+                              </div>
+
+                              <div class="panel-body">
+                                
+                                  <div class="top-resource-description">
+                                    <p>Batch request to execute several actions</p>
+
+                                  </div>
+                                
+
+                                <div class="panel-group">
+                                  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_batch">
+          <span class="parent"></span>/batch
+        </a>
+        <span class="methods">
+          
+            <a href="#batch_post"><!-- modal shown by hashchange event -->
+              <span class="
+label label-post
+">post</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_batch" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#batch_post&apos;" class="list-group-item">
+              <span class="
+label label-post
+">post</span>
+              <div class="method_description">
+                
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="batch_post">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-post
+">post</span>
+                <span class="parent"></span>/batch
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#batch_post_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="batch_post_request">
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                      <h3>Body</h3>
+                      
+                        <p><strong>Type: application/json</strong></p>
+                        
+
+                        
+
+                        
+                          <p><strong>Example</strong>:</p>
+                          <pre><code>[
+  {
+    &quot;relative_url&quot;: &quot;/v1/projects&quot;,
+    &quot;method&quot;: &quot;POST&quot;,
+    &quot;body&quot;: &quot;{\&quot;title\&quot;:\&quot;My title\&quot;}&quot;
+  },
+  {
+    &quot;relative_url&quot;: &quot;/v1/projects/1234567891012&quot;,
+    &quot;method&quot;: &quot;GET&quot;
+  }
+]
+</code></pre>
+                        
+                      
+                    
+                  </div>
+                
+
                 
               </div>
             </div>
@@ -926,6 +1093,23 @@ label label-get
 </li>
 
                         
+                          <li>
+  
+    <strong>search</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>A string containing terms or words to look for</p>
+
+
+  
+
+  
+</li>
+
+                        
                       </ul>
                     
 
@@ -1202,172 +1386,6 @@ label label-get
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-                          
-                        
-                      
-                    
-                  </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </div>
-
-
-
-
-
-  
-
-
-  <div class="panel panel-white">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" href="#panel_products_search">
-          <span class="parent">/products</span>/search
-        </a>
-        <span class="methods">
-          
-            <a href="#products_search_get"><!-- modal shown by hashchange event -->
-              <span class="
-label label-get
-">get</span>
-            </a>
-          
-        </span>
-      </h4>
-    </div>
-
-    <div id="panel_products_search" class="panel-collapse collapse">
-      <div class="panel-body">
-        
-          
-            <div class="resource-description">
-              <p>Search products and products synonyms from a string query</p>
-
-            </div>
-          
-        
-
-        <div class="list-group">
-          
-            <div onclick="window.location.href = &apos;#products_search_get&apos;" class="list-group-item">
-              <span class="
-label label-get
-">get</span>
-              <div class="method_description">
-                <p>This endpoint provide a way to search among indexed search providing a full text query</p>
-
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    
-      <div class="modal fade" tabindex="0" id="products_search_get">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
-              <h4 class="modal-title" id="myModalLabel">
-                <span class="
-label label-get
-">get</span>
-                <span class="parent">/products</span>/search
-              </h4>
-            </div>
-
-            <div class="modal-body">
-              
-                <div class="alert alert-success">
-                  <p>This endpoint provide a way to search among indexed search providing a full text query</p>
-
-                </div>
-              
-
-              
-
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
-                
-                
-                  
-                  <li class="active">
-                    <a href="#products_search_get_request" data-toggle="tab">Request</a>
-                  </li>
-                
-
-
-                
-                  <li>
-                    <a href="#products_search_get_response" data-toggle="tab">Response</a>
-                  </li>
-                
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                
-                  <div class="tab-pane active" id="products_search_get_request">
-                    
-
-                    
-
-                    
-                      <h3>Query Parameters</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>query</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  <p>A string containing terms or words to look for</p>
-
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                  </div>
-                
-
-                
-                  <div class="tab-pane " id="products_search_get_response">
-                    
-                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
-                      
-
-                      
-
-                      
-                        <h3>Body</h3>
-                        
-                          <p><strong>Type: application/json</strong></p>
-
-                          
-
-                          
-                            <p><strong>Example</strong>:</p>
-                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
                           
                         
                       
@@ -3600,6 +3618,533 @@ label label-delete
                           <li>
   
     <strong>userGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_projects__gid__brief_files">
+          <span class="parent">/projects/{gid}</span>/brief_files
+        </a>
+        <span class="methods">
+          
+            <a href="#projects__gid__brief_files_get"><!-- modal shown by hashchange event -->
+              <span class="
+label label-get
+">get</span>
+            </a>
+          
+            <a href="#projects__gid__brief_files_post"><!-- modal shown by hashchange event -->
+              <span class="
+label label-post
+">post</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_projects__gid__brief_files" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#projects__gid__brief_files_get&apos;" class="list-group-item">
+              <span class="
+label label-get
+">get</span>
+              <div class="method_description">
+                <p>Get a collection of brief_files.</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+            <div onclick="window.location.href = &apos;#projects__gid__brief_files_post&apos;" class="list-group-item">
+              <span class="
+label label-post
+">post</span>
+              <div class="method_description">
+                <p>Add a file as an attachment to the project</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="projects__gid__brief_files_get">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-get
+">get</span>
+                <span class="parent">/projects/{gid}</span>/brief_files
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Get a collection of brief_files.</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#projects__gid__brief_files_get_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#projects__gid__brief_files_get_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="projects__gid__brief_files_get_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>gid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="projects__gid__brief_files_get_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                      
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to see brief_files</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to see brief_files&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" tabindex="0" id="projects__gid__brief_files_post">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-post
+">post</span>
+                <span class="parent">/projects/{gid}</span>/brief_files
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Add a file as an attachment to the project</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#projects__gid__brief_files_post_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#projects__gid__brief_files_post_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="projects__gid__brief_files_post_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>gid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+
+                    
+                      <h3>Body</h3>
+                      
+                        <p><strong>Type: application/json</strong></p>
+                        
+
+                        
+
+                        
+                      
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="projects__gid__brief_files_post_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2>
+                      
+
+                      
+                        <h3>Headers</h3>
+                        <ul>
+                          
+                            <li>
+  
+    <strong>Location</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Location of the newly created brief_file</p>
+
+
+  
+
+  
+</li>
+
+                          
+                        </ul>
+                      
+
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2>
+                      <p>Data missing or invalid</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Data missing or invalid&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to create brief_file</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to create brief_file&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_projects__gid__brief_files__filepath_">
+          <span class="parent">/projects/{gid}/brief_files</span>/{filepath}
+        </a>
+        <span class="methods">
+          
+            <a href="#projects__gid__brief_files__filepath__delete"><!-- modal shown by hashchange event -->
+              <span class="
+label label-delete
+">delete</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_projects__gid__brief_files__filepath_" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#projects__gid__brief_files__filepath__delete&apos;" class="list-group-item">
+              <span class="
+label label-delete
+">delete</span>
+              <div class="method_description">
+                <p>Remove a file from the attachments of the project</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="projects__gid__brief_files__filepath__delete">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-delete
+">delete</span>
+                <span class="parent">/projects/{gid}/brief_files</span>/{filepath}
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Remove a file from the attachments of the project</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#projects__gid__brief_files__filepath__delete_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="projects__gid__brief_files__filepath__delete_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>gid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                          <li>
+  
+    <strong>filepath</strong>:
   
 
   <em>required (string)
@@ -11952,6 +12497,1799 @@ label label-get
   <div class="panel panel-white">
     <div class="panel-heading">
       <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__payment_source">
+          <span class="parent">/orgs/{orgGid}</span>/payment_source
+        </a>
+        <span class="methods">
+          
+            <a href="#orgs__orgGid__payment_source_get"><!-- modal shown by hashchange event -->
+              <span class="
+label label-get
+">get</span>
+            </a>
+          
+            <a href="#orgs__orgGid__payment_source_delete"><!-- modal shown by hashchange event -->
+              <span class="
+label label-delete
+">delete</span>
+            </a>
+          
+            <a href="#orgs__orgGid__payment_source_put"><!-- modal shown by hashchange event -->
+              <span class="
+label label-put
+">put</span>
+            </a>
+          
+            <a href="#orgs__orgGid__payment_source_post"><!-- modal shown by hashchange event -->
+              <span class="
+label label-post
+">post</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_orgs__orgGid__payment_source" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__payment_source_get&apos;" class="list-group-item">
+              <span class="
+label label-get
+">get</span>
+              <div class="method_description">
+                <p>The payment method associated to the organization</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__payment_source_delete&apos;" class="list-group-item">
+              <span class="
+label label-delete
+">delete</span>
+              <div class="method_description">
+                <p>Delete resource payment_source.</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__payment_source_put&apos;" class="list-group-item">
+              <span class="
+label label-put
+">put</span>
+              <div class="method_description">
+                <p>Update resource payment_source</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__payment_source_post&apos;" class="list-group-item">
+              <span class="
+label label-post
+">post</span>
+              <div class="method_description">
+                <p>Add (or replace) a payment method to the organization</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__payment_source_get">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-get
+">get</span>
+                <span class="parent">/orgs/{orgGid}</span>/payment_source
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>The payment method associated to the organization</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__payment_source_get_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#orgs__orgGid__payment_source_get_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__payment_source_get_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="orgs__orgGid__payment_source_get_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                      
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1234567891012&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-16T22:47:31-08:00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;modified_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2018-10-16T22: 47: 31-08: 00&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;rid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;external_api_source_id&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;reference&quot;</span><span class="token operator">:</span> <span class="token string">&quot;JOEHF9F7DOXAA07F&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;last_digits&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1234&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to see this payment_source</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to see this payment_source&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2>
+                      <p>Could not find this payment_source</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">404</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Could not find this payment_source&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__payment_source_delete">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-delete
+">delete</span>
+                <span class="parent">/orgs/{orgGid}</span>/payment_source
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Delete resource payment_source.</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__payment_source_delete_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#orgs__orgGid__payment_source_delete_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__payment_source_delete_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="orgs__orgGid__payment_source_delete_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                      <p>payment_source deleted</p>
+
+
+                      
+
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to delete this payment_source</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to delete this payment_source&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2>
+                      <p>Could not find this payment_source</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">404</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Could not this payment_source&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__payment_source_put">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-put
+">put</span>
+                <span class="parent">/orgs/{orgGid}</span>/payment_source
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Update resource payment_source</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__payment_source_put_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#orgs__orgGid__payment_source_put_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__payment_source_put_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                      <h3>Body</h3>
+                      
+                        <p><strong>Type: application/json</strong></p>
+                        
+
+                        
+
+                        
+                      
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="orgs__orgGid__payment_source_put_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/204" target="_blank">204</a></h2>
+                      <p>payment_source updated</p>
+
+
+                      
+
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2>
+                      <p>Data missing or invalid</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Data missing or invalid&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to update this payment_source</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to update this payment_source&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/404" target="_blank">404</a></h2>
+                      <p>Could not find this payment_source</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">404</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Could not this payment_source&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__payment_source_post">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-post
+">post</span>
+                <span class="parent">/orgs/{orgGid}</span>/payment_source
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Add (or replace) a payment method to the organization</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__payment_source_post_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__payment_source_post_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__credit_notes">
+          <span class="parent">/orgs/{orgGid}</span>/credit_notes
+        </a>
+        <span class="methods">
+          
+            <a href="#orgs__orgGid__credit_notes_get"><!-- modal shown by hashchange event -->
+              <span class="
+label label-get
+">get</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_orgs__orgGid__credit_notes" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__credit_notes_get&apos;" class="list-group-item">
+              <span class="
+label label-get
+">get</span>
+              <div class="method_description">
+                <p>The Credit Notes of the organization</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__credit_notes_get">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-get
+">get</span>
+                <span class="parent">/orgs/{orgGid}</span>/credit_notes
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>The Credit Notes of the organization</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__credit_notes_get_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#orgs__orgGid__credit_notes_get_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__credit_notes_get_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="orgs__orgGid__credit_notes_get_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                      
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to see credit_notes</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to see credit_notes&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__webhooks">
+          <span class="parent">/orgs/{orgGid}</span>/webhooks
+        </a>
+        <span class="methods">
+          
+            <a href="#orgs__orgGid__webhooks_get"><!-- modal shown by hashchange event -->
+              <span class="
+label label-get
+">get</span>
+            </a>
+          
+            <a href="#orgs__orgGid__webhooks_post"><!-- modal shown by hashchange event -->
+              <span class="
+label label-post
+">post</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_orgs__orgGid__webhooks" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__webhooks_get&apos;" class="list-group-item">
+              <span class="
+label label-get
+">get</span>
+              <div class="method_description">
+                <p>The webhooks associated to the organization</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__webhooks_post&apos;" class="list-group-item">
+              <span class="
+label label-post
+">post</span>
+              <div class="method_description">
+                <p>Add a webhook to the organization</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__webhooks_get">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-get
+">get</span>
+                <span class="parent">/orgs/{orgGid}</span>/webhooks
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>The webhooks associated to the organization</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__webhooks_get_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#orgs__orgGid__webhooks_get_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__webhooks_get_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="orgs__orgGid__webhooks_get_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
+                      
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to see webhooks</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to see webhooks&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__webhooks_post">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-post
+">post</span>
+                <span class="parent">/orgs/{orgGid}</span>/webhooks
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Add a webhook to the organization</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__webhooks_post_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+                  <li>
+                    <a href="#orgs__orgGid__webhooks_post_response" data-toggle="tab">Response</a>
+                  </li>
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__webhooks_post_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+                      <h3>Headers</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>Authorization</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Authorization: Bearer TOKEN</p>
+<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+                      <h3>Body</h3>
+                      
+                        <p><strong>Type: application/json</strong></p>
+                        
+
+                        
+
+                        
+                      
+                    
+                  </div>
+                
+
+                
+                  <div class="tab-pane " id="orgs__orgGid__webhooks_post_response">
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/201" target="_blank">201</a></h2>
+                      
+
+                      
+                        <h3>Headers</h3>
+                        <ul>
+                          
+                            <li>
+  
+    <strong>Location</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>Location of the newly created webhook</p>
+
+
+  
+
+  
+</li>
+
+                          
+                        </ul>
+                      
+
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/400" target="_blank">400</a></h2>
+                      <p>Data missing or invalid</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Data missing or invalid&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                      <h2>HTTP status code <a href="http://httpstatus.es/403" target="_blank">403</a></h2>
+                      <p>Your are not authorized to create webhook</p>
+
+
+                      
+
+                      
+                        <h3>Body</h3>
+                        
+                          <p><strong>Type: application/json</strong></p>
+
+                          
+
+                          
+                            <p><strong>Example</strong>:</p>
+                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token number">403</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;message&quot;</span> <span class="token operator">:</span> <span class="token string">&quot;Your are not authorized to create webhook&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+                          
+                        
+                      
+                    
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__webhooks_check">
+          <span class="parent">/orgs/{orgGid}/webhooks</span>/check
+        </a>
+        <span class="methods">
+          
+            <a href="#orgs__orgGid__webhooks_check_post"><!-- modal shown by hashchange event -->
+              <span class="
+label label-post
+">post</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_orgs__orgGid__webhooks_check" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__webhooks_check_post&apos;" class="list-group-item">
+              <span class="
+label label-post
+">post</span>
+              <div class="method_description">
+                <p>Trigger a void event to test a potential webhook</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__webhooks_check_post">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-post
+">post</span>
+                <span class="parent">/orgs/{orgGid}/webhooks</span>/check
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Trigger a void event to test a potential webhook</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__webhooks_check_post_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__webhooks_check_post_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__webhooks__webhookGid_">
+          <span class="parent">/orgs/{orgGid}/webhooks</span>/{webhookGid}
+        </a>
+        <span class="methods">
+          
+            <a href="#orgs__orgGid__webhooks__webhookGid__put"><!-- modal shown by hashchange event -->
+              <span class="
+label label-put
+">put</span>
+            </a>
+          
+            <a href="#orgs__orgGid__webhooks__webhookGid__delete"><!-- modal shown by hashchange event -->
+              <span class="
+label label-delete
+">delete</span>
+            </a>
+          
+        </span>
+      </h4>
+    </div>
+
+    <div id="panel_orgs__orgGid__webhooks__webhookGid_" class="panel-collapse collapse">
+      <div class="panel-body">
+        
+          
+        
+
+        <div class="list-group">
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__webhooks__webhookGid__put&apos;" class="list-group-item">
+              <span class="
+label label-put
+">put</span>
+              <div class="method_description">
+                <p>Edit a webhook</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+            <div onclick="window.location.href = &apos;#orgs__orgGid__webhooks__webhookGid__delete&apos;" class="list-group-item">
+              <span class="
+label label-delete
+">delete</span>
+              <div class="method_description">
+                <p>Delete a webhook</p>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__webhooks__webhookGid__put">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-put
+">put</span>
+                <span class="parent">/orgs/{orgGid}/webhooks</span>/{webhookGid}
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Edit a webhook</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__webhooks__webhookGid__put_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__webhooks__webhookGid__put_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                          <li>
+  
+    <strong>webhookGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="modal fade" tabindex="0" id="orgs__orgGid__webhooks__webhookGid__delete">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
+              <h4 class="modal-title" id="myModalLabel">
+                <span class="
+label label-delete
+">delete</span>
+                <span class="parent">/orgs/{orgGid}/webhooks</span>/{webhookGid}
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              
+                <div class="alert alert-success">
+                  <p>Delete a webhook</p>
+
+                </div>
+              
+
+              
+
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                
+                
+                  
+                  <li class="active">
+                    <a href="#orgs__orgGid__webhooks__webhookGid__delete_request" data-toggle="tab">Request</a>
+                  </li>
+                
+
+
+                
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                
+                  <div class="tab-pane active" id="orgs__orgGid__webhooks__webhookGid__delete_request">
+                    
+                      <h3>URI Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>orgGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                          <li>
+  
+    <strong>webhookGid</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
+
+                    
+
+                    
+
+                    
+                  </div>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+  </div>
+
+
+
+
+
+
+
+  
+
+
+  <div class="panel panel-white">
+    <div class="panel-heading">
+      <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__products">
           <span class="parent">/orgs/{orgGid}</span>/products
         </a>
@@ -12090,6 +14428,28 @@ label label-get
                     
 
                     
+                      <h3>Query Parameters</h3>
+                      <ul>
+                        
+                          <li>
+  
+    <strong>search</strong>:
+  
+
+  <em>required (string)
+  </em>
+
+  <p>A string containing terms or words to look for</p>
+
+
+  
+
+  
+</li>
+
+                        
+                      </ul>
+                    
 
                     
                   </div>
@@ -12158,216 +14518,6 @@ label label-get
 
 
 
-  
-
-
-  <div class="panel panel-white">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__products_search">
-          <span class="parent">/orgs/{orgGid}/products</span>/search
-        </a>
-        <span class="methods">
-          
-            <a href="#orgs__orgGid__products_search_get"><!-- modal shown by hashchange event -->
-              <span class="
-label label-get
-">get</span>
-            </a>
-          
-        </span>
-      </h4>
-    </div>
-
-    <div id="panel_orgs__orgGid__products_search" class="panel-collapse collapse">
-      <div class="panel-body">
-        
-          
-            <div class="resource-description">
-              <p>Search products and products synonyms among an organization from a string query</p>
-
-            </div>
-          
-        
-
-        <div class="list-group">
-          
-            <div onclick="window.location.href = &apos;#orgs__orgGid__products_search_get&apos;" class="list-group-item">
-              <span class="
-label label-get
-">get</span>
-              <div class="method_description">
-                <p>This endpoint provide a way to search among indexed search providing a full text query</p>
-
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    
-      <div class="modal fade" tabindex="0" id="orgs__orgGid__products_search_get">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
-              <h4 class="modal-title" id="myModalLabel">
-                <span class="
-label label-get
-">get</span>
-                <span class="parent">/orgs/{orgGid}/products</span>/search
-              </h4>
-            </div>
-
-            <div class="modal-body">
-              
-                <div class="alert alert-success">
-                  <p>This endpoint provide a way to search among indexed search providing a full text query</p>
-
-                </div>
-              
-
-              
-
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
-                
-                
-                  
-                  <li class="active">
-                    <a href="#orgs__orgGid__products_search_get_request" data-toggle="tab">Request</a>
-                  </li>
-                
-
-
-                
-                  <li>
-                    <a href="#orgs__orgGid__products_search_get_response" data-toggle="tab">Response</a>
-                  </li>
-                
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                
-                  <div class="tab-pane active" id="orgs__orgGid__products_search_get_request">
-                    
-                      <h3>URI Parameters</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>orgGid</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                      <h3>Headers</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>Authorization</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  <p>Authorization: Bearer TOKEN</p>
-<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
-
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                      <h3>Query Parameters</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>query</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  <p>A string containing terms or words to look for</p>
-
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                  </div>
-                
-
-                
-                  <div class="tab-pane " id="orgs__orgGid__products_search_get_response">
-                    
-                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
-                      
-
-                      
-
-                      
-                        <h3>Body</h3>
-                        
-                          <p><strong>Type: application/json</strong></p>
-
-                          
-
-                          
-                            <p><strong>Example</strong>:</p>
-                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
-                          
-                        
-                      
-                    
-                  </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-  </div>
-
-
-
-
-
 
 
   
@@ -12376,22 +14526,16 @@ label label-get
   <div class="panel panel-white">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__users_search">
-          <span class="parent">/orgs/{orgGid}</span>/users/search
+        <a class="collapsed" data-toggle="collapse" href="#panel_orgs__orgGid__users">
+          <span class="parent">/orgs/{orgGid}</span>/users
         </a>
         <span class="methods">
-          
-            <a href="#orgs__orgGid__users_search_get"><!-- modal shown by hashchange event -->
-              <span class="
-label label-get
-">get</span>
-            </a>
           
         </span>
       </h4>
     </div>
 
-    <div id="panel_orgs__orgGid__users_search" class="panel-collapse collapse">
+    <div id="panel_orgs__orgGid__users" class="panel-collapse collapse">
       <div class="panel-body">
         
           
@@ -12404,175 +14548,10 @@ label label-get
 
         <div class="list-group">
           
-            <div onclick="window.location.href = &apos;#orgs__orgGid__users_search_get&apos;" class="list-group-item">
-              <span class="
-label label-get
-">get</span>
-              <div class="method_description">
-                <p>This endpoint provide a way to search among indexed search providing a full text query</p>
-
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          
         </div>
       </div>
     </div>
 
-    
-      <div class="modal fade" tabindex="0" id="orgs__orgGid__users_search_get">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&#xD7;</button>
-              <h4 class="modal-title" id="myModalLabel">
-                <span class="
-label label-get
-">get</span>
-                <span class="parent">/orgs/{orgGid}</span>/users/search
-              </h4>
-            </div>
-
-            <div class="modal-body">
-              
-                <div class="alert alert-success">
-                  <p>This endpoint provide a way to search among indexed search providing a full text query</p>
-
-                </div>
-              
-
-              
-
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
-                
-                
-                  
-                  <li class="active">
-                    <a href="#orgs__orgGid__users_search_get_request" data-toggle="tab">Request</a>
-                  </li>
-                
-
-
-                
-                  <li>
-                    <a href="#orgs__orgGid__users_search_get_response" data-toggle="tab">Response</a>
-                  </li>
-                
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                
-                  <div class="tab-pane active" id="orgs__orgGid__users_search_get_request">
-                    
-                      <h3>URI Parameters</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>orgGid</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                      <h3>Headers</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>Authorization</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  <p>Authorization: Bearer TOKEN</p>
-<p> See <a href="https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/">https://auth0.com/blog/2014/01/07/angularjs-authentication-with-cookies-vs-token/</a></p>
-
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                      <h3>Query Parameters</h3>
-                      <ul>
-                        
-                          <li>
-  
-    <strong>query</strong>:
-  
-
-  <em>required (string)
-  </em>
-
-  <p>A string containing terms or words to look for</p>
-
-
-  
-
-  
-</li>
-
-                        
-                      </ul>
-                    
-
-                    
-                  </div>
-                
-
-                
-                  <div class="tab-pane " id="orgs__orgGid__users_search_get_response">
-                    
-                      <h2>HTTP status code <a href="http://httpstatus.es/200" target="_blank">200</a></h2>
-                      
-
-                      
-
-                      
-                        <h3>Body</h3>
-                        
-                          <p><strong>Type: application/json</strong></p>
-
-                          
-
-                          
-                            <p><strong>Example</strong>:</p>
-                            <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">&quot;total_count&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;items&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-<span class="token punctuation">}</span></code></pre>
-                          
-                        
-                      
-                    
-                  </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
   </div>
 
