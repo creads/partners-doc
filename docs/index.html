@@ -127,11 +127,10 @@
                         <div class="col_two_third nobottommargin">
                         <h1 id="overview"><a class="heading-anchor" href="#overview"><span></span></a>Overview</h1>
 <p>L&apos;API est actuellement en version <code>beta</code>. Sa sp&#xE9;cification peut &#xEA;tre amen&#xE9;e &#xE0; &#xE9;voluer. Les changements de sp&#xE9;cification apparaissent dans la section Changelogs.</p>
-<p>Ce document est &#xE0; l&apos;&#xE9;tat de brouillon et peut &#xEA;tre incomplet. Pour toute information d&apos;ordre technique, contactez teamdev@creads.org.</p>
+<p>Ce document est &#xE0; l&apos;&#xE9;tat de brouillon et peut &#xEA;tre incomplet. Pour toute information d&apos;ordre technique, contactez <a href="mailto:teamdev@creads.org">teamdev@creads.org</a>.</p>
 <h2 id="schema"><a class="heading-anchor" href="#schema"><span></span></a>Schema</h2>
 <p>Tous les acc&#xE8;s &#xE0; API se font sur couche HTTPS, sur le domaine <code>api.creads-partners.com</code>. Toutes les donn&#xE9;es sont envoy&#xE9;es et re&#xE7;ues en JSON.</p>
-<pre class="language-bash"><code class="language-bash">curl -i https://api.creads-partners.com/v1/
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i https://api.creads-partners.com/v1/</code></pre>
 <p>R&#xE9;ponse :</p>
 <pre><code>HTTP/1.1 200 OK
 Cache-Control: no-cache
@@ -141,11 +140,9 @@ Server: nginx/1.6.2
 Content-Length: 72
 Connection: keep-alive
 
-{&quot;name&quot;:&quot;Creads Partners API&quot;,&quot;version&quot;:&quot;1.0.0&quot;}
-</code></pre><p>Les champs vides sont inclus en tant que valeur <code>null</code> plut&#xF4;t que d&apos;&#xEA;tre omis.</p>
+{&quot;name&quot;:&quot;Creads Partners API&quot;,&quot;version&quot;:&quot;1.0.0&quot;}</code></pre><p>Les champs vides sont inclus en tant que valeur <code>null</code> plut&#xF4;t que d&apos;&#xEA;tre omis.</p>
 <p>Toutes les dates sont renvoy&#xE9;es au format ISO 8601:</p>
-<pre><code>YYYY-MM-DDTHH:MM:SS+0000
-</code></pre><h3 id="repr-sentation-partielle"><a class="heading-anchor" href="#repr-sentation-partielle"><span></span></a>Repr&#xE9;sentation partielle</h3>
+<pre><code>YYYY-MM-DDTHH:MM:SS+0000</code></pre><h3 id="repr&#xE9;sentation-partielle"><a class="heading-anchor" href="#repr&#xE9;sentation-partielle"><span></span></a>Repr&#xE9;sentation partielle</h3>
 <blockquote>
 <p>La repr&#xE9;sentation partielle n&apos;est <strong>pas support&#xE9;e dans la version 1.0.0-alphaXXX</strong></p>
 </blockquote>
@@ -172,12 +169,11 @@ Connection: keep-alive
         <span class="token punctuation">}</span><span class="token punctuation">,</span>
         ...
     <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="repr-sentation-compl-te"><a class="heading-anchor" href="#repr-sentation-compl-te"><span></span></a>Repr&#xE9;sentation compl&#xE8;te</h3>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="repr&#xE9;sentation-compl&#xE8;te"><a class="heading-anchor" href="#repr&#xE9;sentation-compl&#xE8;te"><span></span></a>Repr&#xE9;sentation compl&#xE8;te</h3>
 <p>Quand vous r&#xE9;cup&#xE9;rez une ressource individuelle, la r&#xE9;ponse renvoy&#xE9;e contient g&#xE9;n&#xE9;ralement tous les attributs pour cette ressource.
 C&apos;est la vue &quot;compl&#xE8;te&quot; de la ressource. (Notez que vos droits d&apos;acc&#xE8;s sur l&apos;API peuvent influencer la pr&#xE9;sence de certains champs.)</p>
-<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rez une cat&#xE9;gorie de produits (<a href="https://api.creads-partners.com/v1/categories/{gid}">https://api.creads-partners.com/v1/categories/{gid}</a>), sa repr&#xE9;sentation contient tous les champs.</p>
+<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rez une cat&#xE9;gorie de produits (<a href="https://api.creads-partners.com/v1/categories/%7Bgid%7D">https://api.creads-partners.com/v1/categories/{gid}</a>), sa repr&#xE9;sentation contient tous les champs.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55e80f50da498&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;created_at&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2015-09-03T09:13:52+0000&quot;</span><span class="token punctuation">,</span>
@@ -186,12 +182,11 @@ C&apos;est la vue &quot;compl&#xE8;te&quot; de la ressource. (Notez que vos droi
     <span class="token property">&quot;is_removable&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token property">&quot;title&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ex&#xE9;cution graphique&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;D&#xE9;tourage photo, retouches photo, adaptation de fichiers...&quot;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="repr-sentation-de-r-f-rence"><a class="heading-anchor" href="#repr-sentation-de-r-f-rence"><span></span></a>Repr&#xE9;sentation de r&#xE9;f&#xE9;rence</h3>
+<span class="token punctuation">}</span></code></pre>
+<h3 id="repr&#xE9;sentation-de-r&#xE9;f&#xE9;rence"><a class="heading-anchor" href="#repr&#xE9;sentation-de-r&#xE9;f&#xE9;rence"><span></span></a>Repr&#xE9;sentation de r&#xE9;f&#xE9;rence</h3>
 <p>Quand vous r&#xE9;cup&#xE9;rez une ressource &#xE0; laquelle est associ&#xE9;e &#xE0; une autre ressource, cette autre ressource apparait en sous-&#xE9;lement repr&#xE9;sent&#xE9; partiellement.
 Cette repr&#xE9;sentation est une &quot;repr&#xE9;sentation de r&#xE9;f&#xE9;rence&quot; contenant les &#xE9;l&#xE9;ments essentiels pour identifier la resource associ&#xE9;e.</p>
-<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rer un projet (<a href="https://api.creads-partners.com/v1/projects/{gid}">https://api.creads-partners.com/v1/projects/{gid}</a>), sa repr&#xE9;sentation contient une r&#xE9;f&#xE9;rence <code>owner</code> vous permettant de retrouver l&apos;utilisateur qui &#xE0; cr&#xE9;&#xE9; le project.</p>
+<p><strong>Exemple</strong>: Quand vous r&#xE9;cup&#xE9;rer un projet (<a href="https://api.creads-partners.com/v1/projects/%7Bgid%7D">https://api.creads-partners.com/v1/projects/{gid}</a>), sa repr&#xE9;sentation contient une r&#xE9;f&#xE9;rence <code>owner</code> vous permettant de retrouver l&apos;utilisateur qui &#xE0; cr&#xE9;&#xE9; le project.</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">&quot;gid&quot;</span><span class="token operator">:</span> <span class="token string">&quot;55e80f5163e3a&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;owner&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -201,17 +196,15 @@ Cette repr&#xE9;sentation est une &quot;repr&#xE9;sentation de r&#xE9;f&#xE9;ren
     ...
 <span class="token punctuation">}</span>
 </code></pre>
-<h2 id="param-tres"><a class="heading-anchor" href="#param-tres"><span></span></a>Param&#xE8;tres</h2>
+<h2 id="param&#xE8;tres"><a class="heading-anchor" href="#param&#xE8;tres"><span></span></a>Param&#xE8;tres</h2>
 <p>Plusieurs m&#xE9;thodes de l&apos;API supportent des param&#xE8;tres optionnels.
 Pour les requ&#xEA;tes GET, ormis les param&#xE8;tres obligatoires pr&#xE9;sents dans le segment d&apos;URL, les param&#xE8;tres optionnels doivent &#xEA;tre pass&#xE9;s comme param&#xE8;tre d&apos;URL HTTP (query string parameter).</p>
 <p><strong>Exemple</strong>: On r&#xE9;cup&#xE8;re la liste des utlisateurs, tri&#xE9;s pas date de cr&#xE9;ation:</p>
-<pre class="language-bash"><code class="language-bash">curl -i https://api.creads-partners.com/v1/users?orderBy<span class="token operator">=</span>created_at
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i https://api.creads-partners.com/v1/users?orderBy<span class="token operator">=</span>created_at</code></pre>
 <p>Pour les requ&#xEA;tes POST, PUT et DELETE, mes param&#xE8;tres ne sont pas inclus dans l&apos;URL mais encod&#xE9;s en JSON dans le <em>body</em> de la requ&#xEA;te
 dont l&apos;ent&#xEA;te <code>Content-Type</code> doit &#xEA;tre initialis&#xE9; &#xE0; la valeur <code>application/json</code>.</p>
 <p>For POST, PATCH, PUT, and DELETE requests, parameters not included in the URL should be encoded as JSON with a Content-Type of &#x2018;application/json&#x2019;:</p>
-<pre class="language-bash"><code class="language-bash">curl -i -X POST -d <span class="token string">&apos;{&quot;firstname&quot;:&quot;John&quot;}&apos;</span> https://api.creads-partners.com/v1/users/55e80f4af117f
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -X POST -d <span class="token string">&apos;{&quot;firstname&quot;:&quot;John&quot;}&apos;</span> https://api.creads-partners.com/v1/users/55e80f4af117f</code></pre>
 <h2 id="erreurs-http"><a class="heading-anchor" href="#erreurs-http"><span></span></a>Erreurs HTTP</h2>
 <p>Il y a plusieurs sortes d&apos;erreurs possibles.</p>
 <ol>
@@ -240,8 +233,7 @@ X-Debug-Token: 450626
 X-Debug-Token-Link: /_profiler/450626
 Content-Type: application/json
 
-{&quot;error&quot;:{&quot;code&quot;:403,&quot;message&quot;:&quot;Forbidden&quot;}}
-</code></pre><h2 id="redirections-http"><a class="heading-anchor" href="#redirections-http"><span></span></a>Redirections HTTP</h2>
+{&quot;error&quot;:{&quot;code&quot;:403,&quot;message&quot;:&quot;Forbidden&quot;}}</code></pre><h2 id="redirections-http"><a class="heading-anchor" href="#redirections-http"><span></span></a>Redirections HTTP</h2>
 <p>L&apos;API peut utiliser des redirections HTTP. Le client doit faire en sorte que ces redirections soient prises en charge.
 Les redirections portent une ent&#xEA;te <code>Location</code> qui contient l&apos;URL de la resource vers laquelle le client doit renvoyer la requ&#xEA;te.</p>
 <table>
@@ -251,8 +243,7 @@ Les redirections portent une ent&#xEA;te <code>Location</code> qui contient l&ap
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>301</td>
 <td>Redirection permanente</td>
 </tr>
@@ -260,8 +251,7 @@ Les redirections portent une ent&#xEA;te <code>Location</code> qui contient l&ap
 <td>302</td>
 <td>Redirection temporaire</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="actions-http"><a class="heading-anchor" href="#actions-http"><span></span></a>Actions HTTP</h2>
 <p>L&apos;API utiliser les m&#xE9;thodes HTTP pour identifier l&apos;action &#xE0; ex&#xE9;cuter sur les ressources.</p>
 <table>
@@ -271,8 +261,7 @@ Les redirections portent une ent&#xEA;te <code>Location</code> qui contient l&ap
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>GET</td>
 <td>Utilis&#xE9;e pour obtenir une ressource</td>
 </tr>
@@ -292,8 +281,7 @@ Les redirections portent une ent&#xEA;te <code>Location</code> qui contient l&ap
 <td>HEAD</td>
 <td>Utilis&#xE9;e sur une ressource pour obtenir seulement le status code et les en-t&#xEA;tes. Permet notamment de v&#xE9;rifier l&apos;existence d&apos;une ressource.</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="authentification"><a class="heading-anchor" href="#authentification"><span></span></a>Authentification</h2>
 <p>En dehors du endpoint de base (<a href="https://api.creads-partners.com/v1/">https://api.creads-partners.com/v1/</a>), tous les autres endpoints n&#xE9;cessitent d&apos;&#xEA;tre authentifi&#xE9; pour &#xEA;tre interrog&#xE9;s.
 Certaines requ&#xEA;tes non-authentifi&#xE9;es peuvent retourner <code>404 Not Found</code> au lieu de <code>403 Forbidden</code> pour pr&#xE9;venir de fuites de s&#xE9;curit&#xE9;.</p>
@@ -301,26 +289,21 @@ Certaines requ&#xEA;tes non-authentifi&#xE9;es peuvent retourner <code>404 Not F
 Veuillez lire la section <a href="/doc/api/oauth2">authentication OAuth2</a> pour plus d&apos;information sur les m&#xE9;thodes pour obtenir un access token.</p>
 <p>Il y a deux solutions pour authentifier les requ&#xEA;tes &#xE0; l&apos;aide du token OAuth2:</p>
 <p><strong>Token Oauth2 envoy&#xE9; en en-t&#xEA;tes:</strong></p>
-<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer OAUTH-TOKEN&quot;</span> https://api.creads-partners.com/v1/me
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -H <span class="token string">&quot;Authorization: Bearer OAUTH-TOKEN&quot;</span> https://api.creads-partners.com/v1/me</code></pre>
 <p><strong>Token Oauth2 envoy&#xE9; en param&#xE8;tre d&apos;URL:</strong></p>
-<pre class="language-bash"><code class="language-bash">curl https://api.creads-partners.com/v1/me?access_token<span class="token operator">=</span>OAUTH-TOKEN
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> https://api.creads-partners.com/v1/me?access_token<span class="token operator">=</span>OAUTH-TOKEN</code></pre>
 <p>Si l&apos;authentification &#xE9;choue, la r&#xE9;ponse retourn&#xE9;e prendra la forme d&apos;une <code>401 Unauthorized</code>:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token string">&quot;invalid_grant&quot;</span><span class="token punctuation">,</span>
     <span class="token property">&quot;error_description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;The access token provided is invalid.&quot;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="timezones"><a class="heading-anchor" href="#timezones"><span></span></a>Timezones</h2>
 <p>Certaines requ&#xEA;tes renvoient des dates ou n&#xE9;cessitent d&apos;en envoyer.
 <strong>Toutes les dates renvoy&#xE9;es par l&apos;API sont exprim&#xE9;es en temps universelle (UTC) au format ISO 8601.</strong></p>
 <p>Par exemple :</p>
-<pre><code>2015-08-04T15:24:21+0000
-</code></pre><p>Lorsque vous souhaitez soummetre une date g&#xE9;n&#xE9;r&#xE9;e sur un autre fuseau horaire qu&apos;UTC, vous devez prendre soin de sp&#xE9;cifier la timezone employ&#xE9;e.
+<pre><code>2015-08-04T15:24:21+0000</code></pre><p>Lorsque vous souhaitez soummetre une date g&#xE9;n&#xE9;r&#xE9;e sur un autre fuseau horaire qu&apos;UTC, vous devez prendre soin de sp&#xE9;cifier la timezone employ&#xE9;e.
 L&apos;exemple pr&#xE9;sent sur le fuseau Europe/Paris en heure d&apos;&#xE9;t&#xE9; sera :</p>
-<pre><code>2015-08-04T17:24:21+0200
-</code></pre><h2 id="les-collections-de-ressource"><a class="heading-anchor" href="#les-collections-de-ressource"><span></span></a>les collections de ressource</h2>
+<pre><code>2015-08-04T17:24:21+0200</code></pre><h2 id="les-collections-de-ressource"><a class="heading-anchor" href="#les-collections-de-ressource"><span></span></a>les collections de ressource</h2>
 <p>Les collections de resource repr&#xE9;sentent un ensemble d&apos;items d&apos;une certaine ressource accompagn&#xE9; d&apos;un compte. Il s&apos;agit des r&#xE9;ponses aux requ&#xEA;tes <code>GET</code> sur les listes de resources (ex: <code>GET /projects</code>) ou de collections imbriqu&#xE9;es dans une autre ressources.</p>
 <p>Une collection est une resource qui contient deux attributs:</p>
 <ul>
@@ -330,36 +313,30 @@ L&apos;exemple pr&#xE9;sent sur le fuseau Europe/Paris en heure d&apos;&#xE9;t&#
 <h3 id="recherche-dans-une-collection"><a class="heading-anchor" href="#recherche-dans-une-collection"><span></span></a>Recherche dans une collection</h3>
 <p>Certaines ressources sont <em>searchable</em> ce qui signifie que vous pouvez filtrer le r&#xE9;sultat d&apos;une requ&#xEA;te sur la collection de cette resource.</p>
 <p>Par exemple, si vous voulez avoir tous les produits existants, vous pouvez faire</p>
-<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/products
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/products</code></pre>
 <p>Ce qui vous retournera une liste compl&#xE8;te.</p>
 <p>Si en revanche vous souhaitez obtenir seulement les produits d&apos;une cat&#xE9;gorie dont le gid est <code>$CATEGORY_GID</code>, vous pouvez filtrer cette requ&#xEA;te via une query.</p>
-<pre class="language-bash"><code class="language-bash">curl -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/products?query<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span>, <span class="token string">&quot;==&quot;</span>, <span class="token string">&quot;<span class="token variable">$CATEGORY_GID</span>&quot;</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> https://api.creads-partners.com/v1/products?query<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span>, <span class="token string">&quot;==&quot;</span>, <span class="token string">&quot;<span class="token variable">$CATEGORY_GID</span>&quot;</span><span class="token punctuation">]</span></code></pre>
 <p>Le param&#xE8;tre d&apos;url <code>query</code> est un tableau JSON. Il s&apos;agit d&apos;un assemblage <em>d&apos;expressions</em> et d&apos;op&#xE9;rateurs logiques.</p>
 <p>Une <em>expression</em> se compose de trois &#xE9;l&#xE9;ments: un <strong>champ</strong>, un <strong>op&#xE9;rateur</strong>, et une <strong>valeur</strong>.</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span> <span class="token string">&quot;$FIELD&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$OPERATOR&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$VALUE&quot;</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span> <span class="token string">&quot;$FIELD&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$OPERATOR&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;$VALUE&quot;</span><span class="token punctuation">]</span></code></pre>
 <p>Les champs et op&#xE9;rateurs utilisables sont d&#xE9;finies dans la documentation des resources.</p>
-<h4 id="op-rateurs-conditionnels"><a class="heading-anchor" href="#op-rateurs-conditionnels"><span></span></a>Op&#xE9;rateurs conditionnels</h4>
+<h4 id="op&#xE9;rateurs-conditionnels"><a class="heading-anchor" href="#op&#xE9;rateurs-conditionnels"><span></span></a>Op&#xE9;rateurs conditionnels</h4>
 <ul>
 <li><code>==</code> : Egalit&#xE9;</li>
 </ul>
 <p>Exemple: Produit dont le GID est 123456789</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span></code></pre>
 <ul>
 <li><code>!=</code> : Inegalit&#xE9;</li>
 </ul>
 <p>Exemple: Produit dont le GID n&apos;est pas 123456789</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> !=<span class="token string">&quot;, &quot;</span><span class="token number">123456789</span>&quot;<span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> !=<span class="token string">&quot;, &quot;</span><span class="token number">123456789</span>&quot;<span class="token punctuation">]</span></code></pre>
 <ul>
 <li><code>&lt;</code> : Inf&#xE9;rieur (strict)</li>
 </ul>
 <p>Exemple: Projets cr&#xE9;&#xE9;&#xE9;s apr&#xE8;s le 21 Octobre 2015 (strictement)</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;created_at&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;2015-08-21T01:00:00+0000&quot;</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;created_at&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;2015-08-21T01:00:00+0000&quot;</span><span class="token punctuation">]</span></code></pre>
 <p>Note: la date doit &#xEA;tre au format ISO 8601</p>
 <ul>
 <li><code>&gt;</code> : Sup&#xE9;rieur (strict)</li>
@@ -370,66 +347,55 @@ L&apos;exemple pr&#xE9;sent sur le fuseau Europe/Paris en heure d&apos;&#xE9;t&#
 <li><code>~=</code> : Op&#xE9;rateur <strong>LIKE</strong> qui permet de controler qu&apos;un champ contient une expression. Le champ doit &#xEA;tre <strong>likable</strong> pour effecteur ce genre de condition</li>
 </ul>
 <p>Exemple: Produits dont le titre contient le mot &apos;projet&apos;</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span></code></pre>
 <ul>
 <li><code>intersect</code> : Intersection. La <em>value</em> pour cet op&#xE9;rateur doit-&#xEA;tre elle-m&#xEA;me une expression, elle permet de ne filter que les r&#xE9;sultats qui r&#xE9;pondent au membre droite de cette condition</li>
 </ul>
 <p>Exemple: Produits contenant l&apos;organisation dont le gid est 123456879</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;in&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;organizations.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;in&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;organizations.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <ul>
 <li><code>exclude</code> : Exclusion. Comme le pr&#xE9;c&#xE9;dent, permet d&apos;obtenir une liste de resource n&apos;&#xE9;tant pas comprise dans le r&#xE9;sultat d&apos;une autre condition.</li>
 </ul>
 <p>Exemple: Produits ne contenant pas l&apos;organisation dont le gid est 123456879</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;!in&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;organizations.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
-<h4 id="op-rateurs-logiques"><a class="heading-anchor" href="#op-rateurs-logiques"><span></span></a>Op&#xE9;rateurs Logiques</h4>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;!in&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;organizations.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<h4 id="op&#xE9;rateurs-logiques"><a class="heading-anchor" href="#op&#xE9;rateurs-logiques"><span></span></a>Op&#xE9;rateurs Logiques</h4>
 <p>Vous pouvez &#xE9;galement assembler plusieurs expressions dans la m&#xEA;me <code>query</code> de mani&#xE8;re logique. Par d&#xE9;faut, apposer les expressions en liste r&#xE9;alisera des <strong>ET logiques</strong> entre chacune:</p>
 <p>Imaginons cette query sur <code>/products</code></p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <p>Cette requ&#xEA;te signifie :</p>
 <blockquote>
 <p>Tous les produits dont le titre contient &quot;projet&quot; <strong>et</strong> dont le gid est 123456789 <strong>et</strong> donc la category a un gid sup&#xE9;rieur &#xE0; 123456789</p>
 </blockquote>
 <p>Si vous souhaitez la version explicite de cette logique, il faut appliqer un <code>AND</code> a la liste d&apos;expressions:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;AND&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;AND&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <p>De la m&#xEA;me mani&#xE8;re, le <strong>OU logique</strong> est possible.:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span> <span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <p>En d&apos;autres termes:</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;$OPERATOR&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> $EXPRESSION_LIST <span class="token punctuation">]</span><span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;$OPERATOR&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span> $EXPRESSION_LIST <span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <p>Pour <strong>prioriser</strong> un op&#xE9;rateur logique, il faut <em>imbriquer</em> une query en tant qu&apos;expression :</p>
-<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;AND&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token punctuation">]</span>
-</code></pre>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">[</span><span class="token string">&quot;AND&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;title&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;~=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;projet&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;OR&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">&quot;category.gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&gt;=&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;12456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">&quot;gid&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;==&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;123456789&quot;</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token punctuation">]</span></code></pre>
 <p>se traduit:</p>
 <blockquote>
 <p>Produits dont le titre contient &quot;projet&quot; <strong>ET</strong> ( gid &#xE9;gale 123456789 <strong>OU</strong> category a un gid sup&#xE9;rieur &#xE0; 123546789 )</p>
 </blockquote>
-<h3 id="tri-d-une-collection"><a class="heading-anchor" href="#tri-d-une-collection"><span></span></a>Tri d&apos;une collection</h3>
+<h3 id="tri-dune-collection"><a class="heading-anchor" href="#tri-dune-collection"><span></span></a>Tri d&apos;une collection</h3>
 <p>Vous pouvez ordonner et trier les r&#xE9;ponses d&apos;une requ&#xEA;te en utilisant les param&#xE8;tres de requ&#xEA;te <code>orderBy</code> et <code>sort</code>.</p>
 <ul>
 <li><code>orderBy</code> permet de trier selon le champ d&apos;une ressource (&#xE0; condition que ce champ soit <em>orderable</em>, c.f. References)</li>
 <li><code>sort</code> vous permet de choisir l&apos;ordre de tri ascendant (<code>asc</code>) ou descendant (<code>desc</code>). Par d&#xE9;faut, cette valeur est &#xE0; <code>asc</code></li>
 </ul>
 <p>Pour obtenir les projets tri&#xE9;s par date de modification (les plus r&#xE9;cents en premier):</p>
-<pre><code>/projects?orderBy=modified_at&amp;sort=desc
-</code></pre><h3 id="pagination-d-une-collection"><a class="heading-anchor" href="#pagination-d-une-collection"><span></span></a>Pagination d&apos;une collection</h3>
+<pre><code>/projects?orderBy=modified_at&amp;sort=desc</code></pre><h3 id="pagination-dune-collection"><a class="heading-anchor" href="#pagination-dune-collection"><span></span></a>Pagination d&apos;une collection</h3>
 <p>Il est possible d&apos;utiliser la pagination (et la cumuler avec le tri et les <code>query</code>) pour n&apos;afficher qu&apos;une partie des r&#xE9;sultats. Les param&#xE8;tres de requ&#xEA;tes <code>offset</code> et <code>limit</code> vous permettent cette op&#xE9;ration.</p>
 <ul>
 <li><code>offset</code> d&#xE9;finit l&apos;index de l&apos;&#xE9;l&#xE9;ment &#xE0; partir duquel afficher la collection de r&#xE9;ponse</li>
 <li><code>limit</code> d&#xE9;finit le nombre d&apos;&#xE9;l&#xE9;ments maximum &#xE0; afficher</li>
 </ul>
 <p>Par exemple, pour obtenir la deuxieme page de la liste de projet, &#xE0; raison de 10 &#xE9;l&#xE9;ments par page:</p>
-<pre><code>/projects?offset=10&amp;limit=10
-</code></pre><h3 id="recherche-full-text-dans-une-collection"><a class="heading-anchor" href="#recherche-full-text-dans-une-collection"><span></span></a>Recherche &quot;Full text&quot; dans une collection</h3>
+<pre><code>/projects?offset=10&amp;limit=10</code></pre><h3 id="recherche-full-text-dans-une-collection"><a class="heading-anchor" href="#recherche-full-text-dans-une-collection"><span></span></a>Recherche &quot;Full text&quot; dans une collection</h3>
 <p>Certaines collections de resource poss&#xE8;dent la caract&#xE9;ristiques &quot;Full Searchable&quot;, qui permet, en parall&#xE8;le avec le tri et la recherche, de ne retourner que les r&#xE9;sultats qui correspondent &#xE0; une recherche textuelle.</p>
 <p>Pour effectuer une recherche Full Text, il suffit d&apos;utiliser le param&#xE8;tre <code>search</code> en lui donnant une chaine de caract&#xE8;res.</p>
-<pre><code>/orgs/1234567891011/users?search=john
-</code></pre><p>Cette requ&#xEA;te vous retournera les r&#xE9;sultats les plus pertinents correspondant &#xE0; la chaine de caract&#xE8;res pass&#xE9;es (avec une certaine tol&#xE9;rance).</p>
+<pre><code>/orgs/1234567891011/users?search=john</code></pre><p>Cette requ&#xEA;te vous retournera les r&#xE9;sultats les plus pertinents correspondant &#xE0; la chaine de caract&#xE8;res pass&#xE9;es (avec une certaine tol&#xE9;rance).</p>
 
                         </div>
 
@@ -437,7 +403,7 @@ L&apos;exemple pr&#xE9;sent sur le fuseau Europe/Paris en heure d&apos;&#xE9;t&#
 
                             <ul class="sidenav">
                                 
-                                <li class="ui-tabs-active"><a href="/partners-doc/"><i class="icon-chevron-left"></i>Overview</a></li>
+                                <li class="ui-tabs-active"><a href="/partners-doc/index.md"><i class="icon-chevron-left"></i>Overview</a></li>
                                 
                                 <li ><a href="/partners-doc/api/oauth2"><i class="icon-chevron-left"></i>OAuth2</a></li>
                                 
