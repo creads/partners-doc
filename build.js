@@ -41,7 +41,9 @@ var metalsmith = Metalsmith(__dirname)
     }
   }))
   .use(markdown({ langPrefix: 'language-' }))
-  .use(metalsmithPrism())
+  .use(metalsmithPrism({
+    preLoad: ["markup-templating"]
+  }))
   .use(permalinks({
     "pattern": ":collection/:title"
   }))
