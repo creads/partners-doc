@@ -206,7 +206,7 @@
 
                             <ul class="sidenav">
                                 {% for resource in resources %}
-                                  <li {#% if loop.first %}class="ui-tabs-active"{% endif %#}><a href="#{{ resource.uniqueId|default("root") }}"><i class="icon-chevron-left"></i>{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
+                                  <li {#% if loop.first %}class="ui-tabs-active"{% endif %#}><a href="#{{ resource.uniqueId|default("root", true) }}"><i class="icon-chevron-left"></i>{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
                                 {% endfor %}
                             </ul>
 
@@ -215,7 +215,7 @@
                         <div class="col_two_third nobottommargin">
 
                           {% for resource in resources %}
-                            <div id="{{ resource.uniqueId|default("root") }}" class="panel panel-default" >
+                            <div id="{{ resource.uniqueId|default("root", true) }}" class="panel panel-default" >
                               <div class="panel-heading">
                                 <h3 class="panel-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
                               </div>
