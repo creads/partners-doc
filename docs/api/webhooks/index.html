@@ -137,7 +137,7 @@
 <h2 id="erreurs"><a class="heading-anchor" href="#erreurs"><span></span></a>Erreurs</h2>
 <p>En cas d&apos;erreur sur un de vos webhooks (erreur HTTP ou bien &#xE9;chec de connexion), nous retenterons de vous notifier plusieurs fois.</p>
 <p>Si trop d&apos;&#xE9;checs successifs se produisent, <strong>le webhook sera d&#xE9;sactiv&#xE9;</strong> le temps que vous r&#xE9;gliez le probl&#xE8;me, et vous serez <strong>notifi&#xE9;s par email</strong> du probl&#xE8;me.</p>
-<h2 id="-v-nements"><a class="heading-anchor" href="#-v-nements"><span></span></a>&#xC9;v&#xE8;nements</h2>
+<h2 id="&#xE9;v&#xE8;nements"><a class="heading-anchor" href="#&#xE9;v&#xE8;nements"><span></span></a>&#xC9;v&#xE8;nements</h2>
 <p>Les notifications webhooks qui sont envoy&#xE9;es suivent un sch&#xE9;ma d&apos;&#xE9;v&#xE8;nements se constituant comme ceci:</p>
 <table>
 <thead>
@@ -146,8 +146,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>event</code></td>
 <td>Le type d&apos;&#xE9;v&#xE8;nement d&#xE9;clench&#xE9; (cr&#xE9;ation, mise &#xE0; jour, suppression)</td>
 </tr>
@@ -163,8 +162,7 @@
 <td><code>resource</code></td>
 <td>La ressource dans son nouvel &#xE9;tat (absent dans le cas de la suppression)</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>Les type d&apos;&#xE9;v&#xE8;nements possibles sont les suivants</p>
 <table>
 <thead>
@@ -173,8 +171,7 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><code>resource.created</code></td>
 <td>La ressource vient d&apos;&#xEA;tre cr&#xE9;&#xE9;e.</td>
 </tr>
@@ -186,9 +183,8 @@
 <td><code>resource.deleted</code></td>
 <td>La ressource a &#xE9;t&#xE9; supprim&#xE9;e</td>
 </tr>
-</tbody>
-</table>
-<h2 id="-v-nements-disponibles"><a class="heading-anchor" href="#-v-nements-disponibles"><span></span></a>&#xC9;v&#xE8;nements disponibles</h2>
+</tbody></table>
+<h2 id="&#xE9;v&#xE8;nements-disponibles"><a class="heading-anchor" href="#&#xE9;v&#xE8;nements-disponibles"><span></span></a>&#xC9;v&#xE8;nements disponibles</h2>
 <p>Voici une liste &#xE0; date des &#xE9;v&#xE8;nements webhooks qui sont disponibles, par ressource:</p>
 <h3 id="invitation"><a class="heading-anchor" href="#invitation"><span></span></a>Invitation</h3>
 <ul>
@@ -230,7 +226,7 @@
 <li><code>resource.updated</code></li>
 <li><code>resource.deleted</code></li>
 </ul>
-<h2 id="s-curiser-les-webhooks"><a class="heading-anchor" href="#s-curiser-les-webhooks"><span></span></a>S&#xE9;curiser les webhooks</h2>
+<h2 id="s&#xE9;curiser-les-webhooks"><a class="heading-anchor" href="#s&#xE9;curiser-les-webhooks"><span></span></a>S&#xE9;curiser les webhooks</h2>
 <p>Tous les appels fait &#xE0; vos webhooks sont accompagn&#xE9;s d&apos;une signature pr&#xE9;sente dans le header HTTP <code>X-Partners-Signature</code>.</p>
 <p>Nous vous recommandons de v&#xE9;rifier la validit&#xE9; de cette signature afin de vous assurer de l&apos;int&#xE9;grit&#xE9; et de l&apos;origine de la requ&#xEA;te.</p>
 <p>La signature est un hash <code>sha256</code> du <strong>body</strong> (en <em>JSON</em>) de la requ&#xEA;te et de votre <strong>cl&#xE9; secr&#xE8;te</strong> fournie &#xE0; la cr&#xE9;ation du webhook.</p>
@@ -242,7 +238,7 @@
 <li>Comparer le header envoy&#xE9; avec votre r&#xE9;sultat</li>
 </ul>
 <p>Par exemple, en php, vous obtiendrez le hash en faisant</p>
-<pre class="language-php"><code class="language-php"><span class="token variable">$expectedSignature</span> <span class="token operator">=</span> <span class="token function">hash_hmac</span><span class="token punctuation">(</span><span class="token string">&apos;sha256&apos;</span><span class="token punctuation">,</span> <span class="token variable">$jsonBodyString</span><span class="token punctuation">,</span> <span class="token string">&apos;your_secret_key&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="language-php"><code class="language-php"><span class="token variable">$expectedSignature</span> <span class="token operator">=</span> <span class="token function">hash_hmac</span><span class="token punctuation">(</span><span class="token single-quoted-string string">&apos;sha256&apos;</span><span class="token punctuation">,</span> <span class="token variable">$jsonBodyString</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">&apos;your_secret_key&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
 
                         </div>
@@ -251,7 +247,7 @@
 
                             <ul class="sidenav">
                                 
-                                <li ><a href="/partners-doc/"><i class="icon-chevron-left"></i>Overview</a></li>
+                                <li ><a href="/partners-doc/index.md"><i class="icon-chevron-left"></i>Overview</a></li>
                                 
                                 <li ><a href="/partners-doc/api/oauth2"><i class="icon-chevron-left"></i>OAuth2</a></li>
                                 

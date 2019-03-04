@@ -5,17 +5,17 @@ RAML specification and Markdown documentation for Creads Partners API.
 
 ## Build the documentation
 
-Be sure to have nodejs 0.12.x installed.
+Be sure to have right nodejs version installed (using nvm)[https://github.com/creationix/nvm]:
 
-### Generate Markdown & RAML doc
+    nvm i
 
 Install dependencies:
 
     npm i
 
- Build doc and RAML references:
+Generate HTML from Markdown & RAML:
 
-    node --harmony build.js
+    npm run build
 
 ## TODO
 

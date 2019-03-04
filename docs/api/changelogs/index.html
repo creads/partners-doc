@@ -126,23 +126,22 @@
 
                         <div class="col_two_third nobottommargin">
                         <h1 id="changelogs"><a class="heading-anchor" href="#changelogs"><span></span></a>Changelogs</h1>
-<h2 id="1-0-0-rc31"><a class="heading-anchor" href="#1-0-0-rc31"><span></span></a>1.0.0-rc31</h2>
+<h2 id="100-rc31"><a class="heading-anchor" href="#100-rc31"><span></span></a>1.0.0-rc31</h2>
 <ul>
 <li>Added <code>webhook</code> resource and endpoints to allow api Users to register their webhooks</li>
 </ul>
-<h2 id="1-0-0-rc15"><a class="heading-anchor" href="#1-0-0-rc15"><span></span></a>1.0.0-rc15</h2>
+<h2 id="100-rc15"><a class="heading-anchor" href="#100-rc15"><span></span></a>1.0.0-rc15</h2>
 <ul>
 <li>added <code>/projects/{gid}/messages</code> <em>POST</em> and <em>GET</em> endpoints, to send and see project messages to a project</li>
 <li>renamed existing <code>solo</code> mode project to <code>solo_legacy</code>. New <code>solo</code> are meant to be in feed (project messages) form</li>
 </ul>
-<h2 id="1-0-0-rc11"><a class="heading-anchor" href="#1-0-0-rc11"><span></span></a>1.0.0-rc11</h2>
+<h2 id="100-rc11"><a class="heading-anchor" href="#100-rc11"><span></span></a>1.0.0-rc11</h2>
 <ul>
 <li>changed file and image fields schema. Image variations are embed now to be able to get any image into its right size.</li>
 </ul>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://filer-creads-partners.s3-eu-west-1.amazonaws.com/myfile.jpg&quot;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p>becomes:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">&quot;logo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
@@ -156,9 +155,8 @@
       <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="1-0-0-rc8"><a class="heading-anchor" href="#1-0-0-rc8"><span></span></a>1.0.0-rc8</h2>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="100-rc8"><a class="heading-anchor" href="#100-rc8"><span></span></a>1.0.0-rc8</h2>
 <ul>
 <li>removed /files endpoint</li>
 <li>added <code>logo</code> field in Organization returned by <code>/p/organizations/{hostname}</code></li>
@@ -171,38 +169,38 @@
 <li>replaced <code>worker.image</code> field by <code>worker.avatar</code></li>
 <li>added <code>me.upload_form</code> field when responding to GET /me and having scope <code>upload_files</code></li>
 </ul>
-<h2 id="1-0-0-rc4"><a class="heading-anchor" href="#1-0-0-rc4"><span></span></a>1.0.0-rc4</h2>
+<h2 id="100-rc4"><a class="heading-anchor" href="#100-rc4"><span></span></a>1.0.0-rc4</h2>
 <ul>
 <li>Added <code>test</code> to organization, option that allows to create Organizations where project are not charged</li>
 </ul>
-<h2 id="1-0-0-rc3"><a class="heading-anchor" href="#1-0-0-rc3"><span></span></a>1.0.0-rc3</h2>
+<h2 id="100-rc3"><a class="heading-anchor" href="#100-rc3"><span></span></a>1.0.0-rc3</h2>
 <ul>
 <li>added <code>last_seen</code> and <code>projects_count</code> fields in resource User for admin only</li>
 <li>Added <code>avatar</code> to user, generated from his firstname and lastname</li>
 </ul>
-<h2 id="1-0-0-rc2"><a class="heading-anchor" href="#1-0-0-rc2"><span></span></a>1.0.0-rc2</h2>
+<h2 id="100-rc2"><a class="heading-anchor" href="#100-rc2"><span></span></a>1.0.0-rc2</h2>
 <ul>
 <li>Added <code>budget</code> and <code>user_rank</code> fields to invitation (data to be provided to generated user)</li>
 <li>Added project state <code>require_approval</code> for over-budget project to be launched by manager</li>
 </ul>
-<h2 id="1-0-0-rc1"><a class="heading-anchor" href="#1-0-0-rc1"><span></span></a>1.0.0-rc1</h2>
+<h2 id="100-rc1"><a class="heading-anchor" href="#100-rc1"><span></span></a>1.0.0-rc1</h2>
 <ul>
 <li>/products/{gid}/organizations is now restricted to admin only</li>
 </ul>
-<h2 id="1-0-0-beta23"><a class="heading-anchor" href="#1-0-0-beta23"><span></span></a>1.0.0-beta23</h2>
+<h2 id="100-beta23"><a class="heading-anchor" href="#100-beta23"><span></span></a>1.0.0-beta23</h2>
 <ul>
 <li>added <code>published_at</code> to <code>project</code> resource to display the date of publication (formerly in <code>started_at</code>)</li>
 <li>added <code>canceled_at</code> to <code>project</code> resource to display the date of cancelation</li>
 <li><code>started_at</code> in <code>project</code> now contains the date at which the project is really in progress</li>
 </ul>
-<h2 id="1-0-0-beta21"><a class="heading-anchor" href="#1-0-0-beta21"><span></span></a>1.0.0-beta21</h2>
+<h2 id="100-beta21"><a class="heading-anchor" href="#100-beta21"><span></span></a>1.0.0-beta21</h2>
 <ul>
 <li>added new OAuth2 scope <code>files</code> that allows to fetch only files resources</li>
 <li>renamed <code>/me/change-password</code> to <code>/me/password</code></li>
 <li>client authenticated with <code>client_credentials</code> won&apos;t be able to request <code>GET /me, PUT /me, GET /me/member_of</code></li>
 <li>only <em>admin</em> users can request <code>POST /works</code>, <code>PUT /works/{gid}</code>, <code>DELETE /works/{gid}</code></li>
 </ul>
-<h2 id="1-0-0-alpha14"><a class="heading-anchor" href="#1-0-0-alpha14"><span></span></a>1.0.0-alpha14</h2>
+<h2 id="100-alpha14"><a class="heading-anchor" href="#100-alpha14"><span></span></a>1.0.0-alpha14</h2>
 <blockquote>
 <p>everything started here</p>
 </blockquote>
@@ -213,7 +211,7 @@
 
                             <ul class="sidenav">
                                 
-                                <li ><a href="/partners-doc/"><i class="icon-chevron-left"></i>Overview</a></li>
+                                <li ><a href="/partners-doc/index.md"><i class="icon-chevron-left"></i>Overview</a></li>
                                 
                                 <li ><a href="/partners-doc/api/oauth2"><i class="icon-chevron-left"></i>OAuth2</a></li>
                                 
