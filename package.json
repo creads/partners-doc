@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "ln -sf docs/ partners-doc 2>/dev/null",
     "start": "node index.js",
     "prebuild": "npm i",
     "build": "node build.js",
@@ -36,5 +37,8 @@
     "q": "^1.5.1",
     "raml2obj": "^3.0.0"
   },
-  "main": "build.js"
+  "main": "build.js",
+  "devDependencies": {
+    "node-static": "^0.7.11"
+  }
 }
