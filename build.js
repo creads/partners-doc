@@ -34,18 +34,13 @@ var metalsmith = Metalsmith(__dirname)
     section_title: 'Documentation API',
     current_section: '/'
   }))
-  .use(collections({
-    overview: {
-      "pattern": "./*.md",
-      "sortBy": "date"
-    }
-  }))
+  .use(collections())
   .use(markdown({ langPrefix: 'language-' }))
   .use(metalsmithPrism({
     preLoad: ["markup-templating"]
   }))
   .use(permalinks({
-    "pattern": ":collection/:title"
+    pattern: ":collection/:title"
   }))
   .use(headingsidentifier())
   .use(layouts({

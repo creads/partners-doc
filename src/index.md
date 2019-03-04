@@ -1,7 +1,7 @@
 ---
 title: Overview
 layout: page.nunjucks
-permalink: false
+permalink: "."
 collection: api
 date: 2015-01-01
 ---
