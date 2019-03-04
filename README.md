@@ -17,6 +17,14 @@ Generate HTML from Markdown & RAML:
 
     npm run build
 
+## Dev web server
+
+To run the dev server:
+
+    npm start
+
+Then visit website on http://localhost:8080/partners-doc/
+
 ## TODO
 
 * add anchor link and icon
