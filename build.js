@@ -11,7 +11,6 @@ var Metalsmith = require('metalsmith'),
   metalsmithPrism = require('metalsmith-prism')
 ;
 
-
 var metadata = {
   base_dir: '/partners-doc',
   site_title: 'Documentation Creads Partners',
@@ -49,28 +48,6 @@ var metalsmith = Metalsmith(__dirname)
     "default": "page.nunjucks"
   }))
   .destination('docs/')
-  .build(function(err) {
-    if (err) throw err;
-  })
-;
-
-// assets duplication
-Metalsmith(__dirname)
-  .source('assets/')
-  .use(ignore([
-    '**/.DS_Store'
-  ]))
-  .destination('docs/')
-  .build(function(err) {
-    if (err) throw err;
-  })
-;
-Metalsmith(__dirname)
-  .source('node_modules/prismjs/themes/')
-  .use(ignore([
-    '**/.DS_Store'
-  ]))
-  .destination('docs/css/highlight/')
   .build(function(err) {
     if (err) throw err;
   })

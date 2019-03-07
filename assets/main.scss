@@ -1,0 +1,40 @@
+$theme-assets-path: '~creads-theme/dist/assets/';
+
+@import '~creads-theme';
+@import '~prismjs/themes/prism-okaidia.css';
+
+@import './gotoTop.scss';
+@import './anchors.scss';
+
+pre {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+code,pre {
+  background-color: #f6f8fa;
+  border-radius: 0.3em;
+  color: #24292e;
+}
+
+code {
+  padding: .2em .4em;
+}
+
+//reset theme class
+.tag {
+  border-radius: initial;
+  background-color:initial;
+  min-height: initial;
+  padding: initial;
+  color: initial;
+  justify-content: initial;
+  align-items: initial;
+  display: initial;
+  margin-bottom: initial;
+  transition: initial;
+  &:not(:last-child) {
+    margin-right: initial;
+  }
+}

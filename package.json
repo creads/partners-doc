@@ -5,9 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "ln -sf docs partners-doc 2>/dev/null",
-    "start": "node index.js",
+    "start": "node server.js",
     "prebuild": "npm i",
-    "build": "node build.js",
+    "build": "node build.js && webpack",
     "version": "npm run build && git add -A docs",
     "bump": "npm version --allow-same-version --no-git-tag-version $VERSION",
     "postbump": "git add package-lock.json package.json"
@@ -39,6 +39,19 @@
   },
   "main": "build.js",
   "devDependencies": {
-    "node-static": "^0.7.11"
+    "@fortawesome/fontawesome-free": "^5.7.2",
+    "anchor-js": "^4.2.0",
+    "creads-theme": "git+ssh://git@github.com/pitpit/theme.git#feature/theme",
+    "css-loader": "^2.1.0",
+    "expose-loader": "^0.7.5",
+    "file-loader": "^3.0.1",
+    "jquery": "^3.3.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "node-static": "^0.7.11",
+    "sass-loader": "^7.1.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   }
 }
