@@ -17,6 +17,10 @@ Generate HTML from Markdown & RAML:
 
     npm run build
 
+Or generate HTML from Markdown & RAML then watch for changes:
+
+    npm run watch
+
 ## Dev web server
 
 To run the dev server:
