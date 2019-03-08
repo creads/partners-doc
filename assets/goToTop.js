@@ -1,3 +1,5 @@
+import jQuery from 'jquery';
+
 (function ($) {
   var $window = $(window);
   var $goToTopEl = $('#gotoTop');

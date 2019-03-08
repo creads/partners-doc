@@ -1,5 +1,7 @@
 import anchorJS from 'anchor-js';
 
-var anchors = new anchorJS();
-anchors.options.visible = 'always';
-anchors.add();
+if (document.getElementsByClassName('anchors-enabled').length) {
+  var anchors = new anchorJS();
+  anchors.options.visible = 'always';
+  anchors.add();
+}

@@ -25,7 +25,7 @@
                   
                   <a class="navbar__item-link ng-binding " href="/partners-doc/">API</a>
                   
-                  <a class="navbar__item-link ng-binding navbar__item-link--active" href="/partners-doc/references">R&#xE9;f&#xE9;rences API</a>
+                  <a class="navbar__item-link ng-binding navbar__item-link--active" href="/partners-doc/references">R&#xE9;f&#xE9;rences</a>
                   
                 </div>
               </div>
@@ -37,99 +37,83 @@
     </header>
     
 
+
     
     <div class="container-fluid">
-      <div class="row">
+      <div id="tabs" class="row">
         
-        <nav class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light" style="z-index: 4;">
-          <ul class="list mt-3">
-            
-            
-          </ul>
-        </nav>
+        
+<nav id="nav" class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light" style="z-index: 4;">
+  <ul class="list mt-3">
+    
+    <li class="list__item mb-3 ui-tabs-active"><a href="#root"><i class="icon-chevron-left"></i>Root</a></li>
+    
+    <li class="list__item mb-3"><a href="#categories"><i class="icon-chevron-left"></i>Categories</a></li>
+    
+    <li class="list__item mb-3"><a href="#products"><i class="icon-chevron-left"></i>Products</a></li>
+    
+    <li class="list__item mb-3"><a href="#projects"><i class="icon-chevron-left"></i>Projects</a></li>
+    
+    <li class="list__item mb-3"><a href="#prices"><i class="icon-chevron-left"></i>Prices</a></li>
+    
+    <li class="list__item mb-3"><a href="#works"><i class="icon-chevron-left"></i>Works</a></li>
+    
+    <li class="list__item mb-3"><a href="#workers"><i class="icon-chevron-left"></i>Workers</a></li>
+    
+    <li class="list__item mb-3"><a href="#comments"><i class="icon-chevron-left"></i>Comments</a></li>
+    
+    <li class="list__item mb-3"><a href="#reviews"><i class="icon-chevron-left"></i>Reviews</a></li>
+    
+    <li class="list__item mb-3"><a href="#users"><i class="icon-chevron-left"></i>Users</a></li>
+    
+    <li class="list__item mb-3"><a href="#invitations"><i class="icon-chevron-left"></i>Invitations</a></li>
+    
+    <li class="list__item mb-3"><a href="#me"><i class="icon-chevron-left"></i>Me</a></li>
+    
+    <li class="list__item mb-3"><a href="#organizations"><i class="icon-chevron-left"></i>Organizations</a></li>
+    
+    <li class="list__item mb-3"><a href="#orgs"><i class="icon-chevron-left"></i>Organizations (shorthand)</a></li>
+    
+    <li class="list__item mb-3"><a href="#p"><i class="icon-chevron-left"></i>Public</a></li>
+    
+    <li class="list__item mb-3"><a href="#files__url_"><i class="icon-chevron-left"></i>Files</a></li>
+    
+    <li class="list__item mb-3"><a href="#fileinfo__url_"><i class="icon-chevron-left"></i>File Info</a></li>
+    
+    <li class="list__item mb-3"><a href="#receipts"><i class="icon-chevron-left"></i>Receipts</a></li>
+    
+    <li class="list__item mb-3"><a href="#invoices"><i class="icon-chevron-left"></i>Invoices</a></li>
+    
+    <li class="list__item mb-3"><a href="#files"><i class="icon-chevron-left"></i>Starred files</a></li>
+    
+  </ul>
+</nav>
+
         
         <main role="main" class="col-12 col-lg-10 offset-lg-2 pt-5 mt-4">
-
           <div class="row">
             <div class="col-12">
               <div class=" mt-3">
-                
-        <!-- Content
-        ============================================= -->
-        <section id="content">
+              
+  <section id="content" class="tabs-enabled">
+    <div class="col_two_third nobottommargin">
 
-            <div class="content-wrap">
+      
+        <div id="root" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Root</h3>
+          </div>
 
-                <div class="container clearfix">
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Say hello to our api (Public)</p>
 
-                    <div id="side-navigation">
+              </div>
+            
 
-                        <div class="col_one_third col_last nobottommargin">
-
-                            <ul class="sidenav">
-                                
-                                  <li><a href="#root"><i class="icon-chevron-left"></i>Root</a></li>
-                                
-                                  <li><a href="#categories"><i class="icon-chevron-left"></i>Categories</a></li>
-                                
-                                  <li><a href="#products"><i class="icon-chevron-left"></i>Products</a></li>
-                                
-                                  <li><a href="#projects"><i class="icon-chevron-left"></i>Projects</a></li>
-                                
-                                  <li><a href="#prices"><i class="icon-chevron-left"></i>Prices</a></li>
-                                
-                                  <li><a href="#works"><i class="icon-chevron-left"></i>Works</a></li>
-                                
-                                  <li><a href="#workers"><i class="icon-chevron-left"></i>Workers</a></li>
-                                
-                                  <li><a href="#comments"><i class="icon-chevron-left"></i>Comments</a></li>
-                                
-                                  <li><a href="#reviews"><i class="icon-chevron-left"></i>Reviews</a></li>
-                                
-                                  <li><a href="#users"><i class="icon-chevron-left"></i>Users</a></li>
-                                
-                                  <li><a href="#invitations"><i class="icon-chevron-left"></i>Invitations</a></li>
-                                
-                                  <li><a href="#me"><i class="icon-chevron-left"></i>Me</a></li>
-                                
-                                  <li><a href="#organizations"><i class="icon-chevron-left"></i>Organizations</a></li>
-                                
-                                  <li><a href="#orgs"><i class="icon-chevron-left"></i>Organizations (shorthand)</a></li>
-                                
-                                  <li><a href="#p"><i class="icon-chevron-left"></i>Public</a></li>
-                                
-                                  <li><a href="#files__url_"><i class="icon-chevron-left"></i>Files</a></li>
-                                
-                                  <li><a href="#fileinfo__url_"><i class="icon-chevron-left"></i>File Info</a></li>
-                                
-                                  <li><a href="#receipts"><i class="icon-chevron-left"></i>Receipts</a></li>
-                                
-                                  <li><a href="#invoices"><i class="icon-chevron-left"></i>Invoices</a></li>
-                                
-                                  <li><a href="#files"><i class="icon-chevron-left"></i>Starred files</a></li>
-                                
-                            </ul>
-
-                        </div>
-
-                        <div class="col_two_third nobottommargin">
-
-                          
-                            <div id="root" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Root</h3>
-                              </div>
-
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Say hello to our api (Public)</p>
-
-                                  </div>
-                                
-
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -261,26 +245,26 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="categories" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Categories</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="categories" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Categories</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Collection of product categories. A product is associated to only one category.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Collection of product categories. A product is associated to only one category.
 Will only return categories that have product you are allowed to order.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -507,27 +491,27 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="products" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Products</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="products" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Products</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable and pageable collection of Products.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable and pageable collection of Products.
 As standard user you can only see enabled products for organization you are member of,
 As manager user, you can only see enabled products for organization you are manager of. And you can not create, update or delete a product.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -1448,27 +1432,27 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="projects" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Projects</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="projects" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Projects</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable, pageable and orderable collection of projets.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable, pageable and orderable collection of projets.
 As standard user you can only see your own projects.
 As manager user, you can only see every projets for organizations you are manager of.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -4175,25 +4159,25 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="prices" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Prices</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="prices" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Prices</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Price resources for products in given organization.</p>
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Price resources for products in given organization.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -5151,26 +5135,26 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="works" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Works</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="works" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Works</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable, pageable and orderable collection of works.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable, pageable and orderable collection of works.
 A standard user can not create a new work and can only see works related to its own projects.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -5715,25 +5699,25 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="workers" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Workers</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="workers" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Workers</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable collection of workers.</p>
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable collection of workers.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -6189,26 +6173,26 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="comments" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Comments</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="comments" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Comments</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Generic comments system able to comment any REST resource (based on its relative URI).
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Generic comments system able to comment any REST resource (based on its relative URI).
 Standard user can not list every comments.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -7284,27 +7268,27 @@ label label-put
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="reviews" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Reviews</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="reviews" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Reviews</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>review resource collection.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>review resource collection.
 A standard user can only see review on its own project.
 A standard user can only create review for its own project.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -8015,27 +7999,27 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="users" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Users</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="users" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Users</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Orderable, Searchable and pageable collection of Users.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Orderable, Searchable and pageable collection of Users.
 As standard user, you can only see your user.
 As manager user, you can see, create, update and delete users for organizations you are manager of.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -9255,25 +9239,25 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="invitations" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Invitations</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="invitations" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Invitations</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Invitations to create user account or add to organization existing user.</p>
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Invitations to create user account or add to organization existing user.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -10118,26 +10102,26 @@ label label-delete
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="me" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Me</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="me" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Me</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Current logged User. Alias for /user/{gid}
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Current logged User. Alias for /user/{gid}
 Will throw 403 if authenticated with <code>client_creadentials</code></p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -10800,26 +10784,26 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="organizations" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Organizations</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="organizations" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Organizations</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable and pageable collection of Organizations.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable and pageable collection of Organizations.
 As standard or manager user, you can only see your organizations.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -11463,20 +11447,20 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="orgs" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Organizations (shorthand)</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="orgs" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Organizations (shorthand)</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
+          <div class="panel-body">
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
 
@@ -12363,25 +12347,25 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="p" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Public</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="p" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Public</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Publicly accessible resources</p>
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Publicly accessible resources</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
 
@@ -12715,20 +12699,20 @@ label label-post
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="files__url_" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Files</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="files__url_" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Files</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
+          <div class="panel-body">
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -12906,20 +12890,20 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="fileinfo__url_" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">File Info</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="fileinfo__url_" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">File Info</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
+          <div class="panel-body">
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -13078,27 +13062,27 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="receipts" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Receipts</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="receipts" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Receipts</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable, pageable and orderable collection of receipts.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable, pageable and orderable collection of receipts.
 As standard user you can only see your own receipts.
 As manager user, you can only see every receipts for organizations you are manager of.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -13392,27 +13376,27 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="invoices" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Invoices</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="invoices" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Invoices</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Searchable, pageable and orderable collection of invoices.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Searchable, pageable and orderable collection of invoices.
 As standard user you cant see any invoice.
 As a owner of an organization, you can only see every invoice for your organization.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -13706,26 +13690,26 @@ label label-get
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-                            <div id="files" class="panel panel-default">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">Starred files</h3>
-                              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div id="files" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">Starred files</h3>
+          </div>
 
-                              <div class="panel-body">
-                                
-                                  <div class="top-resource-description">
-                                    <p>Allows filepaths (already uploaded) to be marked as starred.
+          <div class="panel-body">
+            
+              <div class="top-resource-description">
+                <p>Allows filepaths (already uploaded) to be marked as starred.
 Only supported (visible) for project messages attachments for now.</p>
 
-                                  </div>
-                                
+              </div>
+            
 
-                                <div class="panel-group">
-                                  
+            <div class="panel-group">
+              
 
 
   <div class="panel panel-white">
@@ -14011,47 +13995,18 @@ label label-delete
 
 
 
-                                </div>
-                              </div>
-                            </div>
-                          
-
-                        </div>
-
-                    </div>
-
-                    <script>
-                      $(function() {
-                        $( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } })
-                          .on( "tabsactivate", function(event, ui) {
-                              history.pushState({}, "", ui.newTab.find('a.ui-tabs-anchor').attr('href'));
-                          });
-
-                        if(window.location.hash) {
-                          $('#side-navigation').find('ul > li > a').each(function (index, a) {
-                            console.log($(a).attr('href'))
-                            if ($(a).attr('href') == window.location.hash) {
-                              $('#side-navigation').tabs('option', 'active', index);
-                            }
-                          });
-                          setTimeout(function() {
-                            window.scrollTo(0, 0);
-                          }, 1);
-                        }
-                      });
-                    </script>
-
-                </div>
-
             </div>
+          </div>
+        </div>
+      
 
-        </section><!-- #content end -->
+    </div>
 
+  </section>
 
               </div>
             </div>
           </div>
-
         </main>
       </div>
     </div>

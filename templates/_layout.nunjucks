@@ -35,11 +35,14 @@
     </header>
     {# HEADER END #}
 
+
     {# CONTENT START #}
     <div class="container-fluid">
-      <div class="row">
+      <div id="tabs" class="row">
         {# SIDEBAR START #}
-        <nav class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light"
+        {% block nav %}
+        {% if collections.api %}
+        <nav id="nav" class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light"
           style="z-index: 4;">
           <ul class="list mt-3">
             {#% if section_title %}<li>{{ section_title }}</li>{% endif %#}
@@ -48,17 +51,17 @@
             {% endfor %}
           </ul>
         </nav>
+        {% endif %}
+        {% endblock nav %}
         {# SIDEBAR END #}
         <main role="main" class="col-12 col-lg-10 offset-lg-2 pt-5 mt-4">
-
           <div class="row">
             <div class="col-12">
               <div class=" mt-3">
-                {% block content %}{% endblock %}
+              {% block content %}{% endblock %}
               </div>
             </div>
           </div>
-
         </main>
       </div>
     </div>

@@ -25,7 +25,7 @@
                   
                   <a class="navbar__item-link ng-binding navbar__item-link--active" href="/partners-doc/">API</a>
                   
-                  <a class="navbar__item-link ng-binding " href="/partners-doc/references">Références API</a>
+                  <a class="navbar__item-link ng-binding " href="/partners-doc/references">Références</a>
                   
                 </div>
               </div>
@@ -37,11 +37,14 @@
     </header>
     
 
+
     
     <div class="container-fluid">
-      <div class="row">
+      <div id="tabs" class="row">
         
-        <nav class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light"
+        
+        
+        <nav id="nav" class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light"
           style="z-index: 4;">
           <ul class="list mt-3">
             
@@ -59,13 +62,14 @@
           </ul>
         </nav>
         
+        
+        
         <main role="main" class="col-12 col-lg-10 offset-lg-2 pt-5 mt-4">
-
           <div class="row">
             <div class="col-12">
               <div class=" mt-3">
-                
-<section id="content">
+              
+<section id="content" class="anchors-enabled">
 <h1 id="ressources"><a class="heading-anchor" href="#ressources"><span></span></a>Ressources</h1>
 <p>Pour les exemples de cette documentation nous utilisons curl comme solution g&#xE9;n&#xE9;rique.
 Une variable <code>TOKEN</code> est initialis&#xE9;e avec la valeur du token OAuth obtenu lors de l&apos;authentification OAuth2.</p>
@@ -779,11 +783,9 @@ Mettre &#xE0; jour le projet en lui indiquant la cr&#xE9;ation gagnante:</p>
 
 </section>
 
-
               </div>
             </div>
           </div>
-
         </main>
       </div>
     </div>

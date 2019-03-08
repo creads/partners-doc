@@ -1,7 +1,6 @@
 {% extends '_layout.nunjucks' %}
 {% block content %}
-<section id="content">
+<section id="content" class="anchors-enabled">
 {{ contents | safe }}
 </section>
-
 {% endblock %}

@@ -191,78 +191,41 @@
       }
     </style>
 {% endblock %}
+{% block nav %}
+<nav id="nav" class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light"
+  style="z-index: 4;">
+  <ul class="list mt-3">
+    {% for resource in resources %}
+    <li  class="list__item mb-3{% if loop.first %} ui-tabs-active{% endif %}"><a href="#{{ resource.uniqueId|default("root", true) }}"><i class="icon-chevron-left"></i>{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endblock %}
 {% block content %}
-        <!-- Content
-        ============================================= -->
-        <section id="content">
+  <section id="content" class="tabs-enabled">
+    <div class="col_two_third nobottommargin">
 
-            <div class="content-wrap">
+      {% for resource in resources %}
+        <div id="{{ resource.uniqueId|default("root", true) }}" class="panel panel-default" >
+          <div class="panel-heading">
+            <h3 class="panel-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
+          </div>
 
-                <div class="container clearfix">
+          <div class="panel-body">
+            {% if resource.description %}
+              <div class="top-resource-description">
+                {% markdown %}{{ resource.description }}{% endmarkdown %}
+              </div>
+            {% endif %}
 
-                    <div id="side-navigation">
-
-                        <div class="col_one_third col_last nobottommargin">
-
-                            <ul class="sidenav">
-                                {% for resource in resources %}
-                                  <li {#% if loop.first %}class="ui-tabs-active"{% endif %#}><a href="#{{ resource.uniqueId|default("root", true) }}"><i class="icon-chevron-left"></i>{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</a></li>
-                                {% endfor %}
-                            </ul>
-
-                        </div>
-
-                        <div class="col_two_third nobottommargin">
-
-                          {% for resource in resources %}
-                            <div id="{{ resource.uniqueId|default("root", true) }}" class="panel panel-default" >
-                              <div class="panel-heading">
-                                <h3 class="panel-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
-                              </div>
-
-                              <div class="panel-body">
-                                {% if resource.description %}
-                                  <div class="top-resource-description">
-                                    {% markdown %}{{ resource.description }}{% endmarkdown %}
-                                  </div>
-                                {% endif %}
-
-                                <div class="panel-group">
-                                  {% include "_resource.raml.nunjucks" %}
-                                </div>
-                              </div>
-                            </div>
-                          {% endfor %}
-
-                        </div>
-
-                    </div>
-
-                    <script>
-                      $(function() {
-                        $( "#side-navigation" ).tabs({ show: { effect: "fade", duration: 400 } })
-                          .on( "tabsactivate", function(event, ui) {
-                              history.pushState({}, "", ui.newTab.find('a.ui-tabs-anchor').attr('href'));
-                          });
-
-                        if(window.location.hash) {
-                          $('#side-navigation').find('ul > li > a').each(function (index, a) {
-                            console.log($(a).attr('href'))
-                            if ($(a).attr('href') == window.location.hash) {
-                              $('#side-navigation').tabs('option', 'active', index);
-                            }
-                          });
-                          setTimeout(function() {
-                            window.scrollTo(0, 0);
-                          }, 1);
-                        }
-                      });
-                    </script>
-
-                </div>
-
+            <div class="panel-group">
+              {% include "_resource.raml.nunjucks" %}
             </div>
+          </div>
+        </div>
+      {% endfor %}
 
-        </section><!-- #content end -->
+    </div>
 
+  </section>
 {% endblock %}
