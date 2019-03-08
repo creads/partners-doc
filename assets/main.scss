@@ -6,20 +6,23 @@ $theme-assets-path: '~creads-theme/dist/assets/';
 @import './gotoTop.scss';
 @import './anchors.scss';
 
+code {
+  padding: .2em .4em;
+}
+
 pre {
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
+  code {
+    padding: 0;
+  }
 }
 
 code,pre {
   background-color: #f6f8fa;
   border-radius: 0.3em;
   color: #24292e;
-}
-
-code {
-  padding: .2em .4em;
 }
 
 //reset theme class

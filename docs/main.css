@@ -14112,18 +14112,20 @@ body:not(.device-touch) #gotoTop {
   color: #1785fc;
   text-decoration: none; }
 
+code {
+  padding: .2em .4em; }
+
 pre {
   padding: 1em;
   margin: .5em 0;
   overflow: auto; }
+  pre code {
+    padding: 0; }
 
 code, pre {
   background-color: #f6f8fa;
   border-radius: 0.3em;
   color: #24292e; }
-
-code {
-  padding: .2em .4em; }
 
 .tag {
   border-radius: initial;
