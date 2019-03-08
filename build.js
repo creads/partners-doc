@@ -16,7 +16,7 @@ var metadata = {
   site_title: 'Documentation Creads Partners',
   section_menu: {
     '/': 'API',
-    '/references': 'Références API'
+    '/references': 'Références'
   },
   section_title: null,
   current_section : null
@@ -25,12 +25,13 @@ var metadata = {
 // markdown generator
 var metalsmith = Metalsmith(__dirname)
   .source('src/')
+  .clean(false)
   .use(ignore([
     'references/**',
     '**/.DS_Store'
   ]))
   .metadata(merge(metadata, {
-    section_title: 'Documentation API',
+    section_title: 'API Creads',
     current_section: '/'
   }))
   .use(collections())
@@ -56,6 +57,7 @@ var metalsmith = Metalsmith(__dirname)
 //raml generator
 var metalsmith = Metalsmith(__dirname)
   .source('src/references')
+  .clean(false)
   .use(ignore([
     '**/*.json',
     '**/*.pdf',
@@ -63,7 +65,7 @@ var metalsmith = Metalsmith(__dirname)
     '**/.DS_Store'
   ]))
   .metadata(merge(metadata, {
-    section_title: 'Références API',
+    section_title: 'Références',
     current_section: '/references'
   }))
   .use(raml({

@@ -1,9 +1,10 @@
+
+
 const path = require('path');
 // const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const styleLintPlugin = require('stylelint-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
+const WatchFilesPlugin = require('webpack-watch-files-plugin').default;
 
 module.exports = {
   mode: 'development',
@@ -39,19 +40,15 @@ module.exports = {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
+    }),
+    new WebpackShellPlugin({
+      onBuildExit: ['echo "Building with metalsmith"', 'node build.js']
+    }),
+    new WatchFilesPlugin({
+      files: [
+        './templates/**/*.nunjucks'
+      ],
+      verbose: true
     })
-    // new CopyWebpackPlugin([
-    //   { from: path.resolve(__dirname, 'dist/*.css'), to: path.resolve(__dirname, '_site/assets/css/[name].[ext]'), toType: 'template' },
-    //   { from: path.resolve(__dirname, 'dist/*.js'), to: path.resolve(__dirname, '_site/assets/js/[name].[ext]'), toType: 'template' },
-    //   { from: path.resolve(__dirname, 'src/scss'), to: path.resolve(__dirname, 'dist/scss/[path]/[name].[ext]'), toType: 'template' },
-    //   { from: path.resolve(__dirname, 'src/assets'), to: path.resolve(__dirname, 'dist/assets/[path]/[name].[ext]'), toType: 'template' }
-    // ]),
-    // new styleLintPlugin({
-    //   configFile: '.stylelintrc',
-    //   context: '',
-    //   files: ['src/scss/**/*.scss'],
-    //   failOnError: false,
-    //   quiet: false,
-    // })
   ]
 };
