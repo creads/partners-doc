@@ -3,196 +3,215 @@ label label-{{ method }}
 {% endmacro %}
 
 {% if (resource.methods or (resource.description and resource.parentUrl)) %}
-  <div class="panel panel-white">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" href="#panel_{{ resource.uniqueId }}">
-          <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
-        </a>
-        <span class="methods">
-          {% for method in resource.methods %}
-            <a href="#{{ resource.uniqueId }}_{{ method.method }}"><!-- modal shown by hashchange event -->
-              <span class="{{ class_method(method.method) }}">{{ method.method }}{% if method.securedBy.length %} <span class="glyphicon glyphicon-lock" title="Authentication required"></span>{% endif %}</span>
-            </a>
-          {% endfor %}
-        </span>
-      </h4>
+  <div class="card">
+    <div class="card-header" id="heading-{{ resource.uniqueId }}" data-toggle="collapse" data-target="#collasped-{{ resource.uniqueId }}" aria-expanded="false" aria-controls="collasped-{{ resource.uniqueId }}">
+      <h5 class="card__title">
+        <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
+      </h5>
+      <span class="methods">
+        {% for method in resource.methods %}
+        <span class="{{ class_method(method.method) }}">{{ method.method }}{% if method.securedBy.length %} <i class="fas fa-lock" title="Authentication required"></i>{% endif %}</span>
+        {% endfor %}
+      </span>
+      <span class="card__icon">
+        <i class="fas fa-angle-down"></i>
+      </span>
     </div>
 
-    <div id="panel_{{ resource.uniqueId }}" class="panel-collapse collapse">
-      <div class="panel-body">
-        {% if resource.parentUrl %}
-          {% if resource.description %}
-            <div class="resource-description">
-              {% markdown %}{{ resource.description }}{% endmarkdown %}
-            </div>
-          {% endif %}
+    <div id="collasped-{{ resource.uniqueId }}" class="collapse" aria-labelledby="heading-{{ resource.uniqueId }}" data-parent="#accordion-{{parentUniqueId}}">
+      {% if resource.parentUrl %}
+      <div class="card-body resource-description">
+        {% if resource.description %}
+        {% markdown %}{{ resource.description }}{% endmarkdown %}
+        {% else %}
+        <p>&lt;no description&gt;</p>
         {% endif %}
-
-        <div class="list-group">
-          {% for method in resource.methods %}
-            <div onclick="window.location.href = '#{{ resource.uniqueId }}_{{ method.method }}'" class="list-group-item">
-              <span class="{{ class_method(method.method) }}">{{ method.method }}{% if method.securedBy.length %} <span class="glyphicon glyphicon-lock" title="Authentication required"></span>{% endif %}</span>
-              <div class="method_description">
-                {% markdown %}{{ method.description}}{% endmarkdown %}
-              </div>
-              <div class="clearfix"></div>
-            </div>
-          {% endfor %}
-        </div>
       </div>
+      {% endif %}
+      <ul class="list-group list-group-flush">
+        {% for method in resource.methods %}
+        <a data-toggle="modal" href="#{{ resource.uniqueId }}_{{ method.method }}">
+        <div class="list-group-item method-description">
+          <span class="{{ class_method(method.method) }}">{{ method.method }}{% if method.securedBy.length %} <i class="fas fa-lock" title="Authentication required"></i>{% endif %}</span>
+          {% if method.description %}
+          {% markdown %}{{ method.description}}{% endmarkdown %}
+          {% else %}
+          <p>&lt;no description&gt;</p>
+          {% endif %}
+        </div>
+        </a>
+        {% endfor %}
+      </ul>
     </div>
-
-    {% for method in resource.methods %}
-      <div class="modal fade" tabindex="0" id="{{ resource.uniqueId }}_{{ method.method }}">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel">
-                <span class="{{ class_method(method.method) }}">{{ method.method }}{% if method.securedBy.length %} <span class="glyphicon glyphicon-lock" title="Authentication required"></span>{% endif %}</span>
-                <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
-              </h4>
-            </div>
-
-            <div class="modal-body">
-              {% if method.description %}
-                <div class="alert alert-success">
-                  {% markdown %}{{ method.description}}{% endmarkdown %}
-                </div>
-              {% endif %}
-
-              {% if method.securedBy.length %}
-                {% for securedBy in method.securedBy %}
-                  <div class="alert alert-warning">
-                    <span class="glyphicon glyphicon-lock" title="Authentication required"></span> Secured by {{ securedBy }}
-                    {% set securityScheme = securitySchemeWithName(securedBy) %}
-                    {% if securityScheme.description %}
-                      {% markdown %}{{ securityScheme.description }}{% endmarkdown %}
-                    {% endif %}
-                  </div>
-                {% endfor %}
-              {% endif %}
-
-              <!-- Nav tabs -->
-              <ul class="nav nav-tabs">
-                {% set hasRequest = false %}
-                {% if method.allUriParameters.length or method.queryParameters or method.headers or method.body %}
-                  {% set hasRequest = true %}
-                  <li class="active">
-                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_request" data-toggle="tab">Request</a>
-                  </li>
-                {% endif %}
+  </div>
 
 
-                {% if method.responses %}
-                  <li {% if not(hasRequest) %}class="active"{% endif %}>
-                    <a href="#{{ resource.uniqueId }}_{{ method.method }}_response" data-toggle="tab">Response</a>
-                  </li>
-                {% endif %}
-              </ul>
-
-              <!-- Tab panes -->
-              <div class="tab-content">
-                {% if method.allUriParameters.length or method.queryParameters or method.headers or method.body %}
-                  <div class="tab-pane active" id="{{ resource.uniqueId }}_{{ method.method }}_request">
-                    {% if resource.allUriParameters.length %}
-                      <h3>URI Parameters</h3>
-                      <ul>
-                        {% for item in resource.allUriParameters %}
-                          {% include "_item.raml.nunjucks" %}
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    {% if method.headers %}
-                      <h3>Headers</h3>
-                      <ul>
-                        {% for key, item in method.headers %}
-                          {% include "_item.raml.nunjucks" %}
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    {% if method.queryParameters %}
-                      <h3>Query Parameters</h3>
-                      <ul>
-                        {% for key, item in method.queryParameters %}
-                          {% include "_item.raml.nunjucks" %}
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-
-                    {% if method.body %}
-                      <h3>Body</h3>
-                      {% for key, b in method.body %}
-                        <p><strong>Type: {{ key }}</strong></p>
-                        {% if b.formParameters %}
-                          <strong>Form Parameters</strong>
-                          <ul>
-                            {% for key, item in b.formParameters %}
-                              {% include "_item.raml.nunjucks" %}
-                            {% endfor %}
-                          </ul>
-                        {% endif %}
-
-                        {% if b.schema %}
-                          <p><strong>Schema</strong>:</p>
-                          <pre><code>{{ b.schema | escape }}</code></pre>
-                        {% endif %}
-
-                        {% if b.example %}
-                          <p><strong>Example</strong>:</p>
-                          <pre><code>{{ b.example | escape }}</code></pre>
-                        {% endif %}
-                      {% endfor %}
-                    {% endif %}
-                  </div>
-                {% endif %}
-
-                {% if method.responses %}
-                  <div class="tab-pane {% if not(hasRequest) %}active{% endif %}" id="{{ resource.uniqueId }}_{{ method.method }}_response">
-                    {% for key, response in method.responses %}
-                      <h2>HTTP status code <a href="http://httpstatus.es/{{ key }}" target="_blank">{{ key }}</a></h2>
-                      {% markdown %}{{ response.description}}{% endmarkdown %}
-
-                      {% if response.headers %}
-                        <h3>Headers</h3>
-                        <ul>
-                          {% for key, item in response.headers %}
-                            {% include "_item.raml.nunjucks" %}
-                          {% endfor %}
-                        </ul>
-                      {% endif %}
-
-                      {% if response.body %}
-                        <h3>Body</h3>
-                        {% for key, b in response.body %}
-                          <p><strong>Type: {{ key }}</strong></p>
-
-                          {% if b.schema %}
-                            <p><strong>Schema</strong>:</p>
-                            <pre class="language-json"><code class="language-json">{{ b.schema | escape }}</code></pre>
-                          {% endif %}
-
-                          {% if b.example %}
-                            <p><strong>Example</strong>:</p>
-                            <pre class="language-json"><code class="language-json">{{ b.example | escape }}</code></pre>
-                          {% endif %}
-                        {% endfor %}
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                {% endif %}
-              </div>
+{#<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal__header align-items-center pb-0">
+            <i class="fas fa-times modal__close" data-dismiss="modal" aria-label="Close"></i>
+          </div>
+          <div class="modal__body text-center">
+            <p class="modal__text--only">Êtes-vous sur de vouloir définitivement supprimer ce brouillon ?</p>
+          </div>
+          <div class="modal__footer pb-5 mb-2">
+            <div class="btn-list">
+              <button type="button" class="btn btn-outline-light btn--big" data-dismiss="modal">Annuler</button>
+              <button type="button" class="btn btn-primary btn--big">Validation</button>
             </div>
           </div>
         </div>
       </div>
-    {% endfor %}
+    </div>#}
+
+  {% for method in resource.methods %}
+  <div class="modal fade" id="{{ resource.uniqueId }}_{{ method.method }}" tabindex="0" role="dialog"  aria-labelledby="{{ resource.uniqueId }}_{{ method.method }}-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal__header">
+          <h4 class="modal-title" id="{{ resource.uniqueId }}_{{ method.method }}-title">
+            <span class="{{ class_method(method.method) }}">{{ method.method }}{% if method.securedBy.length %} <i class="fas fa-lock" title="Authentication required"></i>{% endif %}</span>
+            <span class="parent">{{ resource.parentUrl }}</span>{{ resource.relativeUri }}
+          </h4>
+          <i class="fas fa-times modal__close" data-dismiss="modal" aria-label="Close"></i>
+        </div>
+
+        <div class="modal__body">
+          {% if method.description %}
+          {% markdown %}{{ method.description}}{% endmarkdown %}
+          {% else %}
+          <p>&lt;no description&gt;</p>
+          {% endif %}
+
+          {% if method.securedBy.length %}
+            {% for securedBy in method.securedBy %}
+            <i class="fas fa-lock" title="Authentication required"></i> Secured by {{ securedBy }}
+            {% set securityScheme = securitySchemeWithName(securedBy) %}
+            {% if securityScheme.description %}
+            {% markdown %}{{ securityScheme.description }}{% endmarkdown %}
+            {% else %}
+            <p>&lt;no description&gt;</p>
+            {% endif %}
+            {% endfor %}
+          {% endif %}
+
+          <!-- Nav tabs -->
+          <nav>
+            <ul class="nav nav-tabs"  id="nav-tab" role="tablist">
+              {% set active = true %}
+              {% if method.allUriParameters.length or method.queryParameters or method.headers or method.body %}
+              {% set active = false %}
+              <a class="tab active" id="{{ resource.uniqueId }}_{{ method.method }}_request_tab" href="#{{ resource.uniqueId }}_{{ method.method }}_request" data-toggle="tab" role="tab" aria-controls="{{ resource.uniqueId }}_{{ method.method }}_request" aria-selected="true">Request</a>
+              {% endif %}
+
+              {% if method.responses %}
+              <a class="tab {% if active %}active show{% endif %}" id="{{ resource.uniqueId }}_{{ method.method }}_response_tab" href="#{{ resource.uniqueId }}_{{ method.method }}_response" data-toggle="tab" role="tab" aria-controls="{{ resource.uniqueId }}_{{ method.method }}_response" aria-selected="{{ active }}">Response</a>
+              {% endif %}
+            </ul>
+          </nav>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            {% if method.allUriParameters.length or method.queryParameters or method.headers or method.body %}
+            <div class="tab-pane fade" id="{{ resource.uniqueId }}_{{ method.method }}_request" role="tabpanel" aria-labelledby="{{ resource.uniqueId }}_{{ method.method }}_request_tab">
+              {% if resource.allUriParameters.length %}
+              <h3>URI Parameters</h3>
+              <ul>
+                {% for item in resource.allUriParameters %}
+                  {% include "_item.raml.nunjucks" %}
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if method.headers %}
+              <h3>Headers</h3>
+              <ul>
+                {% for key, item in method.headers %}
+                  {% include "_item.raml.nunjucks" %}
+                {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if method.queryParameters %}
+              <h3>Query Parameters</h3>
+              <ul>
+                {% for key, item in method.queryParameters %}
+                  {% include "_item.raml.nunjucks" %}
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            {% if method.body %}
+            <h3>Body</h3>
+            {% for key, b in method.body %}
+              <p><strong>Type: {{ key }}</strong></p>
+              {% if b.formParameters %}
+                <strong>Form Parameters</strong>
+                <ul>
+                  {% for key, item in b.formParameters %}
+                    {% include "_item.raml.nunjucks" %}
+                  {% endfor %}
+                </ul>
+              {% endif %}
+
+              {% if b.schema %}
+                <p><strong>Schema</strong>:</p>
+                <pre><code>{{ b.schema | escape }}</code></pre>
+              {% endif %}
+
+              {% if b.example %}
+                <p><strong>Example</strong>:</p>
+                <pre><code>{{ b.example | escape }}</code></pre>
+              {% endif %}
+            {% endfor %}
+            {% endif %}
+            </div>
+            {% endif %}
+
+            {% if method.responses %}
+            <div class="tab-pane fade" id="{{ resource.uniqueId }}_{{ method.method }}_response" role="tabpanel" aria-labelledby="{{ resource.uniqueId }}_{{ method.method }}_response_tab">
+            {% for key, response in method.responses %}
+              <h2>HTTP status code <a href="http://httpstatus.es/{{ key }}" target="_blank">{{ key }}</a></h2>
+              {% markdown %}{{ response.description}}{% endmarkdown %}
+
+              {% if response.headers %}
+              <h3>Headers</h3>
+              <ul>
+              {% for key, item in response.headers %}
+              {% include "_item.raml.nunjucks" %}
+              {% endfor %}
+              </ul>
+              {% endif %}
+
+              {% if response.body %}
+              <h3>Body</h3>
+              {% for key, b in response.body %}
+              <p><strong>Type: {{ key }}</strong></p>
+
+              {% if b.schema %}
+              <p><strong>Schema</strong>:</p>
+              <pre class="language-json"><code class="language-json">{{ b.schema | escape }}</code></pre>
+              {% endif %}
+
+              {% if b.example %}
+              <p><strong>Example</strong>:</p>
+              <pre class="language-json"><code class="language-json">{{ b.example | escape }}</code></pre>
+              {% endif %}
+              {% endfor %}
+              {% endif %}
+            {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  {% endfor %}
+
 {% endif %}
 
 {% for resource in resource.resources %}
-  {% include "_resource.raml.nunjucks" %}
+{% include "_resource.raml.nunjucks" %}
 {% endfor %}

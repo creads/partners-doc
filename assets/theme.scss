@@ -1,0 +1,35 @@
+code {
+  padding: .2em .4em;
+}
+
+pre {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  code {
+    padding: 0;
+  }
+}
+
+code,pre {
+  background-color: #f8f9fd;
+  border-radius: 0.3em;
+  color: #24292e;
+}
+
+//reset theme class
+.tag {
+  border-radius: initial;
+  background-color:initial;
+  min-height: initial;
+  padding: initial;
+  color: initial;
+  justify-content: initial;
+  align-items: initial;
+  display: initial;
+  margin-bottom: initial;
+  transition: initial;
+  &:not(:last-child) {
+    margin-right: initial;
+  }
+}

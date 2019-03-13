@@ -1,14 +1,14 @@
 {% extends '_layout.nunjucks' %}
-{% block head %}
+{#% block head %}
 {{ super() }}
-{#
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/default.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js"></script>
- #}
+
     <script type="text/javascript">
       $(document).ready(function() {
 
-        {#
+        /*
         $('.page-header pre code, .top-resource-description pre code').each(function(i, block) {
           hljs.highlightBlock(block);
         });
@@ -19,7 +19,7 @@
             hljs.highlightBlock(block);
           });
         });
-        #}
+        */
 
         // open modal on hashes like #_action_get
         $(window).bind('hashchange', function(e) {
@@ -45,47 +45,17 @@
     </script>
 
     <style>
-      {#
+      /*
       .hljs {
         background: transparent;
       }
-      #}
-      .parent {
-        color: #999;
-      }
+      */
       .list-group-item > .label {
         float: none;
         margin-right: 6px;
       }
       .panel-title > .methods {
         float: right;
-      }
-      .label {
-        text-transform: uppercase;
-        padding: .2em .5em;
-        border-radius: 0;
-        width: 70px;
-        font-weight: normal;
-        color: #f3f3f6;
-        line-height: normal;
-        font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-        font-size: 13px;
-        display: inline-block;
-      }
-      .label-get {
-        background-color: #63a8e2;
-      }
-      .label-post {
-        background-color: #6cbd7d;
-      }
-      .label-put {
-        background-color: #22bac4;
-      }
-      .label-delete {
-        background-color: #d26460;
-      }
-      .label-patch {
-        background-color: #ccc444;
       }
       .list-group, .panel-group {
         margin-bottom: 0;
@@ -122,7 +92,7 @@
         border-bottom: 1px solid #ddd;
         padding: 10px;
       }
-      {#
+      /*
         #sidebar {
         margin-top: 30px;
         padding-right: 5px;
@@ -135,7 +105,7 @@
         padding: 15px 15px 0 15px;
         margin: -15px -15px 10px -15px;
       }
-      #}
+      */
       .resource-description {
         border-bottom: 1px solid #fcfcfc;
         background: #fcfcfc;
@@ -190,7 +160,8 @@
         }
       }
     </style>
-{% endblock %}
+{% endblock %#}
+
 {% block nav %}
 <nav id="nav" class="col-2 sticky-top pt-5 mt-4 h-100 overflow-auto border-right position-fixed d-none d-lg-block bg-light"
   style="z-index: 4;">
@@ -202,30 +173,20 @@
 </nav>
 {% endblock %}
 {% block content %}
-  <section id="content" class="tabs-enabled">
-    <div class="col_two_third nobottommargin">
+<section id="content" class="tabs-enabled">
 
-      {% for resource in resources %}
-        <div id="{{ resource.uniqueId|default("root", true) }}" class="panel panel-default" >
-          <div class="panel-heading">
-            <h3 class="panel-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h3>
-          </div>
+  {% for resource in resources %}
+  <div id="{{ resource.uniqueId|default("root", true) }}" class="raml">
+    <h2 class="card-title">{% if resource.displayName %}{{ resource.displayName}}{% else %}{{ resource.relativeUri }}{% endif %}</h2>
+    {% if resource.description %}
+    {% markdown %}{{ resource.description }}{% endmarkdown %}
+    {% endif %}
 
-          <div class="panel-body">
-            {% if resource.description %}
-              <div class="top-resource-description">
-                {% markdown %}{{ resource.description }}{% endmarkdown %}
-              </div>
-            {% endif %}
-
-            <div class="panel-group">
-              {% include "_resource.raml.nunjucks" %}
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-
+    <div id="accordion-{{resource.uniqueId}}" class="accordion">
+    {% set parentUniqueId = resource.uniqueId %}
+    {% include "_resource.raml.nunjucks" %}
     </div>
-
-  </section>
+  </div>
+  {% endfor %}
+</section>
 {% endblock %}

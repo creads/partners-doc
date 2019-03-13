@@ -1,0 +1,61 @@
+.raml {
+  .label {
+    text-transform: uppercase;
+    padding: .2em .5em;
+    border-radius: 0;
+    font-weight: normal;
+    color: #f3f3f6;
+    line-height: normal;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 13px;
+    display: inline-block;
+  }
+  .label-get {
+    background-color: #63a8e2;
+  }
+  .label-post {
+    background-color: #6cbd7d;
+  }
+  .label-put {
+    background-color: #22bac4;
+  }
+  .label-delete {
+    background-color: #d26460;
+  }
+  .label-patch {
+    background-color: #ccc444;
+  }
+  .accordion .card__title {
+    .parent {
+      color: #999fae;
+    }
+    color: #151b26;
+  }
+
+  .resource-description,  .method-description {
+    font-size: .875rem;
+    line-height: 1.375rem;
+    p {
+      display:inline;
+    }
+  }
+
+  .method-description {
+    .label {
+      margin-right: 4px;
+    }
+  }
+
+  .card .list-group a {
+    color: #151b26;
+    &:hover {
+      color: #1785fc;
+      text-decoration: none;
+    }
+  }
+  .modal-title {
+    .label {
+      font-size: inherit;
+    }
+  }
+}
