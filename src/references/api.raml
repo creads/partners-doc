@@ -230,20 +230,6 @@ resourceTypes:
                   }
                 }
 
- - searchEngine:
-    get:
-      description: This endpoint provide a way to search among indexed <<resourcePathName | !singularize>> providing a full text query
-      queryParameters:
-        query:
-          description: A string containing terms or words to look for
-          type: string
-          default: null
-          required: true
-      responses:
-        200:
-          body:
-            application/json:
-              example:  !include ./samples/collection.json
 
 securitySchemes:
   - headerToken:
@@ -273,6 +259,12 @@ traits:
 
  - managerOnly:
     usage: The endpoint is only accessible to manager user
+
+ - developerOnly:
+    usage: The endpoint is only accessible to developer user
+
+ - ownerOnly:
+    usage: The endpoint is only accessible to the owner of the given organization
 
  - pageable:
     queryParameters:
@@ -320,6 +312,20 @@ traits:
           If set, the endpoint will only return the requested fields of the entity (plus the generic ones)
           Comma separated values: *field1,field2,field3*
 
+ - searchEngine:
+    description: This endpoint provide a way to search among indexed <<resourcePathName | !singularize>> providing a full text query
+    queryParameters:
+      search:
+        description: A string containing terms or words to look for
+        type: string
+        default: null
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:  !include ./samples/collection.json
+
 /:
   displayName: Root
   description: Say hello to our api (Public)
@@ -343,6 +349,26 @@ traits:
                 "version": "1.0.0-beta7
               }
 
+/batch:
+  displayName: Batch
+  description: Batch request to execute several actions
+  post:
+    is: [secured]
+    body:
+      application/json:
+        example: |
+          [
+            {
+              "relative_url": "/v1/projects",
+              "method": "POST",
+              "body": "{\"title\":\"My title\"}"
+            },
+            {
+              "relative_url": "/v1/projects/1234567891012",
+              "method": "GET"
+            }
+          ]
+
 /categories:
   displayName: Categories
   description: |
@@ -359,7 +385,7 @@ traits:
 
 /products:
   displayName: Products
-  is: [secured]
+  is: [secured, searchEngine]
   description: |
     Searchable and pageable collection of Products.
     As standard user you can only see enabled products for organization you are member of,
@@ -384,9 +410,6 @@ traits:
        - searchable:
           fields: '**category.id, organizations.gid **'
           example: '["category.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
-  /search:
-    description: Search products and products synonyms from a string query
-    type: searchEngine
 
   /{gid}:
     is: [secured]
@@ -454,6 +477,17 @@ traits:
       /{userGid}:
         delete:
           description: Unshare a project with a user.
+
+    /brief_files:
+      type:
+        collection:
+
+      post:
+        description: Add a file as an attachment to the project
+
+      /{filepath}:
+        delete:
+          description: Remove a file from the attachments of the project
 
     /messages:
       type:
@@ -820,23 +854,50 @@ traits:
             fields: '**organization.gid**'
             example: '["organization.gid", "==", "a615569f1e949b647ba10ed0adca790c"]'
 
+    /payment_source:
+      is: [secured, managerOnly]
+      type:
+        resource:
+          example: !include ./samples/payment_source.json
+      get:
+        description: The payment method associated to the organization
+      post:
+        description: Add (or replace) a payment method to the organization
+
+    /credit_notes:
+      is: [secured, ownerOnly]
+      type:  readOnlyCollection
+      get:
+        description: The Credit Notes of the organization
+
+    /webhooks:
+      is: [secured, developerOnly]
+      type: collection
+      get:
+        description: The webhooks associated to the organization
+      post:
+        description: Add a webhook to the organization
+
+      /check:
+        post:
+          description: Trigger a void event to test a potential webhook
+
+      /{webhookGid}:
+        put:
+          description: Edit a webhook
+        delete:
+          description: Delete a webhook
+
     /products:
-      is: [secured]
+      is: [secured, searchEngine]
       displayName: Products of an organization
       description: Available products for the current organization
       type: readOnlyCollection
 
-      /search:
-        is: [secured]
-        displayName: Product search
-        description: Search products and products synonyms among an organization from a string query
-        type: searchEngine
-
-    /users/search:
-      is: [secured]
+    /users:
+      is: [secured, searchEngine]
       displayName: Users search
       description: Search users among an organization from a string query
-      type: searchEngine
 
 /p:
   displayName: Public

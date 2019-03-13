@@ -566,6 +566,8 @@ Réponse :
 
 Un projet est une commande d'un produit dans une configuration donnée.
 
+Vous pouvez vous abstenir de choisir un produit si aucun ne vous convient, en réalisant une [demande spécifique](#demande-sp-cifique).
+
 #### Obtenir les options du produit
 
 Avant de créer un projet, on doit d'abord connaitre les options disponibles pour le produit du projet (mode, délai, métier...) et s'il peut être cumulé.
@@ -688,6 +690,39 @@ Réponse :
 }
 ```
 
+#### Demande spécifique
+
+Vous pouvez créer un projet sans produit et sans calculer son prix en procédant à une demande spécifique.
+
+Pour ce faire, il vous faut envoyer `null` comme valeur du produit et `true` dans `specific_request`.
+
+```bash
+curl -i -H "Authorization: Bearer $TOKEN" -d '{
+    "title": "titre du projet",
+    "description": "Description précise de la commande (brief)",
+    "product": null,
+    "specific_request": true,
+    "state": "draft"
+}' -X POST https://api-preprod.creads-partners.com/v1/projects
+```
+
+Ensuite, vous pouvez envoyer la demande en passant le statut à `waiting_for_proposal`.
+
+```bash
+curl -i -H "Authorization: Bearer $TOKEN" -d '{
+    "state": "waiting_for_proposal"
+}' -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012
+```
+
+Lorsque le projet aura reçu une proposition (avec ou sans produit), il passera en statut `proposal`, vous pourrez alors le publier en mettant son statut à `published` si votre budget et votre solde vous le permettent.
+
+```bash
+curl -i -H "Authorization: Bearer $TOKEN" -d '{
+    "state": "published"
+}' -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012
+```
+
+
 #### Créer le projet
 
 Un projet peut être créé en état de brouillon (`state: draft`) pour pouvoir être modifié avant lancement définitif de la commande, ou définitivement lancé (`state: published).
@@ -703,7 +738,7 @@ curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "organization": {"gid": "55f2ab761d0bd"},
     "options": {"due":2, "mode": "solo", "skill": "conception"},
     "price": {"amount": 735.0},
-    "status": "in_progress"
+    "state": "published"
 }' -X POST https://api-preprod.creads-partners.com/v1/projects
 ```
 
@@ -916,4 +951,9 @@ Et pour récuperer les autres commentaires de la même ressource
 curl -H "Authorization: Bearer $TOKEN" 'https://api.creads-partners.com/v1/comments?query=\["uri","==","/works/559bef4a9b600"\]'
 ```
 
+# Batch
+
+Il est possible de grouper plusieurs requêtes en une seule requête "Batch".
+
+Reportez-vous à la [référence du Batch](/references/#batch) pour voir un example.
 
