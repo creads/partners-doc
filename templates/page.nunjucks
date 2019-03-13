@@ -1,0 +1,35 @@
+{% extends '_layout.nunjucks' %}
+{% block content %}
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+
+                <div class="container clearfix">
+
+                    <div id="side-navigation">
+
+                        <div class="col_two_third nobottommargin">
+                        {{ contents | safe }}
+                        </div>
+
+                        <div class="col_one_third col_last nobottommargin">
+
+                            <ul class="sidenav">
+                                {% for page in collections.api %}
+                                <li {% if path == page.path %}class="ui-tabs-active"{% endif %}><a href="{{ base_dir }}/{% if page.path %}{{ page.path }}{% endif %}"><i class="icon-chevron-left"></i>{{ page.title }}</a></li>
+                                {% endfor %}
+                                {#<li class="ui-tabs-active"><a href="#snav-content1"><i class="icon-screen"></i>Responsive Layout<i class="icon-chevron-right"></i></a></li>#}
+                            </ul>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- #content end -->
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{
+  "gid": "559bf0527764e",
+  "created_at": "2014-09-08T22:47:31-07:00",
+  "won_at": null,
+  "description" : "Quisque ac ligula faucibus, pretium orci ac, porta velit. Cras ante enim, lacinia a commodo ut, iaculis et sem. Sed faucibus leo id justo imperdiet sollicitudin. Nunc tempor et risus vitae pulvinar. Quisque sed lacinia erat, vitae efficitur turpis. Fusce vel mollis tortor. Vivamus fermentum lacus in ultricies euismod.",
+  "image": "https://cre.ads/43348e3ea6-1.jpg",
+  "content": "Cogito Ergo Sum",
+  "worker": {
+    "gid": "559bf0683e9a5"
+  },
+  "project": {
+    "gid": "559bf06dc73e8",
+    "title": "lorem ipsum dolor"
+  }
+}
