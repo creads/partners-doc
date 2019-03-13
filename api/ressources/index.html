@@ -571,6 +571,7 @@ Un manager a alors le droit de :</p>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="cr&#xE9;er-un-projet"><a class="heading-anchor" href="#cr&#xE9;er-un-projet"><span></span></a>Cr&#xE9;er un projet</h3>
 <p>Un projet est une commande d&apos;un produit dans une configuration donn&#xE9;e.</p>
+<p>Vous pouvez vous abstenir de choisir un produit si aucun ne vous convient, en r&#xE9;alisant une <a href="#demande-sp-cifique">demande sp&#xE9;cifique</a>.</p>
 <h4 id="obtenir-les-options-du-produit"><a class="heading-anchor" href="#obtenir-les-options-du-produit"><span></span></a>Obtenir les options du produit</h4>
 <p>Avant de cr&#xE9;er un projet, on doit d&apos;abord connaitre les options disponibles pour le produit du projet (mode, d&#xE9;lai, m&#xE9;tier...) et s&apos;il peut &#xEA;tre cumul&#xE9;.
 Cette r&#xE9;cup&#xE9;ration peut &#xEA;tre faite une fois pour toute car l&apos;on suppose qu&apos;un produit ne perdra pas ou ne changera pas de caract&#xE9;ristique.</p>
@@ -677,6 +678,24 @@ Pour ce faire, le prix correct du projet doit &#xEA;tre calcul&#xE9; puis soumis
     <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token number">735</span><span class="token punctuation">,</span>
     <span class="token property">&quot;currency&quot;</span><span class="token operator">:</span> <span class="token string">&quot;EUR&quot;</span>
 <span class="token punctuation">}</span></code></pre>
+<h4 id="demande-sp&#xE9;cifique"><a class="heading-anchor" href="#demande-sp&#xE9;cifique"><span></span></a>Demande sp&#xE9;cifique</h4>
+<p>Vous pouvez cr&#xE9;er un projet sans produit et sans calculer son prix en proc&#xE9;dant &#xE0; une demande sp&#xE9;cifique.</p>
+<p>Pour ce faire, il vous faut envoyer <code>null</code> comme valeur du produit et <code>true</code> dans <code>specific_request</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
+    &quot;title&quot;: &quot;titre du projet&quot;,
+    &quot;description&quot;: &quot;Description pr&#xE9;cise de la commande (brief)&quot;,
+    &quot;product&quot;: null,
+    &quot;specific_request&quot;: true,
+    &quot;state&quot;: &quot;draft&quot;
+}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects</code></pre>
+<p>Ensuite, vous pouvez envoyer la demande en passant le statut &#xE0; <code>waiting_for_proposal</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
+    &quot;state&quot;: &quot;waiting_for_proposal&quot;
+}&apos;</span> -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012</code></pre>
+<p>Lorsque le projet aura re&#xE7;u une proposition (avec ou sans produit), il passera en statut <code>proposal</code>, vous pourrez alors le publier en mettant son statut &#xE0; <code>published</code> si votre budget et votre solde vous le permettent.</p>
+<pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
+    &quot;state&quot;: &quot;published&quot;
+}&apos;</span> -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012</code></pre>
 <h4 id="cr&#xE9;er-le-projet"><a class="heading-anchor" href="#cr&#xE9;er-le-projet"><span></span></a>Cr&#xE9;er le projet</h4>
 <p>Un projet peut &#xEA;tre cr&#xE9;&#xE9; en &#xE9;tat de brouillon (<code>state: draft</code>) pour pouvoir &#xEA;tre modifi&#xE9; avant lancement d&#xE9;finitif de la commande, ou d&#xE9;finitivement lanc&#xE9; (`state: published).
 Les options du projet doivent &#xEA;tre pr&#xE9;cis&#xE9;es (voir [Obtenir les options du produit](#Obtenir les options du produit)).
@@ -689,7 +708,7 @@ Le prix calcul&#xE9; au pr&#xE9;alable doit &#xEA;tre soumis &#xE0; titre d&apos
     &quot;organization&quot;: {&quot;gid&quot;: &quot;55f2ab761d0bd&quot;},
     &quot;options&quot;: {&quot;due&quot;:2, &quot;mode&quot;: &quot;solo&quot;, &quot;skill&quot;: &quot;conception&quot;},
     &quot;price&quot;: {&quot;amount&quot;: 735.0},
-    &quot;status&quot;: &quot;in_progress&quot;
+    &quot;state&quot;: &quot;published&quot;
 }&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects</code></pre>
 <p>R&#xE9;ponse :</p>
 <pre><code></code></pre><p>Second exemple, cr&#xE9;ation d&apos;une commande en 2 jours de 3 <em>Logos</em> en mode <em>multi</em> et <em>Execution</em> avec validation du prix &#xE0; 1800.0&#x20AC; &#xE0; l&apos;&#xE9;tat de brouillon :</p>
@@ -835,6 +854,9 @@ Mettre &#xE0; jour le projet en lui indiquant la cr&#xE9;ation gagnante:</p>
 }&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/comments</code></pre>
 <p>Et pour r&#xE9;cuperer les autres commentaires de la m&#xEA;me ressource</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/comments?query=\[&quot;uri&quot;,&quot;==&quot;,&quot;/works/559bef4a9b600&quot;\]&apos;</span></code></pre>
+<h1 id="batch"><a class="heading-anchor" href="#batch"><span></span></a>Batch</h1>
+<p>Il est possible de grouper plusieurs requ&#xEA;tes en une seule requ&#xEA;te &quot;Batch&quot;.</p>
+<p>Reportez-vous &#xE0; la <a href="/references/#batch">r&#xE9;f&#xE9;rence du Batch</a> pour voir un example.</p>
 
                         </div>
 
