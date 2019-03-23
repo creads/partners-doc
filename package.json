@@ -9,7 +9,7 @@
     "prebuild": "npm i",
     "build": "node build.js",
     "version": "npm run build && git add -A docs",
-    "bump": "npm version --allow-same-version --no-git-tag-version $VERSION",
+    "bump": "echo \"nothing to do\"",
     "postbump": "git add package-lock.json package.json"
   },
   "author": "Samuel Vaillant <s.vaillant@creads.org>",
