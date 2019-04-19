@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "ln -sf docs partners-doc 2>/dev/null",
     "start": "node index.js",
     "build": "node build.js",
     "version": "npm run build && git add -A docs",
@@ -32,7 +31,7 @@
     "metalsmith-prism": "^3.1.1",
     "minimize": "^2.2.0",
     "nunjucks": "^3.1.7",
-    "nunjucks-markdown": "^1.0.0",
+    "nunjucks-markdown": "^2.0.1",
     "q": "^1.5.1",
     "raml2obj": "^3.0.0"
   },
