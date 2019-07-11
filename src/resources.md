@@ -703,7 +703,7 @@ curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "product": null,
     "specific_request": true,
     "state": "draft"
-}' -X POST https://api-preprod.creads-partners.com/v1/projects
+}' -X POST https://api.creads.tech/v1/projects
 ```
 
 Ensuite, vous pouvez envoyer la demande en passant le statut à `waiting_for_proposal`.
@@ -711,7 +711,7 @@ Ensuite, vous pouvez envoyer la demande en passant le statut à `waiting_for_pro
 ```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "state": "waiting_for_proposal"
-}' -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012
+}' -X PUT https://api.creads.tech/v1/projects/1234567891012
 ```
 
 Lorsque le projet aura reçu une proposition (avec ou sans produit), il passera en statut `proposal`, vous pourrez alors le publier en mettant son statut à `published` si votre budget et votre solde vous le permettent.
@@ -719,7 +719,7 @@ Lorsque le projet aura reçu une proposition (avec ou sans produit), il passera 
 ```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "state": "published"
-}' -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012
+}' -X PUT https://api.creads.tech/v1/projects/1234567891012
 ```
 
 
@@ -739,7 +739,7 @@ curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "options": {"due":2, "mode": "solo", "skill": "conception"},
     "price": {"amount": 735.0},
     "state": "published"
-}' -X POST https://api-preprod.creads-partners.com/v1/projects
+}' -X POST https://api.creads.tech/v1/projects
 ```
 
 Réponse :
@@ -852,7 +852,7 @@ Les utilisateurs ayant accès au projet peuvent poster des messages sur ce même
 ```bash
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "message": "Veuillez me faire une proposition"
-}' -X POST https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8/messages
+}' -X POST https://api.creads.tech/v1/projects/559bf06dc73e8/messages
 ```
 
 Lorsque le créatif postera un message livraison (`type` à `delivery`), il faudra répondre à ce message par une acceptation (mesage de type `accept`, qui finira le projet) ou un refus (type `reject`) pour continuer a discuter.
@@ -905,7 +905,7 @@ curl -i -H "Authorization: Bearer $TOKEN" -d '{
     "winner": {
         "gid": "559bf0527764e"
     }
-}' -X PUT https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8
+}' -X PUT https://api.creads.tech/v1/projects/559bf06dc73e8
 ```
 
 Le projet est alors terminé. Lorsque des **fichiers sources** arriveront, ils apparaitront dans la resource `project` en tant que `source_files`:
@@ -941,7 +941,7 @@ Il est possible de commenter des resources. Par exemple, pour échanger avec le 
 curl -i -H "Authorization: Bearer $TOKEN" -d '{
   "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque viverra sodales. Vestibulum quis fringilla nisi. Donec congue neque ac consequat vestibulum. Praesent sed urna maximus ante ornare vestibulum. In in vulputate sapien. Ut elementum bibendum mi sit amet congue. Aliquam suscipit turpis vitae dapibus efficitur. Nullam quis lacinia ligula. Nam at lectus sem.",
   "uri": "/works/559bef4a9b600"
-}' -X POST https://api-preprod.creads-partners.com/v1/comments
+}' -X POST https://api.creads.tech/v1/comments
 ```
 
 Et pour récuperer les autres commentaires de la même ressource
