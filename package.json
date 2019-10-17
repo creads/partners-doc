@@ -1,15 +1,13 @@
 {
-  "name": "partners-doc",
+  "name": "@creads/doc",
   "private": true,
-  "version": "0.0.0",
+  "version": "2.15.0",
   "scripts": {
+    "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart": "rm partners-doc &> /dev/null || true && ln -s docs partners-doc",
     "start": "node index.js",
-    "build": "node build.js",
-    "version": "npm run build && git add -A docs",
-    "bump": "echo \"nothing to do\"",
-    "postbump": "git add package-lock.json package.json"
+    "build": "node build.js"
   },
   "author": "Samuel Vaillant <s.vaillant@creads.org>",
   "contributors": [

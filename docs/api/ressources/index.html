@@ -687,15 +687,15 @@ Pour ce faire, le prix correct du projet doit &#xEA;tre calcul&#xE9; puis soumis
     &quot;product&quot;: null,
     &quot;specific_request&quot;: true,
     &quot;state&quot;: &quot;draft&quot;
-}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects</code></pre>
+}&apos;</span> -X POST https://api.creads.tech/v1/projects</code></pre>
 <p>Ensuite, vous pouvez envoyer la demande en passant le statut &#xE0; <code>waiting_for_proposal</code>.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;state&quot;: &quot;waiting_for_proposal&quot;
-}&apos;</span> -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012</code></pre>
+}&apos;</span> -X PUT https://api.creads.tech/v1/projects/1234567891012</code></pre>
 <p>Lorsque le projet aura re&#xE7;u une proposition (avec ou sans produit), il passera en statut <code>proposal</code>, vous pourrez alors le publier en mettant son statut &#xE0; <code>published</code> si votre budget et votre solde vous le permettent.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;state&quot;: &quot;published&quot;
-}&apos;</span> -X PUT https://api-preprod.creads-partners.com/v1/projects/1234567891012</code></pre>
+}&apos;</span> -X PUT https://api.creads.tech/v1/projects/1234567891012</code></pre>
 <h4 id="cr&#xE9;er-le-projet"><a class="heading-anchor" href="#cr&#xE9;er-le-projet"><span></span></a>Cr&#xE9;er le projet</h4>
 <p>Un projet peut &#xEA;tre cr&#xE9;&#xE9; en &#xE9;tat de brouillon (<code>state: draft</code>) pour pouvoir &#xEA;tre modifi&#xE9; avant lancement d&#xE9;finitif de la commande, ou d&#xE9;finitivement lanc&#xE9; (`state: published).
 Les options du projet doivent &#xEA;tre pr&#xE9;cis&#xE9;es (voir [Obtenir les options du produit](#Obtenir les options du produit)).
@@ -709,7 +709,7 @@ Le prix calcul&#xE9; au pr&#xE9;alable doit &#xEA;tre soumis &#xE0; titre d&apos
     &quot;options&quot;: {&quot;due&quot;:2, &quot;mode&quot;: &quot;solo&quot;, &quot;skill&quot;: &quot;conception&quot;},
     &quot;price&quot;: {&quot;amount&quot;: 735.0},
     &quot;state&quot;: &quot;published&quot;
-}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects</code></pre>
+}&apos;</span> -X POST https://api.creads.tech/v1/projects</code></pre>
 <p>R&#xE9;ponse :</p>
 <pre><code></code></pre><p>Second exemple, cr&#xE9;ation d&apos;une commande en 2 jours de 3 <em>Logos</em> en mode <em>multi</em> et <em>Execution</em> avec validation du prix &#xE0; 1800.0&#x20AC; &#xE0; l&apos;&#xE9;tat de brouillon :</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
@@ -791,7 +791,7 @@ Connection: keep-alive</code></pre><p>En compl&#xE9;ment, le project accepte un 
 <p>Les utilisateurs ayant acc&#xE8;s au projet peuvent poster des messages sur ce m&#xEA;me endpoint.</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
     &quot;message&quot;: &quot;Veuillez me faire une proposition&quot;
-}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8/messages</code></pre>
+}&apos;</span> -X POST https://api.creads.tech/v1/projects/559bf06dc73e8/messages</code></pre>
 <p>Lorsque le cr&#xE9;atif postera un message livraison (<code>type</code> &#xE0; <code>delivery</code>), il faudra r&#xE9;pondre &#xE0; ce message par une acceptation (mesage de type <code>accept</code>, qui finira le projet) ou un refus (type <code>reject</code>) pour continuer a discuter.</p>
 <h1 id="work"><a class="heading-anchor" href="#work"><span></span></a>Work</h1>
 <p>Dans le cas d&apos;un projet multi, une ressource <code>Work</code> (travail) repr&#xE9;sente une cr&#xE9;ation envoy&#xE9;e par un cr&#xE9;atif pour un projet.</p>
@@ -827,7 +827,7 @@ Mettre &#xE0; jour le projet en lui indiquant la cr&#xE9;ation gagnante:</p>
     &quot;winner&quot;: {
         &quot;gid&quot;: &quot;559bf0527764e&quot;
     }
-}&apos;</span> -X PUT https://api-preprod.creads-partners.com/v1/projects/559bf06dc73e8</code></pre>
+}&apos;</span> -X PUT https://api.creads.tech/v1/projects/559bf06dc73e8</code></pre>
 <p>Le projet est alors termin&#xE9;. Lorsque des <strong>fichiers sources</strong> arriveront, ils apparaitront dans la resource <code>project</code> en tant que <code>source_files</code>:</p>
 <pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
     <span class="token property">&quot;source_files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
@@ -851,7 +851,7 @@ Mettre &#xE0; jour le projet en lui indiquant la cr&#xE9;ation gagnante:</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -i -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> -d <span class="token string">&apos;{
   &quot;message&quot;: &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque viverra sodales. Vestibulum quis fringilla nisi. Donec congue neque ac consequat vestibulum. Praesent sed urna maximus ante ornare vestibulum. In in vulputate sapien. Ut elementum bibendum mi sit amet congue. Aliquam suscipit turpis vitae dapibus efficitur. Nullam quis lacinia ligula. Nam at lectus sem.&quot;,
   &quot;uri&quot;: &quot;/works/559bef4a9b600&quot;
-}&apos;</span> -X POST https://api-preprod.creads-partners.com/v1/comments</code></pre>
+}&apos;</span> -X POST https://api.creads.tech/v1/comments</code></pre>
 <p>Et pour r&#xE9;cuperer les autres commentaires de la m&#xEA;me ressource</p>
 <pre class="language-bash"><code class="language-bash"><span class="token function">curl</span> -H <span class="token string">&quot;Authorization: Bearer <span class="token variable">$TOKEN</span>&quot;</span> <span class="token string">&apos;https://api.creads-partners.com/v1/comments?query=\[&quot;uri&quot;,&quot;==&quot;,&quot;/works/559bef4a9b600&quot;\]&apos;</span></code></pre>
 <h1 id="batch"><a class="heading-anchor" href="#batch"><span></span></a>Batch</h1>
