@@ -8,7 +8,8 @@ var Metalsmith = require('metalsmith'),
   ignore = require('metalsmith-ignore'),
   merge = require('merge'),
   raml = require('./lib/metalsmith-raml.js'),
-  metalsmithPrism = require('metalsmith-prism')
+  metalsmithPrism = require('metalsmith-prism'),
+  path = require('path')
 ;
 
 
@@ -66,7 +67,7 @@ Metalsmith(__dirname)
   })
 ;
 Metalsmith(__dirname)
-  .source('node_modules/prismjs/themes/')
+  .source(path.join(__dirname, '/node_modules/prismjs/themes/'))
   .use(ignore([
     '**/.DS_Store'
   ]))
