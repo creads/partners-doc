@@ -12,7 +12,6 @@ var Metalsmith = require('metalsmith'),
   path = require('path')
 ;
 
-
 var metadata = {
   base_dir: '/partners-doc',
   site_title: 'Documentation Creads Partners',
@@ -25,7 +24,7 @@ var metadata = {
 };
 
 // markdown generator
-var metalsmith = Metalsmith(__dirname)
+Metalsmith(__dirname)
   .source('src/')
   .use(ignore([
     'references/**',
@@ -50,35 +49,40 @@ var metalsmith = Metalsmith(__dirname)
     "default": "page.nunjucks"
   }))
   .destination('docs/')
+  .clean(true)
   .build(function(err) {
     if (err) throw err;
-  })
-;
 
-// assets duplication
-Metalsmith(__dirname)
-  .source('assets/')
-  .use(ignore([
-    '**/.DS_Store'
-  ]))
-  .destination('docs/')
-  .build(function(err) {
-    if (err) throw err;
-  })
-;
-Metalsmith(__dirname)
-  .source(path.join(__dirname, '/node_modules/prismjs/themes/'))
-  .use(ignore([
-    '**/.DS_Store'
-  ]))
-  .destination('docs/css/highlight/')
-  .build(function(err) {
-    if (err) throw err;
+    // copy assets
+    Metalsmith(__dirname)
+      .source('assets/')
+      .use(ignore([
+        '**/.DS_Store'
+      ]))
+      .destination('docs/')
+      .clean(false)
+      .build(function(err) {
+        if (err) throw err;
+      })
+    ;
+
+    // prismjs copy
+    Metalsmith(__dirname)
+      .source(path.join(__dirname, '/node_modules/prismjs/themes/'))
+      .use(ignore([
+        '**/.DS_Store'
+      ]))
+      .destination('docs/css/highlight/')
+      .clean(false)
+      .build(function(err) {
+        if (err) throw err;
+      })
+    ;
   })
 ;
 
 //raml generator
-var metalsmith = Metalsmith(__dirname)
+Metalsmith(__dirname)
   .source('src/references')
   .use(ignore([
     '**/*.json',
@@ -101,8 +105,8 @@ var metalsmith = Metalsmith(__dirname)
     done();
   })
   .destination('docs/references')
+  .clean(false)
   .build(function(err) {
     if (err) throw err;
   })
 ;
-
